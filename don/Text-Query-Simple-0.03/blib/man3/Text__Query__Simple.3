@@ -1,0 +1,341 @@
+.rn '' }`
+''' $RCSfile$$Revision$$Date$
+'''
+''' $Log$
+'''
+.de Sh
+.br
+.if t .Sp
+.ne 5
+.PP
+\fB\\$1\fR
+.PP
+..
+.de Sp
+.if t .sp .5v
+.if n .sp
+..
+.de Ip
+.br
+.ie \\n(.$>=3 .ne \\$3
+.el .ne 3
+.IP "\\$1" \\$2
+..
+.de Vb
+.ft CW
+.nf
+.ne \\$1
+..
+.de Ve
+.ft R
+
+.fi
+..
+'''
+'''
+'''     Set up \*(-- to give an unbreakable dash;
+'''     string Tr holds user defined translation string.
+'''     Bell System Logo is used as a dummy character.
+'''
+.tr \(*W-|\(bv\*(Tr
+.ie n \{\
+.ds -- \(*W-
+.ds PI pi
+.if (\n(.H=4u)&(1m=24u) .ds -- \(*W\h'-12u'\(*W\h'-12u'-\" diablo 10 pitch
+.if (\n(.H=4u)&(1m=20u) .ds -- \(*W\h'-12u'\(*W\h'-8u'-\" diablo 12 pitch
+.ds L" ""
+.ds R" ""
+'''   \*(M", \*(S", \*(N" and \*(T" are the equivalent of
+'''   \*(L" and \*(R", except that they are used on ".xx" lines,
+'''   such as .IP and .SH, which do another additional levels of
+'''   double-quote interpretation
+.ds M" """
+.ds S" """
+.ds N" """""
+.ds T" """""
+.ds L' '
+.ds R' '
+.ds M' '
+.ds S' '
+.ds N' '
+.ds T' '
+'br\}
+.el\{\
+.ds -- \(em\|
+.tr \*(Tr
+.ds L" ``
+.ds R" ''
+.ds M" ``
+.ds S" ''
+.ds N" ``
+.ds T" ''
+.ds L' `
+.ds R' '
+.ds M' `
+.ds S' '
+.ds N' `
+.ds T' '
+.ds PI \(*p
+'br\}
+.\"	If the F register is turned on, we'll generate
+.\"	index entries out stderr for the following things:
+.\"		TH	Title 
+.\"		SH	Header
+.\"		Sh	Subsection 
+.\"		Ip	Item
+.\"		X<>	Xref  (embedded
+.\"	Of course, you have to process the output yourself
+.\"	in some meaninful fashion.
+.if \nF \{
+.de IX
+.tm Index:\\$1\t\\n%\t"\\$2"
+..
+.nr % 0
+.rr F
+.\}
+.TH Simple 3 "perl 5.005, patch 02" "4/Jan/99" "User Contributed Perl Documentation"
+.UC
+.if n .hy 0
+.if n .na
+.ds C+ C\v'-.1v'\h'-1p'\s-2+\h'-1p'+\s0\v'.1v'\h'-1p'
+.de CQ          \" put $1 in typewriter font
+.ft CW
+'if n "\c
+'if t \\&\\$1\c
+'if n \\&\\$1\c
+'if n \&"
+\\&\\$2 \\$3 \\$4 \\$5 \\$6 \\$7
+'.ft R
+..
+.\" @(#)ms.acc 1.5 88/02/08 SMI; from UCB 4.2
+.	\" AM - accent mark definitions
+.bd B 3
+.	\" fudge factors for nroff and troff
+.if n \{\
+.	ds #H 0
+.	ds #V .8m
+.	ds #F .3m
+.	ds #[ \f1
+.	ds #] \fP
+.\}
+.if t \{\
+.	ds #H ((1u-(\\\\n(.fu%2u))*.13m)
+.	ds #V .6m
+.	ds #F 0
+.	ds #[ \&
+.	ds #] \&
+.\}
+.	\" simple accents for nroff and troff
+.if n \{\
+.	ds ' \&
+.	ds ` \&
+.	ds ^ \&
+.	ds , \&
+.	ds ~ ~
+.	ds ? ?
+.	ds ! !
+.	ds /
+.	ds q
+.\}
+.if t \{\
+.	ds ' \\k:\h'-(\\n(.wu*8/10-\*(#H)'\'\h"|\\n:u"
+.	ds ` \\k:\h'-(\\n(.wu*8/10-\*(#H)'\`\h'|\\n:u'
+.	ds ^ \\k:\h'-(\\n(.wu*10/11-\*(#H)'^\h'|\\n:u'
+.	ds , \\k:\h'-(\\n(.wu*8/10)',\h'|\\n:u'
+.	ds ~ \\k:\h'-(\\n(.wu-\*(#H-.1m)'~\h'|\\n:u'
+.	ds ? \s-2c\h'-\w'c'u*7/10'\u\h'\*(#H'\zi\d\s+2\h'\w'c'u*8/10'
+.	ds ! \s-2\(or\s+2\h'-\w'\(or'u'\v'-.8m'.\v'.8m'
+.	ds / \\k:\h'-(\\n(.wu*8/10-\*(#H)'\z\(sl\h'|\\n:u'
+.	ds q o\h'-\w'o'u*8/10'\s-4\v'.4m'\z\(*i\v'-.4m'\s+4\h'\w'o'u*8/10'
+.\}
+.	\" troff and (daisy-wheel) nroff accents
+.ds : \\k:\h'-(\\n(.wu*8/10-\*(#H+.1m+\*(#F)'\v'-\*(#V'\z.\h'.2m+\*(#F'.\h'|\\n:u'\v'\*(#V'
+.ds 8 \h'\*(#H'\(*b\h'-\*(#H'
+.ds v \\k:\h'-(\\n(.wu*9/10-\*(#H)'\v'-\*(#V'\*(#[\s-4v\s0\v'\*(#V'\h'|\\n:u'\*(#]
+.ds _ \\k:\h'-(\\n(.wu*9/10-\*(#H+(\*(#F*2/3))'\v'-.4m'\z\(hy\v'.4m'\h'|\\n:u'
+.ds . \\k:\h'-(\\n(.wu*8/10)'\v'\*(#V*4/10'\z.\v'-\*(#V*4/10'\h'|\\n:u'
+.ds 3 \*(#[\v'.2m'\s-2\&3\s0\v'-.2m'\*(#]
+.ds o \\k:\h'-(\\n(.wu+\w'\(de'u-\*(#H)/2u'\v'-.3n'\*(#[\z\(de\v'.3n'\h'|\\n:u'\*(#]
+.ds d- \h'\*(#H'\(pd\h'-\w'~'u'\v'-.25m'\f2\(hy\fP\v'.25m'\h'-\*(#H'
+.ds D- D\\k:\h'-\w'D'u'\v'-.11m'\z\(hy\v'.11m'\h'|\\n:u'
+.ds th \*(#[\v'.3m'\s+1I\s-1\v'-.3m'\h'-(\w'I'u*2/3)'\s-1o\s+1\*(#]
+.ds Th \*(#[\s+2I\s-2\h'-\w'I'u*3/5'\v'-.3m'o\v'.3m'\*(#]
+.ds ae a\h'-(\w'a'u*4/10)'e
+.ds Ae A\h'-(\w'A'u*4/10)'E
+.ds oe o\h'-(\w'o'u*4/10)'e
+.ds Oe O\h'-(\w'O'u*4/10)'E
+.	\" corrections for vroff
+.if v .ds ~ \\k:\h'-(\\n(.wu*9/10-\*(#H)'\s-2\u~\d\s+2\h'|\\n:u'
+.if v .ds ^ \\k:\h'-(\\n(.wu*10/11-\*(#H)'\v'-.4m'^\v'.4m'\h'|\\n:u'
+.	\" for low resolution devices (crt and lpr)
+.if \n(.H>23 .if \n(.V>19 \
+\{\
+.	ds : e
+.	ds 8 ss
+.	ds v \h'-1'\o'\(aa\(ga'
+.	ds _ \h'-1'^
+.	ds . \h'-1'.
+.	ds 3 3
+.	ds o a
+.	ds d- d\h'-1'\(ga
+.	ds D- D\h'-1'\(hy
+.	ds th \o'bp'
+.	ds Th \o'LP'
+.	ds ae ae
+.	ds Ae AE
+.	ds oe oe
+.	ds Oe OE
+.\}
+.rm #[ #] #H #V #F C
+.SH "NAME"
+Text::Query::Simple \- Match text against simple query expression and return relevance value for ranking
+.SH "SYNOPSIS"
+.PP
+.Vb 4
+\&    use Text::Query::Simple;
+\&    
+\&    # Constructor
+\&    $query = Text::Query::Simple->new([QSTRING] [OPTIONS]);
+.Ve
+.Vb 4
+\&    # Methods
+\&    $query->prepare(QSTRING [OPTIONS]);
+\&    $query->match([TARGET]);
+\&    $query->matchscalar([TARGET]);
+.Ve
+.SH "DESCRIPTION"
+This module provides an object that tests a string or list of strings 
+against a query expression similar to an AltaVista \*(L"simple  query\*(R" and 
+returns a \*(L"relevance value.\*(R"  Elements of the query expression may be 
+regular expressions or literal text, and may be assigned weights.
+.PP
+Query expressions are compiled into an internal form when a new object is 
+created or the \f(CWprepare\fR method is called; they are not recompiled on each 
+match.
+.PP
+Query expressions consist of words (sequences of non-whitespace), regexps 
+or phrases (quoted strings) separated by whitespace.  Words or phrases 
+prefixed with a \f(CW+\fR must be present for the expression to match; words or 
+phrases prefixed with a \f(CW-\fR must be absent for the expression to match.
+.PP
+A successful match returns a count of the number of times any of the words 
+(except ones prefixed with \f(CW-\fR) appeared in the text.  This type of result 
+is useful for ranking documents according to relevance.
+.PP
+Words or phrases may optionally be followed by a number in parentheses (no 
+whitespace is allowed between the word or phrase and the parenthesized 
+number).  This number specifies the weight given to the word or phrase; it 
+will be added to the count each time the word or phrase appears in the 
+text.  If a weight is not given, a weight of 1 is assumed.
+.SH "EXAMPLES"
+.PP
+.Vb 15
+\&  use Text::Query::Simple;
+\&  my $q=new Text::Query::Simple('+hello world');
+\&  die "bad query expression" if not defined $q;
+\&  $count=$q->match;
+\&  ...
+\&  $q->prepare('goodbye adios -"ta ta",-litspace=>1);
+\&  #requires single space between the two ta's
+\&  if ($q->match($line,-case=>1)) {
+\&  #doesn't match "Goodbye"
+\&  ...
+\&  $q->prepare('\e\ebintegrate\e\eb',-regexp=>1);
+\&  #won't match "disintegrated"
+\&  ...
+\&  $q->prepare('information(2) retrieval');
+\&  #information has twice the weight of retrieval
+.Ve
+.SH "CONSTRUCTOR"
+.Ip "new ([\s-1QSTRING\s0] [\s-1OPTIONS\s0])" 4
+This is the constructor for a new Text::Query::Simple object.  If a 
+\f(CWQSTRING\fR is given it will be compiled to internal form.
+.Sp
+\f(CWOPTIONS\fR are passed in a hash like fashion, using key and value pairs.
+Possible options are:
+.Sp
+\fB\-case\fR \- If true, do case-sensitive match.
+.Sp
+\fB\-litspace\fR \- If true, match spaces (except between operators) in 
+\f(CWQSTRING\fR literally.  If false, match spaces as \f(CW\es+\fR.
+.Sp
+\fB\-regexp\fR \- If true, treat patterns in \f(CWQSTRING\fR as regular expressions 
+rather than literal text.
+.Sp
+\fB\-whole\fR \- If true, match whole words only, not substrings of words.
+.Sp
+The constructor will return \f(CWundef\fR if a \f(CWQSTRING\fR was supplied and had 
+illegal syntax.
+.SH "METHODS"
+.Ip "prepare (\s-1QSTRING\s0 [\s-1OPTIONS\s0])" 4
+Compiles the query expression in \f(CWQSTRING\fR to internal form and sets any 
+options (same as in the constructor).  \f(CWprepare\fR may be used to change 
+the query expression and options for an existing query object.  If 
+\f(CWOPTIONS\fR are omitted, any options set by a previous call to the 
+constructor or \f(CWprepare\fR remain in effect.
+.Sp
+This method returns a reference to the query object if the syntax of the 
+expression was legal, or \f(CWundef\fR if not.
+.Ip "match ([\s-1TARGET\s0])" 4
+If \f(CWTARGET\fR is a scalar, \f(CWmatch\fR returns the number of words in the 
+string specified by \f(CWTARGET\fR that match the query object's query 
+expression.  If \f(CWTARGET\fR is not given, the match is made against \f(CW$_\fR.
+.Sp
+If \f(CWTARGET\fR is an array, \f(CWmatch\fR returns a list of references to 
+anonymous arrays consisting of each element followed by its match count.  
+The list is sorted in descending order by match count.  If the elements of 
+\f(CWTARGET\fR were anonymous arrays, the match count is appended to each 
+element.  This allows arbitrary information (such as a filename) to be 
+associated with each element.
+.Sp
+If \f(CWTARGET\fR is a reference to an array, \f(CWmatch\fR returns a reference to 
+a sorted list of matching items, with counts, for all elements.  
+.Ip "matchscalar ([\s-1TARGET\s0])" 4
+Behaves just like \f(CWMATCH\fR when \f(CWTARGET\fR is a scalar or is not given.  
+Slightly faster than \f(CWMATCH\fR under these circumstances.
+.SH "RESTRICTIONS"
+This module requires Perl 5.005 or higher due to the use of evaluated
+expressions in regexes
+.SH "AUTHOR"
+Eric Bohlman (ebohlman@netcom.com)
+.SH "CREDITS"
+The parse_tokens routine was adapted from the parse_line routine in 
+Text::Parsewords.
+.SH "COPYRIGHT"
+Copyright (c) 1998 Eric Bohlman. All rights reserved.
+This program is free software; you can redistribute and/or modify
+it under the same terms as Perl itself.
+=cut
+
+.rn }` ''
+.IX Title "Simple 3"
+.IX Name "Text::Query::Simple - Match text against simple query expression and return relevance value for ranking"
+
+.IX Header "NAME"
+
+.IX Header "SYNOPSIS"
+
+.IX Header "DESCRIPTION"
+
+.IX Header "EXAMPLES"
+
+.IX Header "CONSTRUCTOR"
+
+.IX Item "new ([\s-1QSTRING\s0] [\s-1OPTIONS\s0])"
+
+.IX Header "METHODS"
+
+.IX Item "prepare (\s-1QSTRING\s0 [\s-1OPTIONS\s0])"
+
+.IX Item "match ([\s-1TARGET\s0])"
+
+.IX Item "matchscalar ([\s-1TARGET\s0])"
+
+.IX Header "RESTRICTIONS"
+
+.IX Header "AUTHOR"
+
+.IX Header "CREDITS"
+
+.IX Header "COPYRIGHT"
+

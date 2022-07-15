@@ -1,0 +1,63 @@
+<SCRIPT LANGUAGE="JavaScript">
+<!--hide from non javascript enabled browers
+	var images = new Array(8); // generate an array 8 deep, 2 wide
+	var i=0;				   // used for looping
+	
+	for (i=0;i<images.length;i++) {
+		images[i]=new Image;
+		images[i].src="/images/toolbar_images/tb_"+i+"_ro.gif";		// swapable gif
+	}
+	
+	function swap_image(img,which) {
+	var tmp = new Image;
+		tmp.src=img.src;
+		img.src=images[which].src;
+		images[which].src=tmp.src;
+	}
+	//-->
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" SRC="/includes/force_rotate.js">
+
+</SCRIPT>
+<TH><FORM ACTION="/cgi-bin/search.pl" METHOD="post" id=form1 name=form1>
+<center>
+    <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" height=82 style="HEIGHT: 82px; WIDTH: 600px">
+            
+    <TH width="750"> 
+		
+		<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" height=82 width=137>
+			<tr><td><IMG SRC="/images/toolbar_images/window/window_top.gif" WIDTH="137" HEIGHT="14" border="0" alt="go to Truck Tarps"></td></tr>
+			<tr><td>						  			 			   			   
+				  <IMG BORDER="0" NAME="ROTIMG" ID="ROTIMG" SRC="/images/toolbar_images/window/window_saddlebox.gif" onMouseDown="click_rot()">
+			</td></tr>
+			<tr><td><IMG SRC="/images/toolbar_images/window/window_bottom.gif" WIDTH="137" HEIGHT="13" border="0" alt="go to Truck Tarps"></td></tr>			
+		</Table>
+	 <TH width="451">
+      
+          
+        <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0">
+          <TR>
+            <TD> <A ID HREF="/truck/truck.php" ONMOUSEOVER="swap_image(img0,0)" ONMOUSEOUT="swap_image(img0,0)">
+				<IMG ID="img0" NAME="img0" SRC="/images/toolbar_images/tb_0.gif" WIDTH="70" HEIGHT="59" border="0" alt="go to Truck Tarps"></A></TD>
+            <TD> <A HREF="/tough/toughtarps.php" ONMOUSEOVER="swap_image(img1,1)" ONMOUSEOUT="swap_image(img1,1)">
+				<IMG NAME="img1" SRC="/images/toolbar_images/tb_1.gif" WIDTH="47" HEIGHT="59" border="0" id=IMG1 alt="go to Tough Tarps"></A></TD>
+            <TD> <A HREF="/pool/pool.php" ONMOUSEOVER="swap_image(img2,2)" ONMOUSEOUT="swap_image(img2,2)">
+				<IMG NAME="img2" SRC="/images/toolbar_images/tb_2.gif" WIDTH="64" HEIGHT="59" border="0" alt="go to Pool Covers"></A></TD>
+            <TD> <A HREF="/boat/boat.php" ONMOUSEOVER="swap_image(img3,3)" ONMOUSEOUT="swap_image(img3,3)">
+				<IMG NAME="img3" SRC="/images/toolbar_images/tb_3.gif" WIDTH="55" HEIGHT="59" border="0" alt="go to Boat Covers"></A></TD>
+            <TD> <A HREF="/custom/custom.php"  ONMOUSEOVER="swap_image(img4,4)" ONMOUSEOUT="swap_image(img4,4)">
+				<IMG NAME="img4" SRC="/images/toolbar_images/tb_4.gif" WIDTH="91" HEIGHT="59" border="0" alt="go to Industrial Sewing & Heat Sealing"></A></TD>
+          </TR>
+        </TABLE>
+        <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" BGCOLOR="#ffcc66">
+                <TBODY>
+          <TR>
+            <TD> <A HREF="/" ONMOUSEDOWN="swap_image(img5,5)" ONMOUSEUP="swap_image(img5,5)" ONDRAGSTART="swap_image(img5,5)">
+				<IMG Name="img5" SRC="/images/toolbar_images/tb_5.gif" WIDTH="56" HEIGHT="26" border="0" ALT="Return to D.S. home page"></A></TD>
+            <TD> <A HREF="/forms/request.asp" ONMOUSEOVER="swap_image(img6,6)" ONMOUSEOUT="swap_image(img6,6)"><IMG NAME="img6" SRC="/images/toolbar_images/tb_6.gif" WIDTH="118" HEIGHT="26" border="0" alt="Request a Catalog"></TD>
+            <TD> <INPUT NAME="keywords"> </TD>
+            <TD> <INPUT TYPE=image SRC="/images/toolbar_images/tb_7.gif" alt="Search the D.S. Sewing site" ONMOUSEDOWN="swap_image(this,7)" ONMOUSEUP="swap_image(this,7)" ONDRAGSTART="swap_image(this,7)" value="Submit Query" BORDER="0"></A></TD>
+          </TR></TBODY>
+        </TABLE></TH></TR></TABLE></TH></TR></TABLE></FORM>
+
+

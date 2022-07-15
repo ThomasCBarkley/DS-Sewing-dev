@@ -1,0 +1,112 @@
+<!--#INCLUDE VIRTUAL="/includes/getprice.inc"-->
+<HTML>
+  <HEAD>
+    <TITLE>D.S.Sewing Truck Tarps - Steel Trailer Tarps - Freight Covers</TITLE>
+    <META HTTP-EQUIV="PICS-Label"
+    CONTENT='(PICS-1.0 "http://www.classify.org/safesurf/" l gen true for "https://www.ds-sewing.com/" by "webmaster@ds-sewing.com" r (SS~~000 1 SS~~100 1))'>
+    <META NAME="rating" CONTENT="General">
+    <META NAME="keywords"
+    CONTENT="D.S.Sewing,Steel Tarps,Steel Trailer Tarps,freight covers,18 ounce vinyl-coated polyester">
+    <META NAME="description"
+    CONTENT="This tarp covers coiled or flat steel shingles and high-density low area freight.  It can be turned sideways and used with two smoke tarps for covering plywood (5� drops).  The approximate sizes are 20� x 14� and 24� x 14�.  This tarp has a 3� drop with two rows.  The top row is about 18� and the bottom row is about 34� Two or three tarps are needed per trailer.">
+    <META NAME="robots" CONTENT="index,follow">
+    <STYLE TYPE="text/css">
+<!--
+A{color:blue}
+a:hover{color:blue}
+a:visited{color:blue}
+a:visited:hover{color:red}
+-->
+</STYLE>
+  <!--#include virtual="/includes/analytics.html"-->
+	</HEAD>
+  <BODY BGCOLOR="#FFFFFF">
+        <CENTER>
+<!--#include virtual="/includes/toolbar.htm"-->
+<center><img src="/images/truck_images/truck_header.gif" width="164" height="33" border="0"></center>
+<P><B><H2><FONT face="verdana,arial,helvetica,sans-serif">Steel Tarp</FONT></H2></B></P>
+</CENTER>
+<center>
+<table border="1" bordercolor="#ffcc66" bgcolor="#ffffcc" width="600" cellspacing="0" cellpadding="0">
+ <tr>
+ 
+ <TD bgcolor=#ffffcc>
+ <table border="1" bordercolor="#ffcc66" bgcolor="#ffffcc" width="325" cellspacing="0" cellpadding="0"><Tr>
+ <TD>
+   
+    <CENTER>
+    <TABLE BORDER="1" WIDTH="600" bordercolor="#ffcc66" bgcolor="#ffffcc" CELLPADDING="0" cellspacing="0">
+      <TR>
+        <TD ALIGN="CENTER" WIDTH="222"><BR>
+        <IMG SRC="/images/truck_images/flatsteelphoto.gif" ALT="steel tarp" BORDER="1" WIDTH="200" HEIGHT="150"></TD>
+        <TD ALIGN="CENTER" WIDTH="343"><TABLE BORDER="1"  bordercolor="#ffcc66" WIDTH="400" CELLPADDING="0" cellspacing="0">
+          <TR>
+            <TD ALIGN="CENTER" WIDTH="222"><IMG SRC="/images/truck_images/steeldiagram.gif" ALT="steel tarp diagram" WIDTH="150" HEIGHT="200" ALIGN="bottom">
+            </TD>
+            <TD ALIGN="LEFT" WIDTH="280"><FONT SIZE="-1" face="verdana,arial,helvetica,sans-serif">This
+            tarp covers coiled or flat steel, shingles and high density low area
+            freight. It can be turned sideways and used with two smoke tarps for
+            covering plywood (5' drops). The approximate sizes are 20' x 14' and
+            24' x 14'. This tarp has a 3' drop with two rows. The top row is
+            about 18&quot; and the bottom row is about 34&quot;. Two or three
+            tarps are needed per trailer.</FONT>
+      <P align=center><B><FONT face=Arial>Standard Prices and Weights</FONT></B></P>
+
+<CENTER><TABLE BORDER="0">
+              <TR>
+                <TD ALIGN="CENTER" WIDTH="55">
+                 <P ALIGN="center"><FONT SIZE="-1" face="verdana,arial,helvetica,sans-serif">20' x 14'</FONT>
+                </P></TD>
+                <TD ALIGN="CENTER" WIDTH="66">
+                <P ALIGN="center"><FONT SIZE="-1" face="verdana,arial,helvetica,sans-serif">$<%=GetPrice("1006A")%></FONT>
+                </P></TD>
+                <TD WIDTH="74">
+                <P ALIGN="center"><FONT SIZE="-1" face="verdana,arial,helvetica,sans-serif">45 lbs.</FONT>
+                </P></TD>
+              </TR>
+              <FORM action="/s/incart" id=form1 method=post name=form1>
+              <INPUT name=action type=hidden value=incart>
+              <INPUT name=pid type=hidden value=1006>
+<TR>
+<TD align="middle" width="135">
+<SELECT name=colour>
+<OPTION value=A>RED
+<OPTION selected value=B>BLUE
+<OPTION value=C>BLACK
+<OPTION value=D>GREEN
+<OPTION value=E>YELLOW
+<OPTION value=F>GREY</OPTION></SELECT> </TD>
+<TD align="middle" width="135">
+<INPUT id=SUBMIT1 name=SUBMIT1 type=submit value=Buy>
+             <TR>
+                <TD WIDTH="55">
+                   <P ALIGN="center"><FONT SIZE="-1" face="verdana,arial,helvetica,sans-serif">24' x 14'</FONT>
+                </P></TD>
+                <TD WIDTH="66">
+                  <P ALIGN="center"><FONT SIZE="-1" face="verdana,arial,helvetica,sans-serif">$<%=GetPrice("1007A")%></FONT>
+                </P></TD>
+                <TD WIDTH="74">
+                         <P ALIGN="center"><FONT SIZE="-1" face="verdana,arial,helvetica,sans-serif">54 lbs.</FONT>
+
+</P></TD></TR></FORM>
+
+
+<FORM action="/s/incart" id=form1 method=post name=form1>
+<INPUT name=action type=hidden value=incart>
+<INPUT name=pid type=hidden value=1007>
+<TR>
+<TD align="middle" width="135"><SELECT name=colour> <OPTION value=A>RED<OPTION selected value=B>BLUE<OPTION
+value=C>BLACK<OPTION value=D>GREEN<OPTION value=E>YELLOW<OPTION value=F>GREY</OPTION></SELECT> </TD>
+<TD align="middle" width="135">
+<INPUT id=SUBMIT1 name=SUBMIT1 type=submit value=Buy>
+</TD></TR></FORM></TBODY></TABLE></TD></TR></TABLE></TD></TR></TABLE></TD></TR></TABLE></TD></TR></TABLE></center>
+<BR><BR>
+<CENTER>
+<!--#include virtual="/includes/truck_footer.htm"--></CENTER>
+</body>
+</HTML>
+
+
+
+
+

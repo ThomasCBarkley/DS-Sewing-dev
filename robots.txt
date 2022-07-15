@@ -1,0 +1,12 @@
+sitemap: https://www.ds-sewing.com/sitemap.xml
+User-agent: *
+Disallow: legal.htm
+Disallow: introduction.htm
+Disallow: letter.htm
+Disallow: thanks.htm
+Disallow: /forms/
+Disallow: /s/tinycart
+User-agent: googlebot
+Disallow:
+User-agent: googlebot-image
+Disallow:

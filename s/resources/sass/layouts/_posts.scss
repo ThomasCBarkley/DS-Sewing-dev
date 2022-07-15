@@ -1,0 +1,92 @@
+.custom-container {
+  max-width: 600px;
+  width: 100%;
+  padding-bottom: 38px;
+}
+.post-content {
+  font-size: 13px;
+  background: #ffffcc;
+  padding: 1px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: normal;
+  border-width: 1px 1px 6px;
+  border-style: solid;
+  border-color: #ffcc66;
+  .inner {
+    border: 1px solid  #ffcc66;
+    padding: 30px 1px 0;
+    a {
+      color: #0000ff;
+    }
+  }
+  .pool-step0 {
+    font-size: 16px;
+  }
+  &-orange {
+    background: #ffcc66;
+    font-family: "Times New Roman";
+    .inner {
+      padding: 1px;
+      table {
+        tr {
+          td {
+            padding: 2px;
+            input {
+              &[type="text"] {
+                height: 21px;
+              }
+              &[type="submit"] {
+                font-family: 'Arial';
+                font-size: 13.333px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0 29px;
+  font-family: verdana,arial,helvetica,sans-serif;
+}
+.content-top {
+  background: #ffcc66;
+  padding: 9px 0 21px;
+  text-align: center;
+  h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: normal;
+    font-family: verdana,arial,helvetica,sans-serif;
+  }
+}
+.card {
+  position: relative;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: transparent;
+  background-clip: border-box;
+  border: 0;
+  border-radius: 0;
+}
+.card-body {
+  padding: 8px 40px;
+}
+.card-title {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-family: "Times New Roman";
+  strong {
+    font-family: verdana,arial,helvetica,sans-serif;
+  }
+}
+.card-text {
+  margin-bottom: 0;
+  margin-left: 16px;
+  font-size: 16px;
+  font-family: "Times New Roman";
+}

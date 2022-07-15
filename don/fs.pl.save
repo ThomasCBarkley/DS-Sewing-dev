@@ -1,0 +1,47 @@
+#!/usr/local/bin/perl
+
+use CGI;
+use DBI;
+
+ $cgih=new CGI; 
+
+ $dbh = DBI->connect('DBI:mysql:dssewing',root,undef);
+
+
+ @keywords=split(" ",$cgih->param('keywords'));
+
+ for ($i=$#keywords;$i>=0;$i--) {
+   $keywords[$i]="'".$keywords[$i]."'";
+ }
+
+$SQL = "SELECT SUM(density) as dens,site_keywords.ID,filename FROM ";
+$SQL = $SQL."site_keywords LEFT JOIN site_files ON site_keywords.id = site_files.id ";
+$SQL = $SQL."where site_keywords.keyword IN (".join(",",@keywords).") ";
+$SQL = $SQL."GROUP BY site_keywords.ID ORDER BY dens";
+
+
+ $sth = $dbh->prepare($SQL);
+ $sth->execute;
+
+
+ print $cgih->header;
+ print $cgih->start_html(-title=>'Search Results');
+
+ print $SQL;
+ 
+ print "<TABLE>";
+ while (sort @row=$sth->fetchrow_array) {
+  print "<TR>";
+  print "<TD>$row[0]</TD><TD>$row[1]</TD><TD>$row[2]</TD>\n";
+  print "</TR>"; 
+}
+
+ print "</TABLE>";
+
+ $sth->finish;
+ $dbh->disconnect;
+
+ print $cgih->end_html;
+
+
+

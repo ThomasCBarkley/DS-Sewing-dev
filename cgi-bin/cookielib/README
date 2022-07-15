@@ -1,0 +1,630 @@
+##############################################################################
+# HTTP Cookie Library           Version 2.1                                  #
+# Copyright 1996 Matt Wright    mattw@worldwidemart.com                      #
+# Created 07/13/96              Last Modified 12/23/96                       #
+# Scripts Archive at:           http://www.worldwidemart.com/scripts/        #
+# Parts of Code Contributed by Jeff Carnahan (http://terminalp.com/scripts/) #
+##############################################################################
+# If you run into any problems while trying to configure this script, help   #
+# is available.  The steps you should take to get the fastest results, are:  #
+#       1) Read this file thoroughly                                         #
+#       2) Consult the Matt's Script Archive Frequently Asked Questions:     #
+#               http://www.worldwidemart.com/scripts/faq/                    #
+#       3) If you are still having difficulty installing this script, send   #
+#          e-mail to: scripts-help@tahoenet.com                              #
+#          Include any error messages you are receiving and as much detail   # 
+#          as you can so we can spot your problem.  Also include the variable#
+#          configuration block that is located at the top of the script.     #
+#                                                                            #
+# Hopefully we will be able to help you solve your problems.  Thank you.     #
+##############################################################################
+# COPYRIGHT NOTICE                                                           #
+# Copyright 1996 Matthew M. Wright  All Rights Reserved.                     #
+#                                                                            #
+# HTTP Cookie Library may be used and modified free of charge by anyone so   #
+# long as this copyright notice and the comments above remain intact.  By    #
+# using this code you agree to indemnify Matthew M. Wright from any          #
+# liability that might arise from it's use.                                  #  
+#                                                                            #
+# Selling the code for this program without prior written consent is         #
+# expressly forbidden.  In other words, please ask first before you try and  #
+# make money off of my program.                                              #
+#                                                                            #
+# Obtain permission before redistributing this software over the Internet or #
+# in any other medium.  In all cases copyright and header must remain intact #
+##############################################################################
+
+TABLE OF CONTENTS:
+==================
+
+1) Overview
+2) cookie.lib Configuration
+    a) $Cookie_Exp_Date
+    b) $Cookie_Path
+    c) $Cookie_Domain
+    d) $Secure_Cookie
+    e) @Cookie_Encode_Chars
+    f) %Cookie_Encode_Chars
+    g) @Cookie_Decode_Chars
+    h) %Cookie_Decode_Chars
+3) Using this Library in your CGI script.
+    a) Requiring the library.
+    b) Subroutine calls.
+        + &GetCookies
+        + &SetCookieExpDate
+        + &SetCookiePath
+        + &SetCookieDomain
+        + &SetSecureCookie
+        + &SetCookies
+        + &SetCompressedCookies
+        + &GetCompressedCookies
+4) Character Translation Information
+5) Any Examples Available?
+    a) ccounter.pl
+    b) Scripts Around the World
+6) Other Cookie Resources
+7) History
+
+##############################################################################
+
+                                   OVERVIEW
+                                   ========
+
+HTTP Cookie Library is a Perl 4 and 5 compatible library which allows you to 
+easily use Persistent Client State HTTP Cookies by allowing you to get the 
+cookies from the environment, prepare cookies, set cookies, change the 
+expiration date, domain and path all with easy subroutine calls.
+
+Version 2.0 and 2.1 contain many changes, including the ability to compress
+multiple cookies into one, the elimination of the &PrepareCookies subroutine,
+and fixes allowing you to set more than one cookie at a time.  The addition of
+character URL-encoding and the fixing of a scoping bug brought on by 
+localizing the global variables used in this script are new to version 2.1.
+
+NOTE: Anyone who used 2.0 and &UnCompressCookies should now change all
+      references from &UnCompressCookies to &GetCompressedCookies.  The calls
+      to these routines are the same, however the name has been changed.
+
+For more information on Cookies, and to see the preliminary specifications
+of Persistent Client State HTTP Cookies to which this library conforms, visit
+http://www.netscape.com/newsref/std/cookie_spec.html
+
+There are three files included with this script:
+        1) README       - This file; includes detailed installation 
+                          instructions.
+        2) cookie.lib   - The Perl script which generates the random phrase
+                          and displays it on your web page.
+        3) ccounter.pl  - An example of how to use this library.
+
+The cookie.lib perl library is not a stand-alone CGI script.  It is meant to
+be used in conjunction with a script that you build.  It's only purpose is to
+facilitate the usage of client side persistent HTTP cookies.  This means, in 
+order to use this library, you should always have the following line in your
+script somewhere:
+
+	require '/path/to/cookie.lib';
+
+This will then tell Perl to retrieve this file and include it's code and 
+subroutines in your script.  Nonetheless, there are some variables which you
+can modify in the cookie.lib file before you place it on your system.  All
+of these variables can be modified through special subroutines in cookie.lib
+so it is not necessary to edit any of them.
+
+##############################################################################
+
+                           COOKIE.LIB CONFIGURATION
+                           ========================
+
+This program contains three variables which can be modified in the library, to
+make it easier to use on your system.  They can also be set through calling
+subroutines, which is explained in: 'Using this Library in Your CGI Script,'
+or by setting them in your main script, as they are local variables which can
+be modified.  The subroutines provide checks to make sure the value is valid.
+
+      $Cookie_Exp_Date = '';
+            This variable defines the expiration date of your cookie.
+            When this date arrives the browser will ask the user if
+            they want to delete the cookie, and that it is ok to do so.
+            This date must always be represented as:
+            Wdy, DD-Mon-YYYY HH:MM:SS GMT
+            and always has to be in GMT time.  An example would be:
+            Wed, 09-Nov-1999 00:00:00 GMT.  By default, if this is
+            not filled in, the browser will delete the cookie when the
+            session ends.  Also see &SetCookieExpDate.
+
+      $Cookie_Path = '';
+            This path defines where under your domain the cookies 
+            should be sent.  For instance, if your URL is: 
+            http://domain.xxx/your_dir/, there is no reason for the 
+            browser to send the Cookie header to the base domain name.
+            Therefore, you would set this to '/your_dir';  However,
+            because this can be set through the script, set it to 
+            whatever directory will use this most often or whichever 
+            directory you want as default.  If nothing is placed here,
+            the default will be assumed to be the script or page which
+            created the cookie.  Also see &SetCookiePath.
+
+      $Cookie_Domain = '';
+            This defines the base domain to which the browse passes the
+            cookie.  If you have a domain: www.host.xxx, your.host.xxx
+            and host.xxx, which all will use this, you would set this 
+            variable to: '.host.xxx';  The following is an excerpt from
+            the Netscape Preliminary Specifications of Persistent Client
+            State HTTP Cookies:
+
+            "Only hosts within the specified domain can set a cookie for 
+            a domain and domains must have at least two (2) or three (3)
+            periods in them to prevent domains of the form: ".com", 
+            ".edu", and "va.us". Any domain that fails within one of the
+            seven special top level domains listed below only require 
+            two periods. Any other domain requires at least three. The 
+            seven special top level domains are: "COM", "EDU", "NET",
+            "ORG", "GOV", "MIL", and "INT"."
+
+            Also see &SetCookieDomain.
+
+      $Secure_Cookie = '0';
+            This defines whether or not you want to restrict the 
+            transmission of the cookie to a secure server.  If this flag
+            is set to '1', by default the cookies you create will only be
+            sent to secure servers by the client.  This can also be 
+            changed through &SetSecureCookie.
+
+      @Cookie_Encode_Chars = ('\%', '\+', '\;', '\,', '\=', '\&', '\:\:', '\s');
+            This defines the order in which the special characters should
+            be encoded.  More info can be found in section entitled
+            'Character Translation Information'.
+
+      %Cookie_Encode_Chars = ('\%',   '%25',
+                              '\+',   '%2B',
+                              '\;',   '%3B',
+                              '\,',   '%2C',
+                              '\=',   '%3D',
+                              '\&',   '%26',
+                              '\:\:', '%3A%3A',
+                              '\s',   '+');
+            This associative array defines the characters to be
+            translated as the keys, which can be referred to as:
+            $Cookie_Encode_Chars{key} and the values which these
+            characters should be translated into.  More info can
+            be found in section entitled 'Character Translation
+            Information'.
+
+      @Cookie_Decode_Chars = ('\+', '\%3A\%3A', '\%26', '\%3D', '\%2C', '\%3B', '\%2B', '\%25');
+            This defines the order in which the special characters should
+            be decoded.  More info can be found in section entitled
+            'Character Translation Information'.
+
+      %Cookie_Decode_Chars = ('\+',       ' ',
+                              '\%3A\%3A', '::',
+                              '\%26',     '&',
+                              '\%3D',     '=',
+                              '\%2C',     ',',
+                              '\%3B',     ';',
+                              '\%2B',     '+',
+                              '\%25',     '%');
+            This associative array defines the characters to be
+            translated as the keys, which can be referred to as:
+            $Cookie_Decode_Chars{key} and the values which these
+            characters should be decoded into.  More info can be
+            found in section entitled 'Character Translation
+            Information'.
+
+
+##############################################################################
+
+                    USING THIS LIBRARY IN YOUR CGI SCRIPT.
+                    ======================================
+
+HTTP Cookie Library is not meant as a standalone CGI script.  It must be used
+in conjunction with other scripts you have written, and provides a basic
+outline and easy subroutines which makes implementing the cookies into your
+perl program easy.
+
+Also, to give cookies to the user, the browser must be pointed to the CGI
+application or the CGI application must be imbedded in the HTML document
+through Server Side Includes or other technology, such as JavaScript.  If
+you choose the JavaScript path, some browsers which support cookies won't
+be able to receive them and JavaScript users have no use for this library
+as it is only compatible in Perl scripted CGI applications.
+
+Requiring the Library:
+----------------------
+
+Near the top of your Perl CGI script (or before you make the first call to a
+subroutine which is in cookie.lib), you will need to include the line:
+
+require '/path/to/cookie.lib';
+
+If you place the cookie.lib in the same directory as your CGI script, or in
+a path which is defined in @INC, you can call it with:
+
+require 'cookie.lib';
+
+Now all of the subroutines which this script contains can be used in your CGI
+Perl script.  Here's is a summary of them, what they do and how to call them:
+
+Subroutine Calls:
+-----------------
+
+&GetCookies('cookie_name1',...,'cookie_namen');
+      This function can be called as simply &GetCookies, or using arguments
+      such as &GetCookies('cookie1','cookie2').  Calling it without
+      arguments means that it will return a '1' if cookies are found, a 0
+      if they are not.  This is useful, so that you can perform function 
+      like:
+
+            if (&GetCookies) {
+                # Successful Code Here;
+            }
+            else {
+                # Give them a Cookie Here;
+            }
+
+      In the above circumstance, if cookies are found, the successful code
+      gets executed.  Otherwise, you can give them a cookie.  The 
+      &GetCookies subroutine then takes the cookies from the environment
+      and places them in an associative array.  This array is %Cookies.
+      So if you have set a cookie named 'visit' with a value which contains
+      whatever you set it for, then you would obtain this value by using
+      the scalar variable $Cookies{'visit'}.
+
+      Now, let's say that a lot of cookies are set for your base domain and
+      path.  They would all get included in the return if you didn't
+      specify arguments for &GetCookies.  For instance, in the above 
+      example, since &GetCookies would return a value of '1' if any cookies
+      are set, that could mess up this script, if all we want to know is if
+      the visit cookie is set.  Therefore, we would change the above program
+      to only need to 'visit' cookie:
+
+		if (&GetCookies('visit')) {
+                # Successful Code Here;
+		}
+            else {
+                # Give them a Cookie Here;
+            }
+
+      Now, only the $Cookies{'visit'} scalar will be set and if it is not
+      &GetCookies will return a 0 and the else { } statement will be 
+      executed.
+
+      You can check for multiple cookies to be set by &GetCookies('name1',
+      'name2','etc...');  However this will return a true value (1) if any
+      of those cookies are set.  You can get around this by calling them one
+      at a time, although this is tedious.
+
+      If you have compressed your cookies with &SetCompressedCookies, you
+      will need to look into the &GetCompressedCookies routine to do what
+      &GetCookies does.
+
+&SetCookieExpDate('Wdy, DD-Mon-YYYY HH:MM:SS GMT');
+
+	By default in the script, the cookie is set to expire when the browser
+      session ends.  If	you wish for the cookie to expire at a later date,
+      then all you have to do is change the date by calling &SetCookieExpDate
+      with an argument containing the new date.  The new date must be in the
+      format as shown above, or it will not set right. The following is an
+      example:
+
+	&SetCookieExpDate('Wed, 09-Nov-1999 00:00:00 GMT');
+
+	If your date does not match a regular expression which checks to see
+	if it is valid, it will return a 0.  So it you catch the value, you
+	can do:
+
+		if (&SetCookieExpDate('Wdy, DD-Mon-YYYY HH:MM:SS GMT')) {
+		    # Continue here.
+		}
+		else {
+		    # Do Error Stuff Here.  &SetCookieExpDate failed.
+		}
+
+	For any cookies which you wish to be able to detect if the user closes
+      the browser's session and then re-opens it, you will need to set this
+      to a specific date.
+
+      The $Cookie_Exp_Date variable can also be changed at the top of
+      cookie.lib, or at any point inside of the perl script which required
+      cookie.lib, simply with the statement: 
+      $Cookie_Exp_Date = 'Wdy, DD-Mon-YYYY HH:MM:SS GMT';
+      The subroutine is provided to check the syntax of your date.
+
+&SetCookiePath('/path');
+
+	By default, this is set to the path of the script or web page which sets
+      the cookie, so unless this has been set differently in cookie.lib to
+      contain a value, you need not call this function.  However, if you wish
+      for those values to be passed to other scripts under the same domain,
+	you will need to have this set to that path of the URL.  For 
+	instance, if I only want my cookies passed to URLs which are at least:
+	http://www.worldwidemart.com/scripts, I would call this function as:
+
+		&SetCookiePath('/scripts');
+
+      You can also set the cookie path with the statement:
+      $Cookie_Path = '/path/you/want/to/set';
+      You can place this statement anywhere in your Perl programs after you
+      have required the cookie.lib library.
+
+&SetCookieDomain('.host.xxx');
+
+      If the value of your desired domain suffix (.host.xxx) was assigned	
+	a different value as default, you can change this by placing a domain
+      name in the call to &SetCookieDomain.  Most of the time you shouldn't
+	have to worry about this.  Below are the rules which this script
+      follows, taken directly from Netscape documentation:
+
+            "Only hosts within the specified domain can set a cookie for 
+            a domain and domains must have at least two (2) or three (3)
+            periods in them to prevent domains of the form: ".com", 
+            ".edu", and "va.us". Any domain that fails within one of the
+            seven special top level domains listed below only require 
+            two periods. Any other domain requires at least three. The 
+            seven special top level domains are: "COM", "EDU", "NET",
+            "ORG", "GOV", "MIL", and "INT"."
+
+      The $Cookie_Domain can also be set using the statemement:
+      $Cookie_Domain = 'host.xxx';
+      You can place this statement anywhere in your Perl programs after you
+      have required the cookie.lib library.
+
+&SetSecureCookie('0' || '1');
+
+      This defines whether or not this cookie should be relayed only to 
+      secure servers.  Calling &SetSecureCookie('1'); means that clients 
+      will only pass those cookies you have set to secure servers.  
+      Calling &SetSecureCookie('0'); means the cookies will be transferred
+      whenever the path and domain are correct, regardless of security issues.
+      Here is an excerpt from Netscape specs:
+
+            "If a cookie is marked secure, it will only be transmitted if the
+            communications channel with the host is a secure one. Currently
+            this means that secure cookies will only be sent to HTTPS (HTTP
+            over SSL) servers.  If secure is not specified, a cookie is 
+            considered safe to be sent in the clear over unsecured channels."
+
+      You can also change the value of $Secure_Cookie through a statement:
+      $Secure_Cookie = 1;        or        $Secure_Cookie = 0;
+      You can place this statement anywhere in your Perl programs after you
+      have required the cookie.lib library.
+
+&SetCookies('cookie_name1','cookie_value1',...,'cookie_namen','cookie_valuen');
+      This function has been completely changed since Version 1.1.1, except
+      for the fact that it actually does set the cookies.  There is no longer
+      a call to &PrepareCookies, but rather &SetCookies does it all.
+
+      If you wish to set the cookies name and email, and have the values of
+      these cookies in the variables $name and $email, you would set them with
+      the following code:
+
+            print "Content-type: text/html\n";
+            &SetCookies('name',"$name",'email',"$email");
+            print "\n";
+
+      The first line prints out the text/html header, with one new line
+      following it, rather than two, since the header sent to the browser is
+      not yet complete.  Then, our call to &SetCookies is made.  This call
+      will send two Set-Cookie: headers to the browser and set both of the
+      cookies for us.
+
+      You can send as many cookies to this subroutine as you wish to set.  
+      Browsers do have a limit though, so if you are setting multiple
+      cookies, it is suggested that you look into the &SetCompressedCookies
+      subroutine.
+
+&SetCompressedCookies('compressed_cookie_name','cookie_name1','cookie_value1',
+                      ...,'cookie_namen','cookie_valuen');
+
+      This subroutine does almost the same thing that &SetCookies does, but
+      instead it takes one extra argument.  You call it with the name of the
+      compressed cookie which you wish to set and then the name/value pairs of
+      of the cookies which you wish to compress.  This subroutine doesn't
+      actually compress cookies, but it takes multiple cookies and strings
+      them together, so to the browser they appear as one.  The = signs are
+      converted into :: and the name/value pairs are separated from each other
+      by &, however there is no need to change these characters before hand,
+      as they will be translated back when uncompressed.
+
+      You may be saying, why should I bother compressing cookies when it takes
+      extra work?  I can just set 50 cookies all for different things.  The
+      main reason is, that according to Netscape's specification:
+
+            "There are limitations on the number of cookies that a client can 
+            store at any one time. This is a specification of the minimum 
+            number of cookies that a client should be prepared to receive and
+            store. 
+
+               -- 300 total cookies 
+               -- 4 kilobytes per cookie, where the name and the value combine
+                  to form the 4 kilobyte limit. 
+               -- 20 cookies per server or domain. (note that completely 
+                  specified hosts and domains are treated as separate entities
+                  and have a 20 cookie limitation for each, not combined)
+
+            Servers should not expect clients to be able to exceed these 
+            limits. When the 300 cookie limit or the 20 cookie per server 
+            limit is exceeded, clients should delete the least recently used
+            cookie. When a cookie larger than 4 kilobytes is encountered the
+            cookie should be trimmed to fit, but the name should remain intact
+            as long as it is less than 4 kilobytes."
+
+      This also means that it is up to you to check and make sure that your
+      compressed cookie will not take more than 4KB.  This is not going to be
+      a common problem most likely, though, as 4KB is 4,000 characters, which
+      if typed out on a common 80 column screen is about 50 lines, or almost
+      a full page of text.  The 20 cookie limit on one server name is
+      definitely a common problem, and this helps save some of this space.
+      As cookies become more common, clients may start reaching the 300
+      cookie maximum more rapidly as well.
+
+      Let's take the example from &SetCookies above, with the name and email
+      cookies we wish to set.  Now, rather than taking up two cookies, we
+      can set one cookie named user, which will contain the information
+      stored in the name and email cookies.  To do this, make you make a call
+      like:
+
+           print "Content-type: text/html\n";
+           &SetCompressedCookies('user','name',$name,'email',$email);
+           print "\n";
+
+      This sets a cookie named user which contains the cookies name and email.
+      In order to uncompress this cookie, you need to use the
+      &GetCompressedCookies subroutine explained below.  It acts much like
+      &GetCookies.
+
+      WARNING:  It is a good idea not to set the compressed cookie name equal
+                to the name of a cookie being stored in the compressed cookie.
+                It can mess things up.
+
+&GetCompressedCookies('compressed_cookie_name','cookie_name1',...,'cookie_namen');
+
+      This subroutine works in almost the same way as &GetCookies, except that
+      it needs the name of the compressed cookie first, followed by the names
+      of the cookies you wish to retrieve out of the compressed cookie.  If
+      this subroutine is called with only the name of the compressed cookie,
+      it will retrieve all values and place them in the %Cookies array.
+
+      For instance, if we were to take the example used in 
+      &SetCompressedCookies and we needed to only get the name of the user out
+      of the compressed cookie, we would do something like:
+
+      &GetCompressedCookies('user','name');
+
+      Where 'user' was the name of the cookie we specified to be set when we
+      compressed the cookies and 'name' was one of the cookies we compressed
+      into 'user'.  The value of name can not be retrieved from 
+      $Cookies{'name'}.
+
+      Or if you wished to get every cookie out of the compressed cookie, you
+      can simply say:
+
+      &GetCompressedCookies('user');
+
+      And now $Cookies{'name'} and $Cookies{'email'} are set.
+
+##############################################################################
+
+                       CHARACTER TRANSLATION INFORMATION
+                       =================================
+
+Version 2.1 of the HTTP Cookie Library introduces some simple character
+URL-encoding which eases the use and fixes some common problems with cookies.
+Previously, cookies would often not be set if they included spaces, semi-
+colons, and a few other special characters.  There was also the problem found
+if information contained two :: or an & and you tried to compress the cookies,
+because those two characters are used for the compression sequence that HTTP
+Cookie Library uses.
+
+According to Netscape's Persistent Client State HTTP Specification:
+
+      "This string is a sequence of characters excluding semi-colon, comma
+       and white space. If there is a need to place such data in the name
+       or value, some encoding method such as URL style %XX encoding is 
+       recommended, though no encoding is defined or required."
+
+HTTP Cookie Library does use the URL style %XX (also known as hex) encoding to
+ensure that these characters are not lost and that the cookie is set.
+
+##############################################################################
+
+                            ANY EXAMPLES AVAILABLE?                           
+                            =======================
+
+ccounter.pl
+-----------
+
+      ccounter.pl, an example of how to use some of the features in this
+      library comes bundled with the script.  Hopefully the docs have been
+      written extensively enough and the library commented enough (this is
+      the most commented and well-documented script at MSA) that it should
+      be fairly easy to figure out.
+
+Scripts Around the World
+------------------------
+
+      You can find real-world implementations of this library listed at MSA
+      in the Scripts Around the World section.  The HTTP Cookie Library page
+      for this can be found at:
+
+          http://www.worldwidemart.com/scripts/examples/cookielib.shtml
+
+      If you have used the library, please let us know so we can add it!
+
+##############################################################################
+
+                            OTHER COOKIE RESOURCES
+                            ======================
+
+There are many other cookie resources available on the Internet.  Below are
+just a few that are the most useful and should help you out.  Enjoy.
+
+Netscape Persistent Client State HTTP Cookies Specification
+      http://www.netscape.com/newsref/std/cookie_spec.html
+      The specifications to which this library conforms.  Contains a lot of
+      useful information on Cookies in general and how they can be used.
+
+Andy's Netscape HTTP Cookie Info
+      http://www.illuminatus.com/cookie.fcgi
+      A lot of information on cookies, the security of them, Frequently Asked
+      Questions and much more.  A LOT of cookie information. :-)
+
+Malcolm's Guide to Persistent Cookies
+      http://www.emf.net/~mal/cookiesinfo.html
+      This guide to Persistant Cookies explains what cookies are, discusses
+      security and privacy issues, gives URLS to more documentation and shows
+      some examples of places using cookies.
+
+Javascript Cookie Functions
+      http://www.hidaho.com/cookies/cookie.txt
+      A library much like this one with different subroutines, only
+      implemented in JavaScript.
+
+HTTP State Management Mechanism RFC
+      http://portal.research.bell-labs.com/~dmk/cookie-2.36.txt
+      Looks very cookie-related.  Maybe I should start conforming to this.
+
+##############################################################################
+
+HISTORY
+
+   Version 2.1   - 12/19/96     - Changed the local() scope of global
+                                  variables because they weren't setting at
+                                  the top of the script right.
+                 - 12/20/96     - Added URL-encoding to the cookies for the
+                                  characters: '%', '+', ':', ',', '=', '&',
+                                  '::', and space.  More on this explained
+                                  in the section, 'Character Translation'.
+                                - &UnCompressCookies changed to
+                                  &GetCompressedCookies, making more sense.
+                 - 12/23/96     - &SetCookieExpDate fixed to allow a blank
+                                  date.
+   Version 2.0   - 11/28/96     - &SetCookieExpDate still not working right,
+                                  and finall fixed.
+                                - &SetCompressedCookies and &UnCompressCookies
+                                  subroutines added so multiple cookies can be
+                                  set as one cookie and take up less room in
+                                  the cookies.txt file.
+                                - &PrepareCookie replaced by changing
+                                  &SetCookies to do all of the work.  This
+                                  subroutine now actually takes values and
+                                  sets them.
+                                - Multiple cookied can be set now.  A bug
+                                  existed before which wouldn't set all of
+                                  the cookies.
+                                - Checking now done when setting cookie domain
+                                  so you can know if it will work.  Based on
+                                  information in Netscape's Specifications.
+   Version 1.1.1 - 07/15/96     - Andy Kington <andyk@teleport.com> 
+                                  pointed out that the ExpDate Year should be
+                                  represented as YYYY instead of YY.
+   Version 1.1   - 07/14/96     - Added secure option and routines.
+   Version 1.0   - 07/14/96     - First Version Released
+
+##############################################################################
+
+Have fun with this script, but if you can, please, please let me know the URL
+of where it is implemented so I can see my work in action (and add you to the
+list of sites using this script.)
+
+##############################################################################
+Matt Wright - mattw@worldwidemart.com  http://www.worldwidemart.com/scripts/

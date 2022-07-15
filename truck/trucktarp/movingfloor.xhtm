@@ -1,0 +1,185 @@
+<!--#INCLUDE VIRTUAL="/includes/getprice.inc"-->
+<HTML>
+  <HEAD>
+    <TITLE>D.S.Sewing Truck Tarps - Moving Floor Tarps</TITLE>
+    <META HTTP-EQUIV="PICS-Label" 
+    CONTENT='(PICS-1.0 "http://www.classify.org/safesurf/" l gen true for "https://www.ds-sewing.com/" by "webmaster@ds-sewing.com" r (SS~~000 1 SS~~100 1))'>
+    <META NAME="rating" CONTENT="General">
+    <META NAME="keywords" CONTENT="D.S.Sewing,Moving Floor tarps,Chains,chip deflection panel,demolition debris covers">
+    <META NAME="description"  CONTENT="Moving Floor tarps are good for covering garbage, demolition debris, and wood chips (with our chip deflection panel). These tarps come in standard 48' x 12' or 50' x 12' sizes. These tarps are crafted of strong 6.5-ounce vinyl-coated 9x9 denier polyester mesh with a tensile strength of 209-lbs. warp x 204 fill. Front corners can be sewn in.">
+    <META NAME="robots" CONTENT="index,follow">
+    <STYLE TYPE="text/css">
+<!--
+A{color:blue}
+a:hover{color:blue}
+a:visited{color:blue}
+a:visited:hover{color:red}
+-->
+</STYLE>
+  <!--#include virtual="/includes/analytics.html"-->
+	</HEAD>
+  
+  <BODY BGCOLOR="#FFFFFF">
+    <CENTER>
+	<!--#include virtual="/includes/toolbar.htm"-->
+	<center><img src="/images/truck_images/truck_header.gif" width="164" height="33" border="0"></center>
+	<P><B><H2><FONT FACE="Arial">Moving Floor Tarp</FONT></H2></B></P>
+    </CENTER>
+
+    <CENTER>
+     <table border="1" bordercolor="#ffcc66" bgcolor="#ffffcc" width="600" cellspacing="0" cellpadding="0"><Tr>
+ <TD>
+   <CENTER>
+    <TABLE border="1" bordercolor="#ffcc66" bgcolor="#ffffcc" cellspacing="0" cellpadding="0" WIDTH="600">
+      <TR>
+       <TD ALIGN="CENTER" WIDTH="220"><IMG SRC="/images/truck_images/movingphoto.gif" 
+          ALT="moving floor tarp photo" WIDTH="200" HEIGHT="150" ALIGN="bottom">
+            <IMG SRC="/images/truck_images/movingdiagram.gif" 
+             ALT="moving floor tarp diagram" WIDTH="150" HEIGHT="200" ALIGN="bottom">
+       </TD>
+       <TD ALIGN="CENTER" WIDTH="380">
+          <FONT SIZE="-1" FACE="Arial">These
+            Moving Floor tarps are good for covering garbage, demolition
+            debris, and wood chips (with our chip deflection panel). These tarps
+            come in standard 48' x 12' or 50' x 12' sizes. These tarps are
+            crafted of strong 6.5 ounce vinyl-coated 9x9 denier polyester mesh
+            with a tensile strength of 209 lbs. warp x 204 fill. Front corners
+            can be sewn in.
+          </FONT>
+             <P ALIGN="center"><B><FONT FACE="Arial">Standard Prices and
+              Weights</FONT></B></P>
+     <CENTER>
+       <TABLE BORDER="0">
+              <TR>
+                <TD ALIGN="CENTER" WIDTH="155">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">48' x 12'</FONT>
+                </P></TD>
+                <TD ALIGN="CENTER" WIDTH="66">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">$<%=GetPrice(1029)%></FONT>
+                </P></TD>
+                <TD WIDTH="74">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">29 lbs.</FONT>
+                </P></TD>
+              
+              <FORM ACTION="/s/incart" METHOD="POST" id=form1 name=form1>
+              <INPUT TYPE="HIDDEN" VALUE="incart" NAME="action">
+              <INPUT TYPE="HIDDEN" VALUE="1029" NAME="pid">
+          
+					<TD ALIGN="CENTER" WIDTH="55">
+						<INPUT TYPE="SUBMIT" VALUE="Buy" id=SUBMIT1 name=SUBMIT1>
+					</TD>
+              </TR>
+              </FORM>   
+              <TR>
+                <TD WIDTH="155">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">50' x 12'</FONT>
+                </P></TD>
+                <TD WIDTH="66">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">$<%=GetPrice(1030)%></FONT>
+                </P></TD>
+                <TD WIDTH="74">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">31 lbs.</FONT>
+                </P></TD>
+              
+              <FORM ACTION="/s/incart" METHOD="POST" id=form1 name=form1>
+              <INPUT TYPE="HIDDEN" VALUE="incart" NAME="action">
+              <INPUT TYPE="HIDDEN" VALUE="1030" NAME="pid">
+          
+					<TD ALIGN="CENTER" WIDTH="55">
+						<INPUT TYPE="SUBMIT" VALUE="Buy" id=SUBMIT1 name=SUBMIT1>
+					</TD>
+              </TR>
+              </FORM>   
+              </TR>
+              <TR>
+                <TD ALIGN="CENTER" WIDTH="155">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">2 sewn corners</FONT>
+                </P></TD>
+                <TD ALIGN="CENTER" WIDTH="66">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">$<%=GetPrice(1031)%></FONT>
+                </P></TD>
+                <TD WIDTH="74">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">0 lbs.</FONT>
+                </P></TD>
+              
+              <FORM ACTION="/s/incart" METHOD="POST" id=form1 name=form1>
+              <INPUT TYPE="HIDDEN" VALUE="incart" NAME="action">
+              <INPUT TYPE="HIDDEN" VALUE="1031" NAME="pid">
+          
+					<TD ALIGN="CENTER" WIDTH="55">
+						<INPUT TYPE="SUBMIT" VALUE="Buy" id=SUBMIT1 name=SUBMIT1>
+					</TD>
+              </TR>
+              </FORM>   
+              <TR><TR>
+                <TD ALIGN="CENTER" WIDTH="155">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">reinforced rear panel</FONT>
+                </P></TD>
+                <TD ALIGN="CENTER" WIDTH="66">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">$<%=GetPrice(1032)%></FONT>
+                </P></TD>
+                <TD WIDTH="74">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">5 lbs.</FONT>
+                </P></TD>
+              
+              <FORM ACTION="/s/incart" METHOD="POST" id=form1 name=form1>
+              <INPUT TYPE="HIDDEN" VALUE="incart" NAME="action">
+              <INPUT TYPE="HIDDEN" VALUE="1032" NAME="pid">
+          
+					<TD ALIGN="CENTER" WIDTH="55">
+						<INPUT TYPE="SUBMIT" VALUE="Buy" id=SUBMIT1 name=SUBMIT1>
+					</TD>
+              </TR>
+              </FORM>   
+              <TR><TR>
+                <TD ALIGN="CENTER" WIDTH="155">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">chip deflector panel</FONT>
+                </P></TD>
+                <TD ALIGN="CENTER" WIDTH="66">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">$<%=GetPrice(1033)%></FONT>
+                </P></TD>
+                <TD WIDTH="74">
+                
+                <P ALIGN="center"><FONT SIZE="-1" FACE="Arial">20 lbs.</FONT>
+                </P></TD>
+              
+              <FORM ACTION="/s/incart" METHOD="POST" id=form1 name=form1>
+              <INPUT TYPE="HIDDEN" VALUE="incart" NAME="action">
+              <INPUT TYPE="HIDDEN" VALUE="1033" NAME="pid">
+          
+					<TD ALIGN="CENTER" WIDTH="55">
+						<INPUT TYPE="SUBMIT" VALUE="Buy" id=SUBMIT1 name=SUBMIT1>
+					</TD>
+              </TR>
+              </FORM>   
+              <TR>
+            </TABLE> </CENTER>            
+            <FONT FACE="Arial"><BR> </FONT><FONT SIZE="-1" FACE="Arial">6.5
+              ounce vinyl-coated 9x9 polyester mesh</FONT></P></TD>
+          </TR>
+        </TABLE> </TD>
+      </TR>
+    </TABLE> 
+        </TABLE> </TD>
+      </TR>
+    </TABLE> </CENTER><br>
+   <CENTER>
+<!--#include virtual="/includes/truck_footer.htm"--></CENTER>
+
+  </BODY>
+
+</HTML>

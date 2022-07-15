@@ -1,0 +1,1 @@
+.header {  &__inner {    display: flex;    flex-wrap: wrap;    align-items: center;    justify-content: space-between;  }}.logo {  display: inline-flex;  flex-direction: column;  align-items: center;  color: $primary-color;  font-size: 45px;  font-weight: 700;  &__leading {    text-align: center;  }  &__headline {    font-size: 15px;  }}

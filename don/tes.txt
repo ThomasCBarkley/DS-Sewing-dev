@@ -1,0 +1,363 @@
+http/1.1 200 document follows 
+server: ibm-http-server/1.0
+date: tue, 28 nov 2000 23:18:22 gmt
+accept-ranges: bytes
+content-type: text/html
+content-length: 9717
+last-modified: tue, 28 nov 2000 23:18:22 gmt
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ freight charge estimate 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  freight charge estimate   
+  
+ based on odfl 559 100 rules tarriff   
+ 
+ 
+ 
+  
+   
+ please select a destination city from list    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  origin  
+ 
+ 
+  destination  
+ 
+ 
+  discount  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  city:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+east haven
+ 
+ 
+foxon
+ 
+ 
+momauguin
+ 
+ 
+morris cove
+ 
+ 
+new haven
+  
+ 
+ 
+ 
+ 
+  zip:  
+ 
+ 
+ 
+&nbsp;
+ 
+  zip lookup  ");
+//-->
+ 
+   zip lookup   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+   *     city:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+bolton center
+ 
+ 
+buckland
+ 
+ 
+highland park
+ 
+ 
+lydallville
+ 
+ 
+manchester
+ 
+ 
+manchester green
+ 
+ 
+quarryville
+ 
+ 
+south manchester
+  
+ 
+ 
+ 
+ 
+  zip:  
+ 
+ 
+ 
+&nbsp;
+ 
+  zip lookup  ");
+//-->
+ 
+   zip lookup   
+ 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;  
+ % 
+ 
+ 
+  
+ 
+ 
+ 
+ &nbsp;&nbsp;&nbsp;weight 
+ 
+ 
+ &nbsp;&nbsp;&nbsp;class 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ copyright &#169 
+1997-2000 old dominion freight line, inc. all rights reserved. 
+ contact us  -
+ privacy policy  -
+ site index 
+ 
+ 
+ 
+ 
+  

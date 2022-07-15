@@ -1,0 +1,112 @@
+#!/usr/local/bin/perl
+
+use Socket;
+use CGI;
+
+$remote = "www.odfl.com";
+$local = "localhost";
+$port = 80;
+
+($name, $aliases,$type,$len,$thataddr) = gethostbyname($remote);
+
+$proto = getprotobyname('tcp');
+
+if (socket(socketh,AF_INET,SOCK_STREAM,$proto)) {
+# print "created socket successfully\n";
+} else {
+# print "failed to create socket.";
+ exit;
+}
+
+$sin = sockaddr_in($port,$thataddr);
+
+if (connect (socketh,$sin)) {
+# print "connected!\n";
+} else {
+# print "failed to connect to $name\n";
+# print $port,inet_aton("localhost");
+}
+
+
+$content_length=0;
+$postdata="";
+
+$weight = 300;
+$discount = 55;
+$origin = "06238";
+$destination = "06040";
+$class = 55;
+
+$postdata.="FormsEditField4=$weight"; #weight
+$postdata.="&Cls1=$class";            #class
+$postdata.="&Ozip=$origin";
+$postdata.="&Dzip=$destination";
+$postdata.="&Disc=$discount";
+
+
+$content_length = length($postdata);
+
+#	{ my $ofh = select LOG;
+#	  $| = 1;
+#	  select $ofh;
+#	}
+
+# i thought there might be some screwey buffering bullshit going on :) thanx to PJ
+select((select(socketh), $|=1)[0]);
+
+
+print socketh "POST /cgi-bin/db2www/rateest.mbr/result HTTP/1.0\n",
+	"Accept: www/source\n",
+	"Accept: text/html\n",
+	"Accept: text/plain\n",
+	"User-Agent: MSIE/4.0\n",
+	"Content-type: application/x-www-form-urlencoded\n",
+	"Content-length: $content_length\n\n";
+
+print socketh $postdata;
+
+while (<socketh>) {
+ $result.=$_;
+}
+
+#Total Charges = $41.00
+#                    <td align="center"><font size="4"
+#                    face="Arial">
+#<strong>Total Charges =</strong></font><font size="4" face="Arial" color="006600"><strong>
+#$41.00</strong></font></td>
+
+$result=~s/<[^>]*>/ /gs; # remove html tags
+$result=~tr/A-Z/a-z/; #upper to lower thanks :)
+
+$cgi = new CGI;
+print $cgi->header;
+
+
+$result =~/total\s*charges\s*=\s+([^<]+)/i;
+$charge = $1;
+print $charge,"iiiiii<BR><BR><BR>";
+
+
+#$result =~/<meta\s+name="description"\s+ content="([^<]+)\">/i;
+#print "Shipping Estimate: ",$1;
+
+
+
+print $charge,'<><><><><><><><><><><><><><><>';
+
+
+print $result;
+
+#finish
+close(socketh);
+
+
+
+
+#         $proto = getprotobyname('tcp');
+#         socket(Socket_Handle, PF_INET, SOCK_STREAM, $proto);
+#         $port = getservbyname('smtp', 'tcp');
+#         $sin = sockaddr_in($port,inet_aton("127.1"));
+#         $sin = sockaddr_in(7,inet_aton("localhost"));
+#         $sin = sockaddr_in(7,INADDR_LOOPBACK);
+#         connect(Socket_Handle,$sin);

@@ -1,0 +1,1 @@
+<%@ Application CodeFile="MyGlobal.asax.vb" Inherits="pooltest.MyGlobal" %>

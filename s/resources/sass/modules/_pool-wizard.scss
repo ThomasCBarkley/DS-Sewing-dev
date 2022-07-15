@@ -1,0 +1,11 @@
+.pool-wizard-container {
+  input {
+    &[type="text"] {
+      height: 21px;
+    }
+    &[type="submit"] {
+      font-family: 'Arial';
+      font-size: 13.333px;
+    }
+  }
+}

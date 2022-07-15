@@ -1,0 +1,478 @@
+Wgt1=152&Cls1=55&OZip=06512&DZip=58541&Send=Y&Disc=55&OCity=East Haven&DCity=&OSt=CT&DSt=NDWgt1=152&Cls1=55&OZip=06512&DZip=58541&Send=Y&Disc=55&OCity=East Haven&DCity=&OSt=CT&DSt=NDhttp/1.1 200 document follows 
+server: ibm-http-server/1.0
+date: wed, 29 nov 2000 00:44:13 gmt
+accept-ranges: bytes
+content-type: text/html
+content-length: 12754
+last-modified: wed, 29 nov 2000 00:44:11 gmt
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ freight charge estimate 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  freight charge estimate   
+  
+   
+  
+ based on odfl 559 100 rules tarriff   
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ thank you for choosing old dominion freight line, inc. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  total charges =  
+ 
+ 
+      $88.62  
+ 
+ 
+ 
+ 
+  shipping days =  
+ 
+ 
+ 
+  4  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ total charges is an estimate based on information provided &
+does not include any applicable accessorial or arbitrary charges from the odfl 100 rules tariff.
+total charges does include  fuel surcharge .
+ shipping days displayed only reflect odfl direct service points.
+they do not allow for interline or agent delivery times.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+east haven,
+ct 06512  
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+golden valley,
+nd 58541  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+south windsor s/c - swd  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+710 nutmeg road 
+ 
+ 
+ 
+ 
+ 
+south windsor,
+ct 06074     
+phone: (800) 343-6335 
+fax: (860) 289-8793 
+manager:  
+ 
+ 
+ 
+ 
+glenn keirn  
+  100% full state coverage  
+  &nbsp;  
+  &nbsp;  
+ 
+ 
+ 
+minneapolis s/c - msp  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+2750 cleveland avenue 
+ 
+ 
+ 
+roseville,
+mn 55113     
+phone: (800) 940-6335 
+fax: (651) 631-2777 
+manager:  
+ 
+ 
+ 
+ 
+steve miller  
+  &nbsp;  
+  
+interline scac - midw  
+  midwest motor express              
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  origin  
+ 
+ 
+  destination  
+ 
+ 
+  discount  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  city:  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+east haven
+ 
+ 
+foxon
+ 
+ 
+momauguin
+ 
+ 
+morris cove
+ 
+ 
+new haven
+  
+ 
+ 
+ 
+ 
+  zip:  
+ 
+ 
+ 
+&nbsp;
+ 
+  zip lookup  ");
+//-->
+ 
+   zip lookup   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  zip:  
+ 
+ 
+ 
+&nbsp;
+ 
+  zip lookup  ");
+//-->
+ 
+   zip lookup   
+ 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;  
+ % 
+ 
+ 
+  
+ 
+ this interline shipment may be subject to a maximum discount. 
+ 
+ 
+  
+ 
+ 
+ 
+ &nbsp;&nbsp;&nbsp;weight 
+ 
+ 
+ &nbsp;&nbsp;&nbsp;class 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+ 
+ 
+ 
+&nbsp;&nbsp;&nbsp;
+  
+ none 
+ 50 
+ 55 
+ 60 
+ 65 
+ 70 
+ 77.5 
+ 85 
+ 92.5 
+ 100 
+ 110 
+ 125 
+ 150 
+ 175 
+ 200 
+ 250 
+ 300 
+ 400 
+ 500 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+  
+  
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ copyright &#169 
+1997-2000 old dominion freight line, inc. all rights reserved. 
+ contact us  -
+ privacy policy  -
+ site index 
+ 
+ 
+ 
+ 
+  

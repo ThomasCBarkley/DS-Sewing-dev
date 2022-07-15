@@ -1,0 +1,525 @@
+HTTP/1.1 200 Document follows 
+Server: IBM-HTTP-Server/1.0
+Date: Tue, 28 Nov 2000 23:05:50 GMT
+Accept-Ranges: bytes
+Content-Type: text/html
+Content-Length: 12799
+Last-Modified: Tue, 28 Nov 2000 23:05:48 GMT
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <html>
+<head>
+<base target="">
+<title>Freight Charge Estimate</title>
+<script language="JavaScript">
+<!--
+function ZipLookup(cityvar, stvar, zipvar, formName) {
+var url = "/cgi-bin/db2www/ziplookup.mbr/main" + "?cityvar=" + cityvar + "&stvar=" + stvar + "&zipvar=" + zipvar + "&form=" + formName;
+hWndZip = window.open(url,"ziplookup","width=400,height=325,resizable=yes,scrollbars=yes");
+if ("Netscape" == navigator.appName)
+hWndZip.focus();
+}
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF">
+<table align="center" border="0">
+<tr>
+<td align="center">
+<font face="Arial,Helvetica" size="+1"><b>Freight Charge Estimate</b></font><br>
+ <a href="/Rates___Shipping/Rate_Estimate/rules.txt" target="_self">
+<font size="-2" face="Arial">Based on ODFL 559 100 Rules Tarriff</font></a><br>
+</td>
+</tr>
+</table>
+ 
+ <form action="/cgi-bin/db2www/rateest.mbr/main" method="post" target="_self" name="rateest">
+ 
+ 
+<table border="0" cellpadding="0" cellspacing="0" width="400" align="center">
+<tr>
+<td align="center">
+<font face="Arial,Helvetica" color="#006300">Thank you for choosing Old Dominion Freight Line, Inc.</font>
+</td>
+</tr>
+</table>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width="550" align="center" bgcolor="#006300">
+<tr>
+<td>
+<table border="0" cellpadding="1" cellspacing="1" width="100%" align="center">
+<tr>
+<td align="center" bgcolor="ffffff">
+<table border="0" cellpadding="0" cellspacing="0" width="50%" align="center">
+<tr>
+<td align="right">
+<font face="Arial,Helvetica"><strong>Total Charges =</strong></font>
+</td>
+<td>
+<font face="Arial,Helvetica" size="+1" color="006600"><strong>    $45.37</strong></font>
+</td>
+</tr>
+<tr>
+<td align="right">
+<font face="Arial,Helvetica"><strong>Shipping Days =</strong></font>
+</td>
+<td>
+ 
+<font face="Arial,Helvetica" size="+1"
+color="green" ><strong>1</strong></font>
+</td>
+</tr>
+</table>
+ <font face="Arial">For only <strong>$43.09</strong> more make this shipment
+<a href="/Products___Services/Speed_Service/speed_service.html" target="_top">
+<img src="/guaran_sm.jpg" align="top" border="0" alt="Speed Service Guaranteed"></a></font>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" align="center">
+<tr>
+<td align="center" height="0" bgcolor="#ffffff">
+<br><font color="#FF0000" size="-2" face="Arial">
+ Total Charges is an estimate based on information provided &
+does NOT include any applicable accessorial or arbitrary charges from the ODFL 100 Rules Tariff.
+Total Charges DOES include <a href="/Rates___Shipping/Fuel_Surcharge/fuel_surcharge.html" target="_top">fuel surcharge</a>.
+</font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width="550" align="center">
+<tr>
+<td width="50%" align="center" bgcolor="#ffffff">
+<font face="Arial,Helvetica">
+<strong> 
+ 
+ 
+ 
+ 
+East Haven,
+CT 06512</strong></font>
+</td>
+<td width="50%" align="center" bgcolor="#ffffff">
+<font face="arial,helvetica">
+<strong> 
+ 
+ 
+Manchester,
+CT 06040</strong></font>
+</td>
+</tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="550" align="center" bgcolor="#006300">
+<tr>
+<td>
+<table border="0" cellpadding="1" cellspacing="1" width="100%" align="center">
+<tr>
+<td width="50%" align="center" bgcolor="#ffffff">
+<FONT FACE="Arial,Helvetica" SIZE="-2">
+SOUTH WINDSOR S/C - SWD <BR>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+710 Nutmeg Road<BR>
+ 
+ 
+ 
+ 
+ 
+South Windsor,
+CT 06074    <BR>
+Phone: (800) 343-6335<BR>
+Fax: (860) 289-8793<BR>
+Manager:  
+ 
+ 
+ 
+ 
+Glenn Keirn<BR></FONT>
+ <FONT FACE="Arial,Helvetica" COLOR="#006300" SIZE="-2">100% Full State Coverage</FONT><br>
+</td>
+<td width="50%" align="center" bgcolor="#ffffff">
+<font face="Arial,Helvetica" size="-2">
+SOUTH WINDSOR S/C - SWD <BR>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+710 Nutmeg Road<BR>
+ 
+ 
+ 
+ 
+ 
+South Windsor,
+CT 06074    <BR>
+Phone: (800) 343-6335<BR>
+Fax: (860) 289-8793<BR>
+Manager:  
+ 
+ 
+ 
+ 
+Glenn Keirn<BR></FONT>
+ <FONT FACE="Arial,Helvetica" COLOR="#006300" SIZE="-2">100% Full State Coverage</FONT><br>
+</TD>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width="550" align="center" bgcolor="#006300">
+<tr>
+<td>
+<table border="0" cellpadding="1" cellspacing="1" width="100%" align="center">
+<tr>
+<td align="center" bgcolor="#ffffff">
+<table border="0" cellpadding="0" cellspacing="1" width="100%">
+<tr>
+<td align="center">
+<font face="Arial,Helvetica"><b>Origin</b></font>
+</td>
+<td align="center">
+<font face="Arial,Helvetica"><b>Destination</b></font>
+</td>
+<td align="center">
+<font face="Arial,Helvetica"><b>Discount</b></font>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" align="center">
+ <tr>
+<td align="right">
+ <font face="Arial,Helvetica" size="-1">City: </font>
+</td>
+<td valign="top">
+ 
+<select name="OCity" size="1">
+ 
+<option value="">
+ 
+<option value="East Haven"selected>
+East Haven
+ 
+<option value="Foxon">
+Foxon
+ 
+<option value="Momauguin">
+Momauguin
+ 
+<option value="Morris Cove">
+Morris Cove
+ 
+<option value="New Haven">
+New Haven
+ </select>
+</td>
+</tr>
+<tr>
+<td align="right">
+ <font face="Arial,Helvetica" size="-1">Zip: </font>
+</td>
+<td valign="top">
+<input type="text" name="OZip" size="6" maxlength="9" value="06512">
+&nbsp;
+<script language="JavaScript">
+<!--
+document.write("<font face=\"Arial,Helvetica\" size=\"-1\"><a href=\"javascript:ZipLookup('OCity', 'OSt', 'OZip', 'rateest')\">Zip Lookup</a></font>");
+//-->
+</script>
+<noscript><font face="Arial,Helvetica" size="-1"><a href="/cgi-bin/db2www/ziplookup.mbr/main" target="_blank">Zip Lookup</a></font></noscript>
+<input type="hidden" name="OSt" value="CT">
+</td>
+</tr>
+</table>
+</td>
+<td align="center" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" align="center">
+ <tr>
+<td align="right">
+ <font face="Arial,Helvetica" size="-1">City: </font>
+</td>
+<td valign="top">
+ 
+<select name="DCity" size="1">
+ 
+<option value="">
+ 
+<option value="Bolton Center">
+Bolton Center
+ 
+<option value="Buckland">
+Buckland
+ 
+<option value="Highland Park">
+Highland Park
+ 
+<option value="Lydallville">
+Lydallville
+ 
+<option value="Manchester"selected>
+Manchester
+ 
+<option value="Manchester Green">
+Manchester Green
+ 
+<option value="Quarryville">
+Quarryville
+ 
+<option value="South Manchester">
+South Manchester
+ </select>
+</td>
+</tr>
+<tr>
+<td align="right">
+ <font face="Arial,Helvetica" size="-1">Zip: </font>
+</td>
+<td valign="top">
+<input type="text" name="DZip" size="6" maxlength="9" value="06040">
+&nbsp;
+<script language="JavaScript">
+<!--
+document.write("<font face=\"Arial,Helvetica\" size=\"-1\"><a href=\"javascript:ZipLookup('DCity', 'DSt', 'DZip', 'rateest')\">Zip Lookup</a></font>");
+//-->
+</script>
+<noscript><font face="Arial,Helvetica" size="-1"><a href="/cgi-bin/db2www/ziplookup.mbr/main" target="_blank">Zip Lookup</a></font></noscript>
+<input type="hidden" name="DSt" value="CT">
+</td>
+</tr>
+</table>
+</td>
+<td align="center" valign="top">
+&nbsp;&nbsp; <input type="text" size="4" maxlength="4" name="Disc" value="55">
+<font face="Arial,Helvetica" size="-1">%</font>
+</td>
+</tr>
+ </table>
+<table border="0" cellpadding="2" cellspacing="1" width="300" align="center">
+<tr>
+<td align="center">
+<font face="Arial,Helvetica" size="-1">&nbsp;&nbsp;&nbsp;Weight</font>
+</td>
+<td align="center">
+<font face="Arial,Helvetica" size="-1">&nbsp;&nbsp;&nbsp;Class</font>
+</td>
+</tr>
+<tr>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+<input type="text" size="6" maxlength="6" name="Wgt1" value="151">
+</td>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+ <select name="Cls1" size="1">
+<option value="">None</option>
+<option value="050">50</option>
+<option value="055"selected>55</option>
+<option value="060">60</option>
+<option value="065">65</option>
+<option value="070">70</option>
+<option value="077">77.5</option>
+<option value="085">85</option>
+<option value="092">92.5</option>
+<option value="100">100</option>
+<option value="110">110</option>
+<option value="125">125</option>
+<option value="150">150</option>
+<option value="175">175</option>
+<option value="200">200</option>
+<option value="250">250</option>
+<option value="300">300</option>
+<option value="400">400</option>
+<option value="500">500</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+<input type="text" size="6" maxlength="6" name="Wgt2" value="">
+</td>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+ <select name="Cls2" size="1">
+<option value="">None</option>
+<option value="050">50</option>
+<option value="055">55</option>
+<option value="060">60</option>
+<option value="065">65</option>
+<option value="070">70</option>
+<option value="077">77.5</option>
+<option value="085">85</option>
+<option value="092">92.5</option>
+<option value="100">100</option>
+<option value="110">110</option>
+<option value="125">125</option>
+<option value="150">150</option>
+<option value="175">175</option>
+<option value="200">200</option>
+<option value="250">250</option>
+<option value="300">300</option>
+<option value="400">400</option>
+<option value="500">500</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+<input type="text" size="6" maxlength="6" name="Wgt3" value="">
+</td>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+ <select name="Cls3" size="1">
+<option value="">None</option>
+<option value="050">50</option>
+<option value="055">55</option>
+<option value="060">60</option>
+<option value="065">65</option>
+<option value="070">70</option>
+<option value="077">77.5</option>
+<option value="085">85</option>
+<option value="092">92.5</option>
+<option value="100">100</option>
+<option value="110">110</option>
+<option value="125">125</option>
+<option value="150">150</option>
+<option value="175">175</option>
+<option value="200">200</option>
+<option value="250">250</option>
+<option value="300">300</option>
+<option value="400">400</option>
+<option value="500">500</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+<input type="text" size="6" maxlength="6" name="Wgt4" value="">
+</td>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+ <select name="Cls4" size="1">
+<option value="">None</option>
+<option value="050">50</option>
+<option value="055">55</option>
+<option value="060">60</option>
+<option value="065">65</option>
+<option value="070">70</option>
+<option value="077">77.5</option>
+<option value="085">85</option>
+<option value="092">92.5</option>
+<option value="100">100</option>
+<option value="110">110</option>
+<option value="125">125</option>
+<option value="150">150</option>
+<option value="175">175</option>
+<option value="200">200</option>
+<option value="250">250</option>
+<option value="300">300</option>
+<option value="400">400</option>
+<option value="500">500</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+<input type="text" size="6" maxlength="6" name="Wgt5" value="">
+</td>
+<td align="center">
+&nbsp;&nbsp;&nbsp;
+ <select name="Cls5" size="1">
+<option value="">None</option>
+<option value="050">50</option>
+<option value="055">55</option>
+<option value="060">60</option>
+<option value="065">65</option>
+<option value="070">70</option>
+<option value="077">77.5</option>
+<option value="085">85</option>
+<option value="092">92.5</option>
+<option value="100">100</option>
+<option value="110">110</option>
+<option value="125">125</option>
+<option value="150">150</option>
+<option value="175">175</option>
+<option value="200">200</option>
+<option value="250">250</option>
+<option value="300">300</option>
+<option value="400">400</option>
+<option value="500">500</option>
+</select>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+<input type="image" name="Submit" src="/submit.gif" align="bottom" border="0" width="60" height="25">
+<a href="/cgi-bin/db2www/rateest.mbr/main" target="_self"><img src="/reset.gif" border="0" width="60" height="25"></a>
+ <a href="/Rates___Shipping/Pickup_Request/pickup_request.html" target="_top">
+<img src="/pickup.gif" border="0" width="60" height="25"></a>
+ </td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<input type="hidden" name="Send" value="Y">
+</form>
+<center><hr width="90%" size="0" align="center"></center>
+<table border=0 cellspacing=0 cellpadding=0 width=500 align=center>
+<tr>
+<td align="center">
+<p align=center>
+<font size="-2" face="Arial,Helvetica,Univers,Zurich BT">
+<a href="http://www.odfl.com/Company/Copyright_Notice/copyright_notice.html" target="_top">Copyright &#169</a>
+1997-2000 Old Dominion Freight Line, Inc. All Rights Reserved.<BR>
+<a href="http://www.odfl.com/Contact_Us/contact_us.html" target="_top">Contact Us</a> -
+<a href="http://www.odfl.com/Miscellaneous/Privacy_Policy/privacy_policy.html" target="_self">Privacy Policy</a> -
+<a href="http://www.odfl.com/Miscellaneous/Site_Index/site_index.html" target="body">Site Index</a>
+</font>
+</td>
+</tr>
+</table>
+</body></html>
+45.37  
+ 
+ 
+ 
+ 
+  

@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<TITLE> Redirect Test/Examples </TITLE>
+<!--#include virtual="/includes/analytics.html"-->
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF">
+
+<H1>Example 1</H1>
+<FORM ACTION="redirect.pl" METHOD="POST">
+	<INPUT TYPE="HIDDEN" NAME="redirect_identifier" VALUE="txtURL">
+	<INPUT NAME="txtURL">
+	<INPUT TYPE="SUBMIT">
+</FORM>
+<BR>
+<H1>Example 2</H1>
+<FORM ACTION="redirect.pl" METHOD="POST">
+<INPUT TYPE="HIDDEN" NAME="redirect_identifier" VALUE="lstURL">	
+<SELECT NAME="lstURL">
+        <OPTION SELECTED VALUE="http://www.yahoo.com">goto yahoo!
+	<OPTION VALUE="http://www.altavista.com">goto altavista!	
+	</SELECT>
+	<INPUT TYPE="SUBMIT">
+</FORM>
+
+<BR>
+
+<!--#INCLUDE FILE="includeme.html"-->
+</BODY>
+</HTML>

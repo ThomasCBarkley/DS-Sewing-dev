@@ -1,0 +1,114 @@
+body {
+    background-color: #ffffff;
+}
+
+a {
+    color: blue
+}
+
+a:hover {
+    color: blue
+}
+
+a:visited {
+    color: blue
+}
+
+a:visited:hover {
+    color: red
+}
+
+h1{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-block: 0.83em;
+}
+h2{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-weight: bold;
+    margin-block: 0.83em;
+}
+
+p {
+    font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.tx_highlight {
+    background-color: #FFFF00;
+}
+
+table.servicesT {
+    font-family: Verdana;
+    font-weight: normal;
+    font-size: 10pt;
+    width: 320px;
+    background-color: #ffcc66;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-top: 1px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 1px;
+}
+
+
+table.servicesT td.servHd {
+    border-bottom: 1px solid #6699CC;
+    border-top: 1px solid #6699CC;
+    background-color: #BEC8D1;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+
+table.servicesT td {
+    font-family: Verdana, sans-serif, Arial;
+    font-weight: normal;
+    font-size: 10pt;
+    background-color: #ffffcc;
+    /* text-align: left; */
+    padding-left: 3px;
+}
+
+
+table.servicesT td.servBodH {
+    border-top: 1px solid #6699CC;
+    border-bottom: 1px solid #6699CC;
+    background-color: #BEC8B1;
+    /* text-align: center; */
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 10pt;
+    color: #404040;
+}
+
+table.menu a {
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 10px;
+}
+
+.legal-div {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.item_sku, .item_description, .item_price, .item_weight {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+.item_sku, .item_price, .item_button {
+    text-align: left;
+}
+.item_rating, .item_currency, .item_image {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+.hidden{
+    display: none;
+}

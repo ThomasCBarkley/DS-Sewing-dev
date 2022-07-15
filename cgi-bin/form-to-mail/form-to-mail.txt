@@ -1,0 +1,276 @@
+form-to-mail
+
+A web page form e-mailer.
+
+
+by Bill Kendrick
+New Breed Software
+kendrick@zippy.sonoma.edu
+http://zippy.sonoma.edu/kendrick/
+  
+January 6, 1997 - January 9, 1997
+Update: March 25, 1997
+
+
+WHAT IT CAN DO:
+---------------
+
+Use form-to-mail to accept e-mail messages via web pages.  Simply
+create an HTML page with a form, set it's "action" to the "form-to-mail.cgi"
+CGI, and you're set!
+
+You can also have form-to-mail store the data it receives to an HTML
+file.  You can use this like a simple guestbook (you'd probably prefer
+to use a real guestbook, like my "gbook" instead, though) or a way to
+have people add messages to a simple "bulletin board."
+
+You can even set form-to-mail up to save the data into a format which is
+easily read by a database package!
+
+
+REQUIREMENTS:
+-------------
+
+Your webserver must be on a Unix or Unix-style operating system.  (For
+other systems, you will probably have to alter the source code.)
+
+You must have the ability to run "CGI" programs.  (Talk to your webmaster
+and/or sysadmin.)
+
+The webserver must have the abilty to access its local "mail" command.
+(Again, talk to your webmaster and/or sysadmin.)
+
+If you have any problems, contact myself and/or your webmaster and/or
+sysadmin! :)
+
+
+INSTALLING:
+-----------
+
+To create the "form-to-mail.cgi" CGI program, all you need to do is download
+the appropriate files ("form-to-mail.c", "cgi-util.c", "cgi-util.h",
+and "makefile") and type "make".
+
+The only option you may need to set before compiling is where your Unix
+system's "mail" program is stored.  From your shell prompt, type "which mail".
+The result is typically "/usr/bin".  If it's not, edit the "form-to-mail.c"
+file and change this line appropriately:
+
+  #define EMAIL_CMD "/bin/mail"
+
+
+THE E-MAIL'S FORMAT:
+--------------------
+
+When you receive the e-mail message from a filled-out form, all of fields
+they filled out are displayed in your e-mail like this:
+
+  Comments: I really enjoyed your page. I found the cheese search engine
+  very useful for my pizza design class.
+
+  Name: Joe User
+
+Text that is too long is automatically word-wrapped to ~80 characters
+by "form-to-mail."  TABs are converted into SPACEs to help the word-wrap
+work right, and RETURNs are left as they are.
+
+
+SETTING THE FORM FIELDS:
+------------------------
+
+* WHO TO? *
+
+For form-to-mail to work, you must have a form!  In this form, you'll
+be using <input>, <select> and/or <textarea> tags.
+
+Your form will contain some information needed by the CGI.  The most
+important one, and the only REQUIRED one, is the addressee of the
+message! (ie, "who will get this e-mail??")  Don't forget the domain
+("@xyz.com", "@aol.com", etc.) in the address.  You should also be able
+to send the message to MULTIPLE addresses! (Simply list them all out,
+placing commas (",") between them.)
+
+A typical field where the "to address" will be placed in the form
+looks like this:
+
+  <input type="hidden" name="_to_address" value="joe_user@place.org">
+
+But if you want, you can make it a pull-down menu, so people can choose
+who the e-mail goes to!  Like this:
+
+  Who do you want the e-mail to go to?
+  <select name="_to_address">
+  <option>fred@abc.com
+  <option>john@def.com
+  </select>
+
+
+* SUBJECT *
+
+You can also set the subject of the message, or let the user do it themselves:
+
+  <input type="hidden" name="_subject" value="Survey Form E-mail">
+
+or
+
+  Subject: <input type="text" name="_subject">
+
+The default subject (if you don't enter one) is "form-to-mail message".
+
+
+* WHO FROM? *
+
+You can let users enter their e-mail address and (although on some systems
+this doesn't work correctly) the e-mail will look like it's actually
+from them (not the webserver, which it really is from).
+
+  Your e-mail address: <input type="text" name="_from_address">
+
+If it works correctly on your system, you should be able to simply use
+your e-mail program's "Reply" command to send a reply back to the
+user.  If it didn't work right (sorry!), you're stuck using "Cut/Paste"
+or typing it in manually.
+
+* THANKS A MILLION *
+
+When the user clicks the "submit" button to send the message, the CGI
+spits out a very simple "Thank you" message on the page, and they must
+use their browser's "BACK" command to get out of it.
+
+If you want, you can create a "thank you" HTML page which will come up,
+instead.
+
+  <input type="hidden" name="_reply_html" value="thanks.html">
+
+
+* DON'T FORGET TO FILL IT OUT *
+
+Sometimes, people don't fill out all of the form.  You can force them to
+do it with "form-to-mail!"
+
+Here's an example where the "Your Name" field MUST be filled out for
+the e-mail to be sent, but the "Your E-mail" field is optional:
+
+  Your Name: <input type="text" name="Name"> <br>
+  <input type="hidden" name=""_need" value="Name">
+
+  Your E-mail: <input type="text" name="E-mail">
+
+The field named "_need" tells form-to-mail which fields must be filled
+out for the e-mail to be accepted.  (The "value" of the "_need" field
+is the "name" of the field which must be filled out.)
+
+You can of course use as many "_need" fields as you need. (Be careful
+using it; and be sure to test your form after you've set it up!)
+
+
+* TEST FOR A GOOD E-MAIL ADDRESS *
+
+There's another directive similar to "_need" called "_need_email".
+It acts exactly like "_need" except not only does the field it's naming
+need to be filled out, it also has to be in proper e-mail address form.
+(ie, simply "Joe123" will not be accepted.  "Joe123@aol.com" will be.
+And spaces aren't allowed (yes folks, some people decide to put spaces in
+their e-mail addresses!!!))
+
+
+* SAVE TO FILE *
+
+If you want, you can automatically save the data that is e-mailed to you
+into a file.  This file can become an HTML file, a plain text file, or
+even a TAB-delimited file (good for importing it into a database program).
+
+First, specify the file you'd like the data to go into:
+
+  <input type="hidden" name="_out_file" value="survey.dat">
+
+Be sure that the file is accessible by the webserver.  This usually means
+creating a blank file ("touch survey.dat"), and then making it writeable
+by the webserver ("chmod 666 survey.dat").  Check with your webmaster and/or
+sysadmin about how your webserver is setup and what you need to do to
+create output files.
+
+
+* HOW TO SAVE IT? *
+
+By default, files are saved with each field value stored on the same line,
+with "TAB" characters between each field.  This is suitable for a
+database import.  (Note that the fields are saved in order of their
+field name (alphabetically), so they're always saved in the same order.)
+
+You can specify the "delimiter" and "end of record" characters and strings
+yourself, if you wish!
+
+If you want a "<br>" tag put between each field and an "<hr>" tag
+between each record (a record being one submition of the form), you
+simply tell it this through the form:
+
+  <input type="hidden" name="_delimiter" value="<br>">
+  <input type="hidden" name="_endrecord" value="<hr>">
+
+In a case like this (where the output file is pretty much a guestbook
+signature page!), you'll probably want the names of te fields displayed
+("Name:", "E-mail:", "Comments:", etc.)
+
+  <input type="hidden" name="_shownames" value="yes">
+
+
+Voila, a guestbook!
+
+
+* SPECIAL CHARACTERS: *
+
+You can include special characters in your delimiter and end-of-record
+strings.  If you want a "TAB" character or a "RETURN" character (like
+the default uses), you enter special codes:
+
+  %n - "newline" - a "RETURN" character
+  %t - "tab"
+  %% - "percent" - since it's used for the codes, how could you use it
+                   unless it WERE a code? :)
+
+A better version of the previous input fields is:
+
+
+  <input type="hidden" name="_delimiter" value="<br>%n">
+  <input type="hidden" name="_endrecord" value="<hr>%n%n">
+
+
+Note that the special characters "TAB" and "RETURN" are replaced with
+"SPACEs" in the field values when saving to the file. (That way, if
+the user typed "TAB" or "RETURN" in an input field, it wouldn't mess
+up the file if you were going to use it for a database.)
+
+
+FORM FIELD REFERENCE:
+---------------------
+
+Required form fields:
+    _to_address   -- email to send message to
+
+Optional form fields:
+    _subject      -- subject for e-mail
+    _from_address -- "reply-to" will be set to this address
+    _reply_html   -- file to display when e-mail is sent successfully
+    _need         -- (useable multiple times) will require that the
+                     field named in "_need"'s value is filled out)
+    _out_file     -- file to save entries to
+    _delimiter    -- text string for the field delimiter when saving to file
+                     (default, "\t" (TAB))
+    _endrecord    -- text string for the "end-of-record" when saving to file
+                     (defautl, "\n" (RETURN))
+    _shownames    -- if "yes" (or "on"), will append field names to
+                     field values when saving to file
+
+All other fields (which don't contain "_" as their name's first character)
+will be sent via e-mail (and to the output file, if set).
+
+
+CREDITS / CONTACT:
+------------------
+
+form-to-mail
+by Bill Kendrick
+kendrick@zippy.sonoma.edu
+http://zippy.sonoma.edu/kendrick/
+January 6, 1997 - January 9, 1997
