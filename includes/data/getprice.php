@@ -15,7 +15,7 @@ final class DB {
         Encrypt=True;
         TrustServerCertificate=False;
         Connection Timeout=30;
-        );
+        ");
     }
 }
 
