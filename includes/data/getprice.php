@@ -5,17 +5,8 @@ final class DB {
     public static function init()
     {
         //return new PDO("sqlsrv:Server=localhost;Database=DSSewing", "dssewing_www_service", "!g0ttal3arnt0s3w");
-        return new PDO("sqlsrv:
-        Server=tcp:ds-sewing-dev-server.database.windows.net,1433;
-        Initial Catalog=dssewing;
-        Persist Security Info=False;
-        User ID=ds-sewing-dev-server-admin;
-        Password=2020Sucks!;
-        MultipleActiveResultSets=False;
-        Encrypt=True;
-        TrustServerCertificate=False;
-        Connection Timeout=30;"
-        );
+        //return new PDO("sqlsrv:Server=tcp:ds-sewing-dev-server.database.windows.net,1433;Initial Catalog=dssewing;Persist Security Info=False;User ID=ds-sewing-dev-server-admin;Password=2020Sucks!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        return new PDO("sqlsrv:Server=tcp:ds-sewing-dev-server.database.windows.net,1433;Initial Catalog=dssewing","ds-sewing-dev-server-admin","2020Sucks!");
     }
 }
 
