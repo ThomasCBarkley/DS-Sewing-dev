@@ -14,8 +14,8 @@ final class DB {
         MultipleActiveResultSets=False;
         Encrypt=True;
         TrustServerCertificate=False;
-        Connection Timeout=30;
-        ");
+        Connection Timeout=30;"
+        );
     }
 }
 
