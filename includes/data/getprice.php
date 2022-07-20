@@ -35,7 +35,11 @@ function getPrice($pid) {
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-	$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+
+    $tsql= "SELECT Price FROM Catalog WHERE PID='" . $pid . "'";
+    $res= sqlsrv_query($conn, $tsql);
+
+	//$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
 
 	if ($res) {
 	    return number_format($res['Price'],2);
@@ -54,7 +58,9 @@ function getWeight($pid) {
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-	$res = $conn->query("SELECT weight FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+	//$res = $conn->query("SELECT weight FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+    $tsql= "SELECT weight FROM Catalog WHERE PID='" . $pid . "'";
+    $res= sqlsrv_query($conn, $tsql);
 
     if ($res) {
         return number_format($res['weight'],0);
@@ -73,8 +79,11 @@ function getImageLinks($pid){
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-	$res = $conn->query("SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'")->fetch();
-	if ($res) {
+	//$res = $conn->query("SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+    $tsql= "SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'";
+    $res= sqlsrv_query($conn, $tsql);
+    
+    if ($res) {
 		return $res;
 	}else{
 		return [];
@@ -111,7 +120,9 @@ function getDescription($pid) {
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $res = $conn->query("SELECT description FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+    //$res = $conn->query("SELECT description FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+    $tsql= "SELECT description FROM Catalog WHERE PID='" . $pid . "'";
+    $res= sqlsrv_query($conn, $tsql);
 
     if ($res) {
         return $res['description'];
