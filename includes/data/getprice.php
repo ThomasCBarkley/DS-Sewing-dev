@@ -26,7 +26,15 @@ function test123(){
 
 
 function getPrice($pid) {
-    $conn = DB::init();
+    //$conn = DB::init();
+    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
 
 	if ($res) {
@@ -37,7 +45,15 @@ function getPrice($pid) {
 }
 
 function getWeight($pid) {
-    $conn = DB::init();
+    //$conn = DB::init();
+    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$res = $conn->query("SELECT weight FROM Catalog WHERE PID='" . $pid . "'")->fetch();
 
     if ($res) {
@@ -48,7 +64,15 @@ function getWeight($pid) {
 }
 
 function getImageLinks($pid){
-	$conn = DB::init();
+	//$conn = DB::init();
+    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$res = $conn->query("SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'")->fetch();
 	if ($res) {
 		return $res;
@@ -78,7 +102,15 @@ function getImages($pid) {
 }
 
 function getDescription($pid) {
-    $conn = DB::init();
+    //$conn = DB::init();
+    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
     $res = $conn->query("SELECT description FROM Catalog WHERE PID='" . $pid . "'")->fetch();
 
     if ($res) {
