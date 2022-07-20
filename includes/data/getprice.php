@@ -36,7 +36,7 @@ function getPrice($pid) {
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-    $tsql= "SELECT Price FROM Catalog WHERE PID='" . $pid . "'";
+    $tsql= "SELECT Price FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
 
 	//$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
@@ -59,7 +59,7 @@ function getWeight($pid) {
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 	//$res = $conn->query("SELECT weight FROM Catalog WHERE PID='" . $pid . "'")->fetch();
-    $tsql= "SELECT weight FROM Catalog WHERE PID='" . $pid . "'";
+    $tsql= "SELECT weight FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
 
     if ($res) {
@@ -80,7 +80,7 @@ function getImageLinks($pid){
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 	//$res = $conn->query("SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'")->fetch();
-    $tsql= "SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'";
+    $tsql= "SELECT image, image_schematics  FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
     
     if ($res) {
@@ -121,7 +121,7 @@ function getDescription($pid) {
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     //$res = $conn->query("SELECT description FROM Catalog WHERE PID='" . $pid . "'")->fetch();
-    $tsql= "SELECT description FROM Catalog WHERE PID='" . $pid . "'";
+    $tsql= "SELECT description FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
 
     if ($res) {
