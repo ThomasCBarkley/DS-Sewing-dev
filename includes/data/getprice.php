@@ -36,7 +36,7 @@ function getPrice($pid) {
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-    $tsql= "SELECT Price FROM dbo.Catalog WHERE PID='" . $pid . "'";
+    $tsql= "SELECT c.price as Price FROM [dbo].[catalog] c WHERE c.pid ='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
 
 	//$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
