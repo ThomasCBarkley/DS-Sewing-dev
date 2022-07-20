@@ -94,7 +94,7 @@
     <IMG alt="" src="/images/Merritt_Company_Logo.jpg">
     <BR>
     <a name="Cabguards">
-        <font color="red"> CAB RACKS </font>
+        <font color="red"> CAB RACKS ttt</font>
     </a>
 	<?php
 	$product_arr = [
@@ -135,7 +135,7 @@
 	?>
 
     <a name="Mounting_Kits">
-        <font color="red"> MOUNTING KITS TTTTT </font>
+        <font color="red"> MOUNTING KITS</font>
     </a>
 
 	<?php
