@@ -42,7 +42,8 @@ function getPrice($pid) {
 	//$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
 
 	if ($res) {
-	    return number_format($res['Price'],2);
+	    //return number_format($res['Price'],2);
+        return number_format("100",2);
     }
 
     return 'Unknown';
