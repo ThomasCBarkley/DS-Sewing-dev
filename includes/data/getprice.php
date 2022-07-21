@@ -47,12 +47,16 @@ function getPrice($pid) {
         return $res['c.price'];
     }
     */
+    /*
     if ($res == FALSE)
         echo (sqlsrv_errors());
     while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
      //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
      $price=$row['itemPrice'];
     }
+    */
+    $row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)
+    $price=$row['itmPrice'];
     return $price;
     //return 'Unknown';
 }
