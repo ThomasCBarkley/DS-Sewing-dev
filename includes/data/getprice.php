@@ -27,9 +27,6 @@ function test123(){
 
 
 function getPrice($pid) {
-    //$conn = DB::init();
-    //setvars();
-
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     
     $connectionOptions = array(
@@ -43,27 +40,29 @@ function getPrice($pid) {
 
     $tsql= "SELECT c.price as itmPrice FROM [dbo].[catalog] c WHERE c.pid ='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
-
-	//$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+    
+    if ($res == FALSE)
+        $price = sqlsrv_errors();
+    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        $price=$row['itmPrice'];
+    }
+    
+    return number_format($price,2);
+    
+    //Removed by Tom Barkley 7/21/2022
     /*
+    $conn = DB::init();
+    $res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+    
 	if ($res) {
 	    //return number_format($res['Price'],2);
         //return number_format("100",2);
         return $res['c.price'];
     }
+    
+    return 'Unknown';
     */
-    
-    if ($res == FALSE)
-        echo (sqlsrv_errors());
-    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-     //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
-     $price=$row['itmPrice'];
-    }
-    
-    //$row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)
-    //$price=$row['itmPrice'];
-    return number_format($price,2);
-    //return 'Unknown';
 }
 
 function getWeight($pid) {
