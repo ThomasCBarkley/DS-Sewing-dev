@@ -44,7 +44,7 @@ function getPrice($pid) {
 	if ($res) {
 	    //return number_format($res['Price'],2);
         //return number_format("100",2);
-        return itmPrice;
+        return $res['itmPrice'];
     }
 
     return 'Unknown';
