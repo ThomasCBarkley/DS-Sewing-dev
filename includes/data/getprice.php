@@ -40,14 +40,21 @@ function getPrice($pid) {
     $res= sqlsrv_query($conn, $tsql);
 
 	//$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
-
+    /*
 	if ($res) {
 	    //return number_format($res['Price'],2);
         //return number_format("100",2);
-        return $res['itmPrice'];
+        return $res['c.price'];
     }
-
-    return 'Unknown';
+    */
+    if ($res == FALSE)
+        echo (sqlsrv_errors());
+    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+     //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+     $price=$row['itemPrice'];
+    }
+    return $price;
+    //return 'Unknown';
 }
 
 function getWeight($pid) {
