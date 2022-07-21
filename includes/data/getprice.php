@@ -62,7 +62,7 @@ function getPrice($pid) {
     
     //$row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)
     //$price=$row['itmPrice'];
-    return $price;
+    return number_format($price,2);
     //return 'Unknown';
 }
 
