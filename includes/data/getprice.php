@@ -1,5 +1,6 @@
 <?php
 
+
 final class DB {
 
     public static function init()
@@ -12,7 +13,7 @@ final class DB {
 }
 
 function test123(){
-	$conn = DB::init();
+	//$conn = DB::init();
 
 	//$sql = "SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'";
 	$sql = "
@@ -27,12 +28,16 @@ function test123(){
 
 function getPrice($pid) {
     //$conn = DB::init();
+    //setvars();
+
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    
     $connectionOptions = array(
         "Database" => "dssewing", // update me
         "Uid" => "ds-sewing-dev-server-admin", // update me
         "PWD" => "2020Sucks!" // update me
     );
+    
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 
@@ -47,16 +52,16 @@ function getPrice($pid) {
         return $res['c.price'];
     }
     */
-    /*
+    
     if ($res == FALSE)
         echo (sqlsrv_errors());
     while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
      //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
-     $price=$row['itemPrice'];
+     $price=$row['itmPrice'];
     }
-    */
-    $row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)
-    $price=$row['itmPrice'];
+    
+    //$row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)
+    //$price=$row['itmPrice'];
     return $price;
     //return 'Unknown';
 }
