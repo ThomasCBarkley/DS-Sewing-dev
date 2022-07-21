@@ -36,14 +36,15 @@ function getPrice($pid) {
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-    $tsql= "SELECT c.price as Price FROM [dbo].[catalog] c WHERE c.pid ='" . $pid . "'";
+    $tsql= "SELECT c.price as itmPrice FROM [dbo].[catalog] c WHERE c.pid ='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
 
 	//$res = $conn->query("SELECT Price FROM Catalog WHERE PID='" . $pid . "'")->fetch();
 
 	if ($res) {
 	    //return number_format($res['Price'],2);
-        return number_format("100",2);
+        //return number_format("100",2);
+        return itmPrice;
     }
 
     return 'Unknown';
