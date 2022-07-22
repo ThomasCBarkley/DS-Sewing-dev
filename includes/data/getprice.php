@@ -109,7 +109,7 @@ function getImageLinks($pid){
     $conn = sqlsrv_connect($serverName, $connectionOptions);
 	$tsql= "SELECT image, image_schematics  FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
-    
+    /*
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
     while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
@@ -117,7 +117,7 @@ function getImageLinks($pid){
         $rtn=$row['image']$row['image_schematics'];
     }
     return $row;
-
+    */
     //Removed by Tom Barkley 7/21/2022
     /*
     $conn = DB::init();
