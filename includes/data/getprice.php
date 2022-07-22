@@ -66,7 +66,6 @@ function getPrice($pid) {
 }
 
 function getWeight($pid) {
-    //$conn = DB::init();
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
         "Database" => "dssewing", // update me
@@ -75,15 +74,27 @@ function getWeight($pid) {
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-	//$res = $conn->query("SELECT weight FROM Catalog WHERE PID='" . $pid . "'")->fetch();
-    $tsql= "SELECT weight FROM dbo.Catalog WHERE PID='" . $pid . "'";
+	$tsql= "SELECT weight FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
+    
+    if ($res == FALSE)
+        $rtn = sqlsrv_errors();
+    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        $rtn=$row['weight'];
+    }
+    return number_format($rtn,0);
 
+    //Removed by Tom Barkley 7/21/2022
+    /*
+    //$conn = DB::init();
+    //$res = $conn->query("SELECT weight FROM Catalog WHERE PID='" . $pid . "'")->fetch();
     if ($res) {
         return number_format($res['weight'],0);
     }
 
     return 'Unknown';
+    */
 }
 
 function getImageLinks($pid){
