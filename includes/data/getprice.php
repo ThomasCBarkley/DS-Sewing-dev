@@ -98,7 +98,7 @@ function getWeight($pid) {
 }
 
 function getImageLinks($pid){
-	//$conn = DB::init();
+	
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
         "Database" => "dssewing", // update me
@@ -107,15 +107,28 @@ function getImageLinks($pid){
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-	//$res = $conn->query("SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'")->fetch();
-    $tsql= "SELECT image, image_schematics  FROM dbo.Catalog WHERE PID='" . $pid . "'";
+	$tsql= "SELECT image, image_schematics  FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
+    
+    if ($res == FALSE)
+        $rtn = sqlsrv_errors();
+    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        $rtn=$row['image']$row['image_schematics'];
+    }
+    return $row;
+
+    //Removed by Tom Barkley 7/21/2022
+    /*
+    $conn = DB::init();
+    $res = $conn->query("SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'")->fetch();
     
     if ($res) {
 		return $res;
 	}else{
 		return [];
 	}
+    */
 }
 
 
@@ -139,7 +152,7 @@ function getImages($pid) {
 }
 
 function getDescription($pid) {
-    //$conn = DB::init();
+    
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
         "Database" => "dssewing", // update me
@@ -148,13 +161,25 @@ function getDescription($pid) {
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    //$res = $conn->query("SELECT description FROM Catalog WHERE PID='" . $pid . "'")->fetch();
     $tsql= "SELECT description FROM dbo.Catalog WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
+    if ($res == FALSE)
+        $rtn = sqlsrv_errors();
+    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        $rtn=$row['description'];
+    }
+    return $rtn;
 
+    //Removed by Tom Barkley 7/21/2022
+    /*
+    $conn = DB::init();
+    $res = $conn->query("SELECT description FROM Catalog WHERE PID='" . $pid . "'")->fetch();
+    
     if ($res) {
         return $res['description'];
     }
 
     return 'Unknown';
+    */
 }
