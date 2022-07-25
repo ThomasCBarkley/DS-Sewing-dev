@@ -97,6 +97,7 @@ function getWeight($pid) {
     */
 }
 
+
 function getImageLinks($pid){
 	
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -136,6 +137,7 @@ function getImageLinks($pid){
 /*
     This was added to reduce the individual Azure SQL calls from 5 call per row to 1 per row
 */
+/*
 function getItem($pid)
 {
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -166,14 +168,12 @@ function getItem($pid)
         if ($schematic != '') {
             $data .=  "<br><a onclick=\"window.open('" . $schematic . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" . $schematic. "'><font color=green>View Schematic</font></a>";
         }
-        */
+
 
     }
-
-    */
     return $data;
-
 }
+*/
 
 function getImages($pid) {
 	//$res = getImageLinks($pid);
