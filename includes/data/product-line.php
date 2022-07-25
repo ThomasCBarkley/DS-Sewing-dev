@@ -1,5 +1,5 @@
 <?php
-
+$html
 
 function product_table( $prod_array, $tbl_header = false, $tbl_title = false, $add_info = '', $tbl_width = '600' ) {
 	$clm_size = true;
@@ -68,7 +68,6 @@ function product_table_iterator( $prod_array, $clm_size = false ) {
 
 	return $html;
 }
-// Add new function for single SQL query per line
 
 function product_tr( $id, $clm_size = false ) {
 
