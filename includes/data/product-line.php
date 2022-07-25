@@ -68,6 +68,7 @@ function product_table_iterator( $prod_array, $clm_size = false ) {
 
 	return $html;
 }
+// Add new function for single SQL query per line
 
 function product_tr( $id, $clm_size = false ) {
 
