@@ -1,5 +1,5 @@
 <?php
-$html
+//$html
 
 function product_table( $prod_array, $tbl_header = false, $tbl_title = false, $add_info = '', $tbl_width = '600' ) {
 	$clm_size = true;
