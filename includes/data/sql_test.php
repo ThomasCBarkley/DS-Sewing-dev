@@ -20,7 +20,7 @@
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
      echo ($row['PID'] . " " . $row['Description'] .PHP_EOL);
      
-     $html=$html + '<tr itemscope itemtype="https://schema.org/Product">
+     //$html=$html + '<tr itemscope itemtype="https://schema.org/Product">
      <td ' . ( $clm_size ? ' WIDTH="15%"' : '' ) . ' class="item_sku">' . $row['pid'] . ' ' . $row['image'] . ' </td>
      <td ' . ( $clm_size ? ' WIDTH="55%"' : '' ) . ' itemprop="name" class="item_description">' . $row['description'] . '</td>
      <td ' . ( $clm_size ? ' WIDTH="10%"' : '' ) . ' itemprop="weight"  class="item_weight">' . $row['weight'] . '</td>
@@ -30,7 +30,7 @@
    
     }
     //sqlsrv_free_stmt($getResults);
-    $html=$html+'</table>';
+    //$html=$html+'</table>';
     echo $html;
 ?>
 
