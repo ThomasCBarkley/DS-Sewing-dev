@@ -12,7 +12,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 */
 
 //Added by TCB
-function addToCart(){
+function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     
     $connectionOptions = array(
@@ -23,8 +23,9 @@ function addToCart(){
     
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql = "INSERT INTO dbo.cart(sessionID, pid, price, weight, qty, Lenght, width, height)
-    VALUES ($_SESSION, $pid)";
+    $tsql = "INSERT INTO dbo.cart(sessionID, pid, price, weight, qty, Length, width, height)
+    VALUES ($_SESSION, $pid, $weight, $qty, $length, $width, $height)";
+    return "success";
     
 }
 
