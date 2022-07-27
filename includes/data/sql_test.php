@@ -13,25 +13,27 @@
     $getResults= sqlsrv_query($conn, $tsql);
     echo ("Reading data from table" .PHP_EOL);
 
-    $html='<Table>';
+    $html='<table><tr><td>';
   
 
     if ($getResults == FALSE)
         echo (sqlsrv_errors());
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
      echo ($row['PID'] . " " . $row['Description'] .PHP_EOL);
-     
+    
+
+    /* 
     $html .= '<tr>
      <td >' . $row['pid'] . ' ' . $row['image'] . ' </td>
      <td >' . $row['description'] . '</td>
      <td >' . $row['weight'] . '</td>
      <td >' . $row['price'] . '</td>
    </tr>';
-   
+   */
 
     }
-    //sqlsrv_free_stmt($getResults);
-   $html .= '</table>';
+    sqlsrv_free_stmt($getResults);
+   $html .= 'This sucks</td></tr></table>';
    echo ($html);
 ?>
 
