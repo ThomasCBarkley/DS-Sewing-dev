@@ -21,17 +21,17 @@
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
      echo ($row['PID'] . " " . $row['Description'] .PHP_EOL);
      
-     $html .= '<tr>
+    $html .= '<tr>
      <td >' . $row['pid'] . ' ' . $row['image'] . ' </td>
      <td >' . $row['description'] . '</td>
      <td >' . $row['weight'] . '</td>
      <td >' . $row['price'] . '</td>
-   </tr>'
+   </tr>';
    
 
     }
     //sqlsrv_free_stmt($getResults);
    $html .= '</table>';
-    echo ($html);
+   echo ($html);
 ?>
 
