@@ -6,8 +6,27 @@ session_start();
 $total=0;
 
 //Database connection, replace with your connection string.. Used PDO
+/* Original - removed by TCB
 $conn = new PDO("mysql:host=localhost;dbname=tutsplanet", 'root', '');		
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+*/
+
+//Added by TCB
+function addToCart(){
+    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $tsql = "INSERT INTO dbo.cart(sessionID, pid, price, weight, qty, Lenght, width, height)
+    VALUES ($_SESSION, $pid)";
+    
+}
 
 
 //get action string
