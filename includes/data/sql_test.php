@@ -14,7 +14,10 @@
     echo ("Reading data from table" .PHP_EOL);
 
     $html="<table>";
-  
+    
+    echo ("After HTNL string definition");
+
+    echo ($getResults);
 
     if ($getResults == FALSE)
         echo (sqlsrv_errors());
@@ -23,17 +26,19 @@
     
 
     
+    /*
     $html .= "<tr>
      <td >" . $row['pid'] . "<br>" . $row['image'] . "<br>" . $row['image_schematics'] ."</td>
      <td >" . $row['description'] . "</td>
      <td >" . $row['weight'] . "</td>
      <td >" . $row['price'] . "</td>
    </tr>";
+   */
    
 
     }
     sqlsrv_free_stmt($getResults);
-   $html .= "</table>";
+   $html .= "</table>test";
    echo ($html);
 ?>
 
