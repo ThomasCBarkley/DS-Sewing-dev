@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 final class DB {
 
@@ -25,6 +25,35 @@ function test123(){
 
 }
 
+//Added by TCB
+function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
+    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $tsql = "INSERT INTO dbo.cart(sessionID, pid, price, weight, qty, Length, width, height)
+    VALUES (session_id(), $pid, $weight, $qty, $length, $width, $height)";
+    $res= sqlsrv_query($conn, $tsql);
+    
+    $rtn = "success";
+    if ($res == FALSE){
+        $rtn = sqlsrv_errors();
+    }
+
+    /*while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        $price=$row['itmPrice'];
+    }*/
+    
+    return $rtn;
+    
+}
 
 function getPrice($pid) {
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
