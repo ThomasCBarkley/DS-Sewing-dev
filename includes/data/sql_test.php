@@ -22,11 +22,12 @@
         $rtn = sqlsrv_errors();
     while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
         echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+        
         $html .= "<tr>";
         $html .= "<td>" . $row['pid'] . "<br>" .$row['image'] . "<br>" . $row['image_schematics'] . "</td>";
         $html .= "<td>" . $row['description'] . "</td>";
         $html .= "<td>" . $row['price'] . "</td>";
-        $html .= "</tr>"
+        $html .= "</tr>";
     }
     sqlsrv_free_stmt($res);
 
