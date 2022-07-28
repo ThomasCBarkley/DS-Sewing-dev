@@ -15,14 +15,15 @@
 
     $html="<table>";
     
-    echo ("After HTNL string definition");
+    echo ("After HTML string definition");
 
     echo ($getResults);
 
     if ($getResults == FALSE)
         echo (sqlsrv_errors());
     while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-     echo ($row['pid'] . " " . $row['description'] .PHP_EOL);
+        echo ("in Row");
+        echo ($row['pid'] . " " . $row['description'] .PHP_EOL);
     
 
     
