@@ -1,5 +1,3 @@
-<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/data/getprice.php"; ?>
-<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/data/product-line.php"; ?>
 <?php
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
@@ -9,7 +7,7 @@
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql= "SELECT TOP 20 SELECT pid, description FROM [dbo].[catalog]";
+    $tsql= "SELECT TOP 20 SELECT pid as PID, description as Des FROM [dbo].[catalog] c";
     $res= sqlsrv_query($conn, $tsql);
     echo ("Reading data from table" .PHP_EOL);
 
@@ -22,10 +20,10 @@
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
     while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-        echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+        echo ($row['PID'] . " " . $row['Des'] . PHP_EOL);
         //$price=$row['itmPrice'];
     }
     sqlsrv_free_stmt($res);
-    
+
 ?>
 
