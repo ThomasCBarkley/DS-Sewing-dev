@@ -16,7 +16,7 @@
     
     echo ("After HTML -- ");
 
-    echo ($getResults);
+    echo ($res);
 
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
