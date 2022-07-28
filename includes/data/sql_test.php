@@ -10,7 +10,7 @@
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     $tsql= "SELECT TOP 20 SELECT pid, description FROM [dbo].[catalog]";
-    $getResults= sqlsrv_query($conn, $tsql);
+    $res= sqlsrv_query($conn, $tsql);
     echo ("Reading data from table" .PHP_EOL);
 
     $html="<table>";
@@ -19,23 +19,13 @@
 
     echo ($getResults);
 
-    if ($getResults == FALSE)
-        echo (sqlsrv_errors());
-    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-        echo ("in Row");
-        echo ($row);
-        //echo ($row['pid'] . " " . $row['description'] .PHP_EOL);
-    /*
-    $html .= "<tr>";
-    $html .= "<td >" . $row['pid'] . "<br>" . $row['image'] . "<br>" . $row['image_schematics'] ."</td>";
-    $html .= "<td >" . $row['description'] . "</td>";
-    $html .= "<td >" . $row['weight'] . "</td>";
-    $html .= "<td >" . $row['price'] . "</td>";
-    $html .= "</tr>";
-   */
+    if ($res == FALSE)
+        $rtn = sqlsrv_errors();
+    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+        //$price=$row['itmPrice'];
     }
-    sqlsrv_free_stmt($getResults);
-   $html .= "</table>test";
-   echo ($html);
+    sqlsrv_free_stmt($res);
+    
 ?>
 
