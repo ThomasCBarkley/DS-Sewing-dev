@@ -21,7 +21,7 @@
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
     while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-        echo ($row['PID'] . " " . $row['Des'] . PHP_EOL);
+        echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
         //$price=$row['itmPrice'];
     }
     sqlsrv_free_stmt($res);
