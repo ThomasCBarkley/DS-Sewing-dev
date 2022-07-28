@@ -7,8 +7,9 @@
     );
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql= "SELECT TOP 20 SELECT pid as PID, description as Des FROM [dbo].[catalog] c";
+    $tsql= "SELECT TOP 20 pid as PID, description as Des FROM [dbo].[catalog] c";
     $res= sqlsrv_query($conn, $tsql);
+
     echo ("Reading data from table" .PHP_EOL);
 
     $html="<table>";
