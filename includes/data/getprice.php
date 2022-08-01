@@ -185,7 +185,7 @@ function getDetailLine($pid)
 
     //echo ("Reading data from table" .PHP_EOL);
 
-    $html='';
+    //$html='';
     
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
