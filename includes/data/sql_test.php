@@ -15,24 +15,24 @@
     $html="<table>";
     /* BORDER='1' CELLSPACING='0' CELLPADDING='3'>";*/
     
-    $html .= "<TR>
-        <TD WIDTH='15%' HEIGHT='50'>
-          <P ALIGN='left'><FONT SIZE='2'><STRONG>Part #</STRONG></FONT></P>
+    $html .= '<TR>
+        <TD WIDTH="15%" HEIGHT="50">
+          <P ALIGN="left"><FONT SIZE="2"><STRONG>Part #</STRONG></FONT></P>
         </TD>
-        <TD WIDTH='55%'>
-          <P ALIGN='left'><STRONG><SMALL>Product Description and</SMALL><BR>
+        <TD WIDTH="55%">
+          <P ALIGN="left"><STRONG><SMALL>Product Description and</SMALL><BR>
               <SMALL>Dimensions Height x Width</SMALL></STRONG></P>
         </TD>
-        <TD WIDTH='10%'>
-          <P ALIGN='left'><STRONG><SMALL>Shipping Wt.</SMALL></STRONG></P>
+        <TD WIDTH="10%">
+          <P ALIGN="left"><STRONG><SMALL>Shipping Wt.</SMALL></STRONG></P>
         </TD>
-        <TD WIDTH='10%'>
-          <P ALIGN='left'><STRONG><SMALL>Price</SMALL></STRONG></P>
+        <TD WIDTH="10%">
+          <P ALIGN="left"><STRONG><SMALL>Price</SMALL></STRONG></P>
         </TD>
-        <TD WIDTH='10%'>
+        <TD WIDTH="10%">
           <P ALIGN="left"><STRONG><SMALL>Buy</SMALL></STRONG></P>
         </TD>
-      </TR>";
+      </TR>';
     
     //echo ("After HTML -- ");
 
