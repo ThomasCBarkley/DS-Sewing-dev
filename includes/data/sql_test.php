@@ -51,10 +51,10 @@
         $PRICE=$row['price'];
         
         $html .= "<tr>";
-        $html .= "<td>" . $row['pid'] . "<br>" .$row['image'] . "<br>" . $row['image_schematics'] . "</td>";
-        $html .= "<td>" . $row['description'] . "</td>";
-        $html .= "<td>" . $row['weight'] . "</td>";
-        $html .= "<td>" . $row['price'] . "</td>";
+        $html .= "<td>" . $PID . "<br>" .$IMAGE . "<br>" . $SCHEMATICS . "</td>";
+        $html .= "<td>" . $DESC . "</td>";
+        $html .= "<td>" . number_format($WEIGHT,0) . "</td>";
+        $html .= "<td>" . number_format($PRICE,2) . "</td>";
         $html .= "<td><button>buy</button></td>";
         $html .= "</tr>";
     }
