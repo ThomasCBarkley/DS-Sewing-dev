@@ -73,10 +73,8 @@ function product_table_iterator( $prod_array, $clm_size = false ) {
 	foreach ( $prod_array as $product)
 	{
 		$tcb_tmp = getDetailLine($product);
-		$html .= $tmp[0];
+		$html .= $tcb_tmp[0];
 	}
-
-
 
 	return $html;
 }
