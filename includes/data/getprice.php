@@ -204,6 +204,7 @@ function getItem($pid)
 }
 */
 
+/*
 function getDetailLine($pid)
 {
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -264,6 +265,7 @@ function getDetailLine($pid)
     echo ($html);
 
 }
+*/
 
 function getImages($pid) {
 	//$res = getImageLinks($pid);
