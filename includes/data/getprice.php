@@ -186,6 +186,7 @@ function getDetailLine($pid)
     //echo ("Reading data from table" .PHP_EOL);
 
     //$html='';
+    $rtn="";
     
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
@@ -199,17 +200,17 @@ function getDetailLine($pid)
         $WEIGHT=$row['weight'];
         $PRICE=$row['price'];
         
-        $html .= "<tr>";
-        $html .= "<td>" . $PID . "<br>" .$IMAGE . "<br>" . $SCHEMATICS . "</td>";
-        $html .= "<td>" . $DESC . "</td>";
-        $html .= "<td>" . number_format($WEIGHT,0) . "</td>";
-        $html .= "<td>$" . number_format($PRICE,2) . "</td>";
-        $html .= "<td><button>buy</button></td>";
-        $html .= "</tr>";
+        $rtn .= "<tr>";
+        $rtn .= "<td>" . $PID . "<br>" .$IMAGE . "<br>" . $SCHEMATICS . "</td>";
+        $rtn .= "<td>" . $DESC . "</td>";
+        $rtn .= "<td>" . number_format($WEIGHT,0) . "</td>";
+        $rtn .= "<td>$" . number_format($PRICE,2) . "</td>";
+        $rtn .= "<td><button>buy</button></td>";
+        $rtn .= "</tr>";
     }
-    sqlsrv_free_stmt($res);
+    //sqlsrv_free_stmt($res);
 
-    return $html;
+    return $rtn;
     
     //echo ($html);
 
