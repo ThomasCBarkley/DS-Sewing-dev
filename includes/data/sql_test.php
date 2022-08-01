@@ -14,7 +14,7 @@
 
     $html="<table>";
     /* BORDER='1' CELLSPACING='0' CELLPADDING='3'>";*/
-    /*
+    
     $html .= "<TR>
         <TD WIDTH='15%' HEIGHT='50'>
           <P ALIGN='left'><FONT SIZE='2'><STRONG>Part #</STRONG></FONT></P>
@@ -33,7 +33,7 @@
           <P ALIGN="left"><STRONG><SMALL>Buy</SMALL></STRONG></P>
         </TD>
       </TR>";
-    */
+    
     //echo ("After HTML -- ");
 
     //echo ($res);
