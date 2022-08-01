@@ -12,7 +12,7 @@
 
     //echo ("Reading data from table" .PHP_EOL);
 
-    $html="<table>";
+    $html='<table BORDER="1" CELLSPACING="0" CELLPADDING="3">';
     /* BORDER='1' CELLSPACING='0' CELLPADDING='3'>";*/
     
     $html .= '<TR>
@@ -42,6 +42,13 @@
         $rtn = sqlsrv_errors();
     while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
         //echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+
+        $PID=$row['pid'];
+        $IMAGE=$row['image'];
+        $SCHEMATICS=$row['image_schematics'];
+        $DESC=$row['description'];
+        $WEIGHT=$row['weight'];
+        $PRICE=$row['price'];
         
         $html .= "<tr>";
         $html .= "<td>" . $row['pid'] . "<br>" .$row['image'] . "<br>" . $row['image_schematics'] . "</td>";
