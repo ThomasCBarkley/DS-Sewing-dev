@@ -94,7 +94,7 @@
     <IMG alt="" src="/images/Merritt_Company_Logo.jpg">
     <BR>
     <a name="Cabguards">
-        <font color="red"> CAB RACKS ttt</font>
+        <font color="red"> CAB RACKS </font>
     </a>
 	<?php
 	

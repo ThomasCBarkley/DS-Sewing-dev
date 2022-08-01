@@ -60,11 +60,23 @@ function product_table( $prod_array, $tbl_header = false, $tbl_title = false, $a
 }
 
 function product_table_iterator( $prod_array, $clm_size = false ) {
+	//Original Code
+	/*
 	foreach ( $prod_array as $product ) {
 		$tmp = product_tr( $product, $clm_size );
 		$html .= $tmp[0];
 		$clm_size = $tmp[1];
 	}
+	*/
+
+	//Added by Tom Bartkley 8/1/2022
+	foreach ( $prod_array as $product)
+	{
+		$tcb_tmp = getDetailLine($product);
+		$html .= $tmp[0];
+	}
+
+
 
 	return $html;
 }
