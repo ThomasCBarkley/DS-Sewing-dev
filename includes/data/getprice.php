@@ -164,106 +164,15 @@ function getImageLinks($pid){
 //Function getItem($pid) added by Tom Barkley
 // 07/25/2022
 /*
-    This was added to reduce the individual Azure SQL calls from 5 call per row to 1 per row
-*/
-/*
 function getItem($pid)
 {
-    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
-    $connectionOptions = array(
-        "Database" => "dssewing", // update me
-        "Uid" => "ds-sewing-dev-server-admin", // update me
-        "PWD" => "2020Sucks!" // update me
-    );
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-	$tsql= "SELECT pid, image, image_schematics, description, weight, price FROM dbo.Catalog WHERE PID='" . $pid . "'";
-    $res= sqlsrv_query($conn, $tsql);
-    
-    if ($res == FALSE)
-        $rtn = sqlsrv_errors();
-    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) 
-    
-    {
-        //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
-        
-        $data = '';
-        $image = $row['image'];
-        $schematic = $row['image_schematics'];
-        
-        /*if ($image != '') {
-            $data .=  "<br><a onclick=\"window.open('" . $image . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='". $image. "'>View Picture</a>";
-        }
-        if ($schematic != '') {
-            $data .=  "<br><a onclick=\"window.open('" . $schematic . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" . $schematic. "'><font color=green>View Schematic</font></a>";
-        }
-
-
-    }
-    return $data;
 }
 */
 
 /*
 function getDetailLine($pid)
 {
-    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
-    $connectionOptions = array(
-        "Database" => "dssewing", // update me
-        "Uid" => "ds-sewing-dev-server-admin", // update me
-        "PWD" => "2020Sucks!" // update me
-    );
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql= "SELECT TOP 20 pid, description, price, weight, length, height, image, image_schematics  FROM [dbo].[catalog]";
-    $res= sqlsrv_query($conn, $tsql);
-
-    //echo ("Reading data from table" .PHP_EOL);
-
-    $html="<table BORDER='1' CELLSPACING='0' CELLPADDING='3'>";
-    $html .= "
-    <TR>
-        <TD WIDTH='15%' HEIGHT='50'>
-          <P ALIGN='left'><FONT SIZE='2'><STRONG>Part #</STRONG></FONT></P>
-        </TD>
-        <TD WIDTH='55%'>
-          <P ALIGN='left'><STRONG><SMALL>Product Description and</SMALL><BR>
-              <SMALL>Dimensions Height x Width</SMALL></STRONG></P>
-        </TD>
-        <TD WIDTH='10%'>
-          <P ALIGN='left'><STRONG><SMALL>Shipping Wt.</SMALL></STRONG></P>
-        </TD>
-        <TD WIDTH='10%'>
-          <P ALIGN='left'><STRONG><SMALL>Price</SMALL></STRONG></P>
-        </TD>
-        <TD WIDTH='10%'>
-          <P ALIGN="left"><STRONG><SMALL>Buy</SMALL></STRONG></P>
-        </TD>
-      </TR>
-    "
-    
-    //echo ("After HTML -- ");
-
-    //echo ($res);
-
-    if ($res == FALSE)
-        $rtn = sqlsrv_errors();
-    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-        //echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
-        
-        $html .= "<tr>";
-        $html .= "<td>" . $row['pid'] . "<br>" .$row['image'] . "<br>" . $row['image_schematics'] . "</td>";
-        $html .= "<td>" . $row['description'] . "</td>";
-        $html .= "<td>" . $row['weight'] . "</td>";
-        $html .= "<td>" . $row['price'] . "</td>";
-        $html .= "<td><button>buy</button></td>";
-        $html .= "</tr>";
-    }
-    sqlsrv_free_stmt($res);
-
-    $html .= "</table>";
-    echo ($html);
-
+ 
 }
 */
 
