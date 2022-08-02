@@ -125,8 +125,8 @@
   </tr>
   <tr>
     <td ALIGN="left" height="37">
-      <span>Use the link below to open and print the Custom Swimming Pool  Form</span>
       <p align="center">
+        <span><font face="Verdana,Arial,Helvetica,Sans-serif" size="2">Use the link below to open and print the Custom Swimming Pool Form</font></span>
         <font face="Verdana,Arial,Helvetica,Sans-serif" size="2">
           <a href="/pool/forms/Custom_Swimming_Pool_Form.pdf">Custom Swimming Pool Form</a>
         </font>
