@@ -127,7 +127,7 @@
     <td ALIGN="left" height="37">
       <p align="center">
         <span>
-            <font face="Verdana,Arial,Helvetica,Sans-serif" size="2">
+            <font face="Verdana,Arial,Helvetica,Sans-serif" color=""Red" size="2">
                 Use the link below to open and print the Custom Swimming Pool Form
             </font>
         </span><br>
