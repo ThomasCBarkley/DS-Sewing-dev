@@ -74,6 +74,7 @@ function product_table_iterator( $prod_array, $clm_size = false ) {
 	{
 		$tcb_tmp = getDetailLine($product);
 		$html .= $tcb_tmp[0];
+		echo ($html);
 	}
 
 	return $html;
