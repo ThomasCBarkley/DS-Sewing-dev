@@ -214,12 +214,12 @@ function getDetailLine($pid)
             $rtn .= "<a onclick=\"window.open('" . $SCHEMATICS . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" . $SCHEMATICS . "'><font color=green>View Schematic</font></a>";
 
         }
-        $rtn .= "</td>";
-        $rtn .= "<td>" . $DESC . "</td>";
-        $rtn .= "<td>" . number_format($WEIGHT,0) . "</td>";
-        $rtn .= "<td>$" . number_format($PRICE,2) . "</td>";
-        $rtn .= "<td><button>buy</button></td>";
-        $rtn .= "</tr>";
+        $rtn .= '</td>';
+        $rtn .= '<td class="item_description">' . $DESC . '</td>';
+        $rtn .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
+        $rtn .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
+        $rtn .= '<td class="item_button"><button>buy</button></td>';
+        $rtn .= '</tr>';
     }
     //sqlsrv_free_stmt($res);
 
