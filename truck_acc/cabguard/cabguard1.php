@@ -117,7 +117,8 @@
 		'229',
 		'230'
 	];
-	echo("before product table call");
+	
+	//echo("before product table call");
 	echo product_table( $product_arr, true );
 	?>
     <a name="Cabguards_Northern">
