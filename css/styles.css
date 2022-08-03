@@ -94,6 +94,26 @@ table.menu a {
     max-width: 800px;
     margin: 0 auto;
 }
+.item_sku
+{
+    width:15%;
+}
+.item_description
+{
+    width:55%;
+}
+.item_price
+{
+    width:10%;
+}
+.item_price
+{
+    width:10%;
+}
+.item_button
+{
+    width:10%;
+}
 
 .item_sku, .item_description, .item_price, .item_weight {
     font-family: Arial, Helvetica, sans-serif;
