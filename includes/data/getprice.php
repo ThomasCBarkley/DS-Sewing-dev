@@ -202,7 +202,7 @@ function getDetailLine($pid)
         
         $rtn .= "<tr>";
         //conditional for image and schmatics
-        $rtn .= "<td>" . $PID;
+        $rtn .= '<td  class="item_sku">' . $PID;
         if ($IMAGE !=''){
             $rtn .= "<br>";
             $rtn .= "<a onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" .$IMAGE . "'>View Picture</a>";
@@ -210,7 +210,9 @@ function getDetailLine($pid)
 
         }
         if ($SCHEMATICS != ''){
-            $rtn .=  "<br>" . $SCHEMATICS;
+            $rtn .= "<br>" . $SCHEMATICS;
+            $rtn .= "<a onclick=\"window.open('" . $SCHEMATICS . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" . $SCHEMATICS . "'><font color=green>View Schematic</font></a>";
+
         }
         $rtn .= "</td>";
         $rtn .= "<td>" . $DESC . "</td>";
