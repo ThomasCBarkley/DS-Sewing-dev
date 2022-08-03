@@ -74,7 +74,7 @@ function product_table_iterator( $prod_array, $clm_size = false ) {
 	foreach ( $prod_array as $product)
 	{
 		$tcb_tmp = getDetailLine($product);
-		$html .= $tcb_tmp[0];
+		$html .= $tcb_tmp;
 		echo ("prod array");
 	}
 
@@ -94,79 +94,7 @@ function product_tr( $id, $clm_size = false ) {
 
 	$future_timestamp = strtotime("+1 month");
 	$date = date('Y-m-d', $future_timestamp);
-	/*
-	$html = '
-<tr itemscope itemtype="https://schema.org/Product">
-  <td ' . ( $clm_size ? ' WIDTH="15%"' : '' ) . ' itemprop="sku"  class="item_sku">' . $id . ' ' . getImages( $id ) . '</td>
-  <td ' . ( $clm_size ? ' WIDTH="55%"' : '' ) . ' itemprop="name" class="item_description">' . getDescription( $id ) . '</td>
-  <td ' . ( $clm_size ? ' WIDTH="10%"' : '' ) . ' itemprop="weight"  class="item_weight">' . getWeight( $id ) . '</td>
-  <td ' . ( $clm_size ? ' WIDTH="10%"' : '' ) . ' class="item_price"><span itemprop="priceCurrency" class="item_currency">USD</span>$<span itemprop="price">' . getPrice( $id ) . '</span></td>
-  <td ' . ( $clm_size ? ' WIDTH="10%"' : '' ) . ' class="item_button">
-      <form action="/s/incart" method="post" id="form1" name="form1">
-        <input type="hidden" value="incart" name="action">
-        <input type="hidden" value="' . $id . '" NAME="pid">
-        <input type="submit" value="Buy" id="SUBMIT1" name="SUBMIT1">
-      </form>
-      <span itemprop="aggregateRating" class="item_rating" itemscope itemtype="https://schema.org/AggregateRating">Rated: <span itemprop="ratingValue">5</span> based on <span itemprop="ratingCount">'. rand(1, 100).'</span></span>
-  </td>
-</tr>
-<script type="application/ld+json">
-{
-	"@content"			: "https://schema.org/Product",
-	"@type"				: "Product",
-	"name"				: ' . json_encode(getDescription( $id )) . ',
-	"description"	    : ' . json_encode(getDescription( $id )) . ',
-	"sku"               : ' . json_encode($id) . ',
-	'.$image_code.'
-	"aggregateRating"   : {
-							"@type"         : "AggregateRating",
-							"ratingValue"   : "5",
-							"ratingCount"   : '. json_encode(rand(1, 100)) .'
-							}	
 	
-}
-</script>
-';
-	*/
-
-	/*
-	$html = '
-<tr>
-  <td ' . ( $clm_size ? ' WIDTH="15%"' : '' ) . ' class="item_sku">' . $id . ' ' . getImages( $id ) . '</td>
-  <td ' . ( $clm_size ? ' WIDTH="55%"' : '' ) . ' class="item_description">' . getDescription( $id ) . '</td>
-  <td ' . ( $clm_size ? ' WIDTH="10%"' : '' ) . ' class="item_weight">' . getWeight( $id ) . '</td>
-  <td ' . ( $clm_size ? ' WIDTH="10%"' : '' ) . ' class="item_price">$' . getPrice( $id ) . '</td>
-  <td ' . ( $clm_size ? ' WIDTH="10%"' : '' ) . ' class="item_button">
-      <form action="/s/incart" method="post" id="form1" name="form1">
-        <input type="hidden" value="incart" name="action">
-        <input type="hidden" value="' . $id . '" NAME="pid">
-        <input type="submit" value="Buy" id="SUBMIT1" name="SUBMIT1">
-      </form>
-  </td>
-</tr>
-<script type="application/ld+json">
-{
-	"@content"			: "https://schema.org/Product",
-	"@type"				: "Product",
-	"name"				: ' . json_encode(getDescription( $id )) . ',
-	"description"	    : ' . json_encode(getDescription( $id )) . ',
-	"sku"               : ' . json_encode($id) . ',
-	'.$image_code.'
-	"offer"             : {
-							"@type"         : "Offer",
-							"price"         : '.json_encode(getPrice( $id )).',
-							"priceCurrency" : "USD"
-							},
-	"aggregateRating"   : {
-							"@type"         : "AggregateRating",
-							"ratingValue"   : "5",
-							"ratingCount"   : '. json_encode(rand(1, 100)) .'
-							}	
-	
-}
-</script>
-';
-	*/
 
 	$html = '
 <tr itemscope itemtype="https://schema.org/Product">
