@@ -210,8 +210,8 @@ function getDetailLine($pid)
     }
     //sqlsrv_free_stmt($res);
 
-    echo (rtn);
-    
+    echo ($rtn);
+
     return $rtn;
     
     //echo ($html);
