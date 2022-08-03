@@ -183,7 +183,7 @@ function getDetailLine($pid)
     $tsql= "SELECT TOP 20 pid, description, price, weight, length, height, image, image_schematics  FROM [dbo].[catalog] WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
 
-    //echo ("Reading data from table" .PHP_EOL);
+    echo ("Reading data from table");
 
     //$html='';
     $rtn="";

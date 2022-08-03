@@ -68,8 +68,9 @@ function product_table_iterator( $prod_array, $clm_size = false ) {
 		$clm_size = $tmp[1];
 	}
 	*/
+	echo ("product_table_iterator");
 
-	//Added by Tom Bartkley 8/1/2022
+	//Added by Tom Barkley 8/1/2022
 	foreach ( $prod_array as $product)
 	{
 		$tcb_tmp = getDetailLine($product);
