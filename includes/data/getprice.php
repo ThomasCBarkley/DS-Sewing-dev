@@ -201,7 +201,16 @@ function getDetailLine($pid)
         $PRICE=$row['price'];
         
         $rtn .= "<tr>";
-        $rtn .= "<td>" . $PID . "<br>" .$IMAGE . "<br>" . $SCHEMATICS . "</td>";
+        //conditional for image and schmatics
+        $rtn .= "<td>" . $PID;
+        if ($IMAGE !=''){
+            $rtn .= "<br>";
+            $rtn .= "<a onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='". .$IMAGE . "'>View Picture</a>";
+        }
+        if ($SCHEMATICS != ''){
+            $rtn .=  "<br>" . $SCHEMATICS;
+        }
+        $rtn .= "</td>";
         $rtn .= "<td>" . $DESC . "</td>";
         $rtn .= "<td>" . number_format($WEIGHT,0) . "</td>";
         $rtn .= "<td>$" . number_format($PRICE,2) . "</td>";
