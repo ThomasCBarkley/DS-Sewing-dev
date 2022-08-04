@@ -125,6 +125,18 @@
   </tr>
   <tr>
     <td ALIGN="left" height="37">
+      <p align="center"><font face="Verdana,Arial,Helvetica,Sans-serif" size="2">
+        <span>
+            <font face="Verdana,Arial,Helvetica,Sans-serif" color="Green" size="2">
+                Use the link below to Order Replacement parts such as springs
+            </font>
+        </span><br>
+        <a href="../wizard/replacement_parts.php">Replacement hardware</a>
+        </font></p>
+    </td>
+  </tr>
+  <tr>
+    <td ALIGN="left" height="37">
       <p align="center">
         <span>
             <font face="Verdana,Arial,Helvetica,Sans-serif" color="Red" size="2">
@@ -137,13 +149,7 @@
       </p>  
     </td>
   </tr>
-  <tr>
-    <td ALIGN="left" height="37">
-      <p align="center"><font face="Verdana,Arial,Helvetica,Sans-serif" size="2">
-        <a href="../wizard/replacement_parts.php">Replacement hardware</a>
-        </font></p>
-    </td>
-  </tr>
+  
   <tr>
     <td><table border="1" width="100%">
         <tr>
