@@ -184,7 +184,7 @@ function getDetailLine($pid)
     $res= sqlsrv_query($conn, $tsql);
 
     //echo ("Reading data from table - PID= " .$pid);
-
+    
     //$html='';
     $rtn="";
     
@@ -202,7 +202,7 @@ function getDetailLine($pid)
         
         $rtn .= "<tr>";
         //conditional for image and schmatics
-        $rtn .= '<td  class="item_sku">' . $PID;
+        $rtn .= '<td  class="item_sku">' . $PID . ' ' .$_SESSION;
         if ($IMAGE !=''){
             $rtn .= "<br>";
             $rtn .= "<a onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" .$IMAGE . "'>View Picture</a>";
@@ -225,7 +225,7 @@ function getDetailLine($pid)
 
     //echo ($rtn);
     return $rtn;
-    
+
 }
 
 
