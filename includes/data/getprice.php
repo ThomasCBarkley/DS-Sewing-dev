@@ -187,7 +187,7 @@ function getDetailLine($pid)
     
     //$html='';
     $rtn="";
-    $SESS_id = session_id();
+    $SESS_ID = session_id();
     
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
@@ -203,7 +203,7 @@ function getDetailLine($pid)
         
         $rtn .= "<tr>";
         //conditional for image and schmatics
-        $rtn .= '<td  class="item_sku">' . $PID . ' ' .$SESS_id ;
+        $rtn .= '<td  class="item_sku">' . $PID . ' -' .$SESS_ID;
         if ($IMAGE !=''){
             $rtn .= "<br>";
             $rtn .= "<a onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" .$IMAGE . "'>View Picture</a>";
