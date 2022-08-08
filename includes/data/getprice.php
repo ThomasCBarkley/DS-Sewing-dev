@@ -192,6 +192,7 @@ function getDetailLine($pid)
     //$html='';
     $rtn="";
     $SESS_ID = $_COOKIE["TestCookie"];
+    echo $_COOKIE["TestCookie"];
     
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
