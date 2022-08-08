@@ -1,5 +1,9 @@
 <?php
 session_start();
+$value = 'Test Cookie Session ID';
+
+setcookie("TestCookie", $value);
+setcookie("TestCookie", $value, time()+3600);  /* expire in 1 hour */
 
 final class DB {
 
@@ -187,7 +191,7 @@ function getDetailLine($pid)
     
     //$html='';
     $rtn="";
-    $SESS_ID = session_id();
+    $SESS_ID = $_COOKIE["TestCookie"];
     
     if ($res == FALSE)
         $rtn = sqlsrv_errors();
@@ -200,6 +204,7 @@ function getDetailLine($pid)
         $DESC=$row['description'];
         $WEIGHT=$row['weight'];
         $PRICE=$row['price'];
+        
         
         $rtn .= "<tr>";
         //conditional for image and schmatics
