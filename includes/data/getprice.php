@@ -1,10 +1,11 @@
 <?php
-session_id( 'mySessionId' );
+//session_id( 'mySessionId' );
 session_start();
+session_id( 'mySessionId' );
 $id = session_id();
 
 
-echo ($id);
+echo ('Start ID= ' .$id);
 
 /*
 $value = 'Test Cookie Session ID';
