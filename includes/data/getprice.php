@@ -1,22 +1,11 @@
 <?php
+
 //session_id( 'mySessionId' );
 session_start();
 session_id( 'mySessionId' );
 $id = session_id();
 
-
-echo ('Start ID= ' .$id);
-
-/*
-$value = 'Test Cookie Session ID';
-
-setcookie("TestCookie", $value);
-setcookie("TestCookie", $value, time()+3600);  /* expire in 1 hour */
-/*
-$cookie_name = "user";
-$cookie_value = "John Doe";
-setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
-*/
+echo ('Start ID= ' .SID);
 
 final class DB {
 
@@ -206,7 +195,7 @@ function getDetailLine($pid)
     
     //$html='';
     $rtn="";
-    $SESS_ID = prngRandomNumber;
+    $SESS_ID = rand();
     echo ('Session ID = ' .$id);
 
 
