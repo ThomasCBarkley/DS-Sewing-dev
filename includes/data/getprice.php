@@ -1,5 +1,10 @@
 <?php
+
 session_start();
+$id = session_id();
+
+echo ($id);
+
 $value = 'Test Cookie Session ID';
 
 setcookie("TestCookie", $value);
