@@ -2,10 +2,10 @@
 
 //session_id( 'mySessionId' );
 session_start();
-session_id( 'mySessionId' );
+session_id(rand());
 $id = session_id();
 
-echo ('Start ID= ' .SID);
+echo ('Start ID= ' $id);
 
 final class DB {
 
@@ -195,7 +195,7 @@ function getDetailLine($pid)
     
     //$html='';
     $rtn="";
-    $SESS_ID = rand();
+    //$SESS_ID = rand();
     echo ('Session ID = ' .$id);
 
 
