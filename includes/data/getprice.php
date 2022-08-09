@@ -2,7 +2,7 @@
 
 //session_id( 'mySessionId' );
 session_start();
-session_id(rand());
+//session_id(rand());
 $id = session_id();
 
 echo ('Start ID= ' $id);
