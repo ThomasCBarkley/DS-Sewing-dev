@@ -1,5 +1,7 @@
 <?php
-
+session_id( 'mySessionId' );
+session_start();
+$id = session_id();
 
 
 echo ($id);
@@ -186,8 +188,7 @@ function getItem($pid)
 
 function getDetailLine($pid)
 {
-    session_start();
-    $id = session_id();
+
 
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
@@ -204,7 +205,7 @@ function getDetailLine($pid)
     
     //$html='';
     $rtn="";
-    $SESS_ID = '';
+    $SESS_ID = prngRandomNumber;
     echo ('Session ID = ' .$id);
 
 
