@@ -8,7 +8,7 @@ $description = "Truck covers,tarps and accessories for trucking fleets and indep
 $robots = "index,follow";
 $is_home_page = true;
 
-session_start();
+//session_start();
 
 ?>
   <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
