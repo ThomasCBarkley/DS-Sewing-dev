@@ -2,10 +2,10 @@
 
 //session_id( 'mySessionId' );
 //session_start();
-session_id(rand());
-$id = session_id();
+//session_id(rand());
+//$id = session_id();
 
-echo ('Start ID= ' $id);
+//echo ('Start ID= ' $id);
 
 final class DB {
 
@@ -167,19 +167,9 @@ function getImageLinks($pid){
     */
 }
 
-//Function getItem($pid) added by Tom Barkley
-// 07/25/2022
-/*
-function getItem($pid)
-{
-}
-*/
-
 
 function getDetailLine($pid)
 {
-
-
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
         "Database" => "dssewing", // update me
@@ -195,8 +185,8 @@ function getDetailLine($pid)
     
     //$html='';
     $rtn="";
-    $SESS_ID = rand();
-    echo ('Session ID = ' .$id);
+    //$SESS_ID = rand();
+    //echo ('Session ID = ' .$id);
 
 
     /*****************************************************************************/
@@ -217,7 +207,7 @@ function getDetailLine($pid)
         
         $rtn .= "<tr>";
         //conditional for image and schmatics
-        $rtn .= '<td  class="item_sku">' . $PID . ' -' .$SESS_ID;
+        $rtn .= '<td  class="item_sku">' . $PID . ' -';
         if ($IMAGE !=''){
             $rtn .= "<br>";
             $rtn .= "<a onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" .$IMAGE . "'>View Picture</a>";
