@@ -3,7 +3,7 @@ session_start();
 $value = 'Test Cookie Session ID';
 
 setcookie("TestCookie", $value);
-setcookie("TestCookie", $value, time()+3600);  /* expire in 1 hour */
+//setcookie("TestCookie", $value, time()+3600);  /* expire in 1 hour */
 
 final class DB {
 
