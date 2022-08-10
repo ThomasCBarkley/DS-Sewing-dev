@@ -8,6 +8,8 @@ $description = "Truck covers,tarps and accessories for trucking fleets and indep
 $robots = "index,follow";
 $is_home_page = true;
 
+$randomSessionID = rand();
+session_id($randomSessionID);
 session_start();
 
 ?>
