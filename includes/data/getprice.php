@@ -197,6 +197,10 @@ function getDetailLine($pid)
     $rtn="";
     //$SESS_ID = rand();
     //echo ('Session ID = ' .$id);
+
+    //Build onclick string
+    $additemtocart = "onclick=additemtocart(\"" .$PID . "\",\"" . $PRICE . "\",\"" . $WEIGHT . "\", \"1\", \"\", \"\", \"\")";
+
     $cart="/cart/cart.php";
 
     /*****************************************************************************/
@@ -233,7 +237,8 @@ function getDetailLine($pid)
         $rtn .= '<td class="item_description">' . $DESC . '</td>';
         $rtn .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
         $rtn .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
-        $rtn .= "<td class=\"item_button\"><button onclick=\"window.open('" . $cart . "');\">buy</button></td>"; //onclick=additemtocart($PID, $PRICE, $WEIGHT, "1", "", "", "")
+        $rtn .= "<td class=\"item_button\"><button onclick=\"window.open('" . $cart . "');\">buy</button></td>";
+        $rtn .= "<br>" . $additemtocart; //onclick=additemtocart($PID, $PRICE, $WEIGHT, "1", "", "", "")
         $rtn .= '</tr>';
     }
     //sqlsrv_free_stmt($res);
