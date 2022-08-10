@@ -27,7 +27,7 @@ $TEST = session_create_id('test');
 echo $TEST;
 echo ('session_id ' . session_id());
 echo('PHPSESSID=' . $_COOKIE["PHPSESSID"]);
-//echo('_gid=' . $_COOKIE["_gid"]);
+echo('_gid=' . $_COOKIE["_gid"]);
 
 ?>
   <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
