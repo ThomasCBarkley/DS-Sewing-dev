@@ -2,6 +2,8 @@
 
 <head>
   <?php
+  session_start();
+
 $title = "DS-Sewing custom pool covers, truck tarps covers and accessories for truck fleets";
 $keywords = "truck tarps,truck parts,Dave the tarp guy,custom covers,steel tarps,custom truck tarps,truck tarps custom tarps,boat storage covers,swimming pool covers,custom pool covers,polyethylene tarps,blue poly tarps";
 $description = "Truck covers,tarps and accessories for trucking fleets and independent owner operators & custom tarps, custom boat storage covers & swimming pool covers too.";
@@ -10,10 +12,10 @@ $is_home_page = true;
 
 $randomSessionID = rand();   
 // session_id($randomSessionID);
-session_start();
+
 
 $sess_stat = session_status();
-echo ('Session Status=' . $sess_stat);
+echo ('Session Status=' . $sess_stat . '  ');
 
 
 // initialize a session variable
