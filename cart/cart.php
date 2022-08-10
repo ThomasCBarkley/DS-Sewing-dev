@@ -34,7 +34,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $action = isset($_GET['action'])?$_GET['action']:"";
 
 //Add to cart
-if($action=='addcart' && $_SERVER['REQUEST_METHOD']=='POST') {
+if($action=='addcart') {
 	
 	//Finding the product by code
 /* 	$query = "SELECT * FROM products WHERE sku=:sku";
@@ -88,7 +88,7 @@ $products = $stmt->fetchAll();
 </head>
 <body>
 <div class="container" style="width:600px;">
-IT LOADS
+IT LOADS <?php echo ($action); ?>
 </DIV>
 </body>
 </html>
