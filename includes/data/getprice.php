@@ -1,15 +1,16 @@
 <?php
 
-session_id( 'mySessionId' );
-session_start();
+//session_id( 'mySessionId' );
+//session_start();
 //session_id('tezt');
 //$id = session_id();
 $id = rand();
-//$testid=session_id();
+//$testid=session_id()   
 
-echo ('testid = ' . session_id());
-echo ('Start ID= ' .$id);
+//echo ('testid = ' . session_id());
+//echo ('Start ID= ' .$id);
 echo ('New ID = ' . $_SESSION['RandomNumber']);
+
 
 final class DB {
 
