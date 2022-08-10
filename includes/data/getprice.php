@@ -10,8 +10,9 @@ $id = rand();
 //echo ('testid = ' . session_id());
 //echo ('Start ID= ' .$id);
 echo ('New ID = ' . $_SESSION['RandomNumber']);
-$TEST = session_create_id('test');
-echo ($TEST);
+//$TEST = session_create_id('test');
+//echo ($TEST);
+echo (' sessino_id = ' . session_id());
 
 final class DB {
 
