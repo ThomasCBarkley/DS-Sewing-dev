@@ -5,7 +5,7 @@
 session_id(rand());
 $id = session_id();
 $id = rand();
-echo ('Start ID= ');
+echo ('Start ID= ' .$id);
 
 final class DB {
 
