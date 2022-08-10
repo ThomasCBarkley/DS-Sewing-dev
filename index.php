@@ -11,6 +11,11 @@ $is_home_page = true;
 $randomSessionID = rand();   
 // session_id($randomSessionID);
 session_start();
+
+$sess_stat = session_status();
+echo ('Session Status=' . $sess_stat);
+
+
 // initialize a session variable
 $_SESSION['RandomNumber'] = '1';
 
@@ -20,6 +25,7 @@ $TEST = session_create_id('test');
 echo $TEST;
 echo ('session_id ' . session_id());
 echo('PHPSESSID=' . $_COOKIE["PHPSESSID"]);
+//echo('_gid=' . $_COOKIE["_gid"]);
 
 ?>
   <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
