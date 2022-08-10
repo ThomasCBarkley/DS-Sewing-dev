@@ -30,7 +30,7 @@
 			$.ajax({
 				type: 'POST',
 				url: 'file_product.php',
-				data: "param1= + param1 + &param2= + param2",
+				data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
 				success: function(data) {
 					$("p").text(data);
 				}
