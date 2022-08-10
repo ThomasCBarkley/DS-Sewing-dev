@@ -24,7 +24,19 @@
 		
 	-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+	<script language="JavaScript">
+		function additemtocart(pid, price, weight, qty, length, width, height)
+		{
+			$.ajax({
+				type: 'POST',
+				url: 'file_product.php',
+				data: "param1=" + param1 + "&param2=" + param2,
+				success: function(data) {
+					$("p").text(data);
+				}
+			})
+		};
+	</script>
 </head>
 <body>
 <DIV ALIGN="center">
