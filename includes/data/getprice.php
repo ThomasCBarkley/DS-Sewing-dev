@@ -1,7 +1,7 @@
 <?php
 
 //session_id( 'mySessionId' );
-//session_start();
+session_start();
 //session_id('tezt');
 //$id = session_id();
 $id = rand();
