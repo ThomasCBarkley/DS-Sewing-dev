@@ -2,9 +2,12 @@
 
 //session_id( 'mySessionId' );
 //session_start();
-session_id(rand());
+session_id('tezt');
 $id = session_id();
 $id = rand();
+$testid=session_id;
+
+echo ('testid = ' .$testid);
 echo ('Start ID= ' .$id);
 
 final class DB {
