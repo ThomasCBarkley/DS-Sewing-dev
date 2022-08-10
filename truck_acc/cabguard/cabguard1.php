@@ -18,6 +18,12 @@
 	<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
 	<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/data/getprice.php"; ?>
 	<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/data/product-line.php"; ?>
+	<!-- 
+		iNSERT jQuery to process the but click events. this will need to call the 
+		addToCart($pid, $price, $weight, $qty, $length, $width, $height) function in the /includes/data/getprice.php file
+		
+	-->
+
 </head>
 <body>
 <DIV ALIGN="center">

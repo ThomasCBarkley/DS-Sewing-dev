@@ -47,11 +47,14 @@ function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
         "Uid" => "ds-sewing-dev-server-admin", // update me
         "PWD" => "2020Sucks!" // update me
     );
-    
+
+    //Get computer ID
+    $computer_id = $_COOKIE["_gid"];
+
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     $tsql = "INSERT INTO dbo.cart(sessionID, pid, price, weight, qty, Length, width, height)
-    VALUES (session_id(), $pid, $weight, $qty, $length, $width, $height)";
+    VALUES ($computer_id, $pid, $price, $weight, $qty, $length, $width, $height)";
     $res= sqlsrv_query($conn, $tsql);
     
     $rtn = "success";
