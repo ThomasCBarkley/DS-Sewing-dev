@@ -18,6 +18,7 @@ echo ($randomSessionID);
 echo ('New ID = ' . $_SESSION['RandomNumber']);
 $TEST = session_create_id('test');
 echo $TEST;
+echo ('session_id ' . session_id());
 ?>
   <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
 </head>
