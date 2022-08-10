@@ -5,7 +5,7 @@
 session_id('tezt');
 $id = session_id();
 $id = rand();
-$testid=session_id;
+$testid=session_id();
 
 echo ('testid = ' .$testid);
 echo ('Start ID= ' .$id);
