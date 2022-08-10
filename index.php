@@ -11,7 +11,7 @@ $is_home_page = true;
 $randomSessionID = rand();   
 // session_id($randomSessionID);
 session_start();
-/ initialize a session variable
+// initialize a session variable
 $_SESSION['RandomNumber'] = '1';
 
 echo ($randomSessionID);
