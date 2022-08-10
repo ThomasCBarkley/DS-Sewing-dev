@@ -12,6 +12,8 @@ $randomSessionID = rand();
 session_id($randomSessionID);
 session_start();
 
+echo ($randomSessionID);
+
 ?>
   <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
 </head>
