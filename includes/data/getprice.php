@@ -14,6 +14,13 @@ echo ('New ID = ' . $_SESSION['RandomNumber']);
 //echo ($TEST);
 echo (' sessino_id = ' . session_id());
 
+$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+$connectionOptions = array(
+    "Database" => "dssewing", // update me
+    "Uid" => "ds-sewing-dev-server-admin", // update me
+    "PWD" => "2020Sucks!" // update me
+);
+
 final class DB {
 
     public static function init()
@@ -39,7 +46,7 @@ function test123(){
 }
 
 //Added by TCB
-function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
+/* function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     
     $connectionOptions = array(
@@ -66,10 +73,10 @@ function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
         //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
         $price=$row['itmPrice'];
     }*/
-    
+  /*  
     return $rtn;
     
-}
+} */
 
 function getPrice($pid) {
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -180,12 +187,15 @@ function getImageLinks($pid){
 
 function getDetailLine($pid)
 {
+    /*
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
         "Database" => "dssewing", // update me
         "Uid" => "ds-sewing-dev-server-admin", // update me
         "PWD" => "2020Sucks!" // update me
     );
+    */
+
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     $tsql= "SELECT TOP 20 pid, description, price, weight, length, height, image, image_schematics  FROM [dbo].[catalog] WHERE PID='" . $pid . "'";
