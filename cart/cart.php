@@ -46,6 +46,9 @@ if($action=='addcart') {
     
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions); */
+	
+	global $serverName, $connectionOptions, $conn;
+
     $tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
     $res= sqlsrv_query($conn, $tsql);
     
@@ -60,7 +63,7 @@ if($action=='addcart') {
 		
 		}
 	}
-	
+
     //if ($res == FALSE){
     //    $rtn = sqlsrv_errors();
     //}
