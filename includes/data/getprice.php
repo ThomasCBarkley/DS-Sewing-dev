@@ -1,17 +1,13 @@
 <?php
 
-//session_id( 'mySessionId' );
 session_start();
-//session_id('tezt');
-//$id = session_id();
-$id = rand();
-//$testid=session_id()   
 
-//echo ('testid = ' . session_id());
-//echo ('Start ID= ' .$id);
+$id = rand();
+
 echo ('New ID = ' . $_SESSION['RandomNumber']);
 //$TEST = session_create_id('test');
 //echo ($TEST);
+
 echo (' sessino_id = ' . session_id());
 
 $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -20,7 +16,7 @@ $connectionOptions = array(
     "Uid" => "ds-sewing-dev-server-admin", // update me
     "PWD" => "2020Sucks!" // update me
 );
-
+echo ("server name :" .$serverName);
 final class DB {
 
     public static function init()
@@ -32,18 +28,7 @@ final class DB {
     }
 }
 
-function test123(){
-	//$conn = DB::init();
 
-	//$sql = "SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'";
-	$sql = "
-	UPDATE Catalog
-	SET image=''
-	WHERE PID = '393'
-	";
-	//$res = $conn->query($sql)->fetch();
-
-}
 
 //Added by TCB
 /* function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
@@ -77,6 +62,87 @@ function test123(){
     return $rtn;
     
 } */
+function getDetailLine($pid)
+{
+    echo ("server name :" .$serverName);
+
+
+    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    
+
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $tsql= "SELECT TOP 20 pid, description, price, weight, length, height, image, image_schematics  FROM [dbo].[catalog] WHERE PID='" . $pid . "'";
+    $res= sqlsrv_query($conn, $tsql);
+
+    $rtn="";
+
+    //Build onclick string
+    $additemtocart = "onclick=\"additemtocart('" .$PID . "','" . $PRICE . "','" . $WEIGHT . "', '1', '', '', '');\"";
+
+    /*****************************************************************************/
+    /*****************************************************************************/
+    
+    if ($res == FALSE)
+        $rtn = sqlsrv_errors();
+    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        //echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+
+        $PID=$row['pid'];
+        $IMAGE=$row['image'];
+        $SCHEMATICS=$row['image_schematics'];
+        $DESC=$row['description'];
+        $WEIGHT=$row['weight'];
+        $PRICE=$row['price'];
+        
+        //Build onclick string
+        $additemtocart = "onclick=\"additemtocart('" .$PID . "','" . $PRICE . "','" . $WEIGHT . "', '1', '', '', '');\"";
+
+        $rtn .= "<tr>";
+        //conditional for image and schmatics
+        $rtn .= '<td  class="item_sku">' . $PID;
+        if ($IMAGE !=''){
+            $rtn .= "<br>";
+            $rtn .= "<a onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" .$IMAGE . "'>View Picture</a>";
+            //onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\"
+
+        }
+        if ($SCHEMATICS != ''){
+            $rtn .= "<br>";
+            $rtn .= "<a onclick=\"window.open('" . $SCHEMATICS . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" . $SCHEMATICS . "'><font color=green>View Schematic</font></a>";
+
+        }
+        $rtn .= '</td>';
+        $rtn .= '<td class="item_description">' . $DESC . '</td>';
+        $rtn .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
+        $rtn .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
+        $rtn .= "<td class=\"item_button\"><button " . $additemtocart . ">buy</button></td>";
+        $rtn .= '</tr>';
+    }
+    //sqlsrv_free_stmt($res);
+
+    //echo ($rtn);
+    return $rtn;
+
+}
+
+function test123(){
+	//$conn = DB::init();
+
+	//$sql = "SELECT image, image_schematics  FROM Catalog WHERE PID='" . $pid . "'";
+	$sql = "
+	UPDATE Catalog
+	SET image=''
+	WHERE PID = '393'
+	";
+	//$res = $conn->query($sql)->fetch();
+
+}
 
 function getPrice($pid) {
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -185,72 +251,6 @@ function getImageLinks($pid){
 }
 
 
-function getDetailLine($pid)
-{
-    
-    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
-    $connectionOptions = array(
-        "Database" => "dssewing", // update me
-        "Uid" => "ds-sewing-dev-server-admin", // update me
-        "PWD" => "2020Sucks!" // update me
-    );
-    
-
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql= "SELECT TOP 20 pid, description, price, weight, length, height, image, image_schematics  FROM [dbo].[catalog] WHERE PID='" . $pid . "'";
-    $res= sqlsrv_query($conn, $tsql);
-
-    $rtn="";
-
-    //Build onclick string
-    $additemtocart = "onclick=\"additemtocart('" .$PID . "','" . $PRICE . "','" . $WEIGHT . "', '1', '', '', '');\"";
-
-    /*****************************************************************************/
-    /*****************************************************************************/
-    
-    if ($res == FALSE)
-        $rtn = sqlsrv_errors();
-    while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-        //echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
-
-        $PID=$row['pid'];
-        $IMAGE=$row['image'];
-        $SCHEMATICS=$row['image_schematics'];
-        $DESC=$row['description'];
-        $WEIGHT=$row['weight'];
-        $PRICE=$row['price'];
-        
-        //Build onclick string
-        $additemtocart = "onclick=\"additemtocart('" .$PID . "','" . $PRICE . "','" . $WEIGHT . "', '1', '', '', '');\"";
-
-        $rtn .= "<tr>";
-        //conditional for image and schmatics
-        $rtn .= '<td  class="item_sku">' . $PID;
-        if ($IMAGE !=''){
-            $rtn .= "<br>";
-            $rtn .= "<a onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" .$IMAGE . "'>View Picture</a>";
-            //onclick=\"window.open('" .$IMAGE . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\"
-
-        }
-        if ($SCHEMATICS != ''){
-            $rtn .= "<br>";
-            $rtn .= "<a onclick=\"window.open('" . $SCHEMATICS . "','newwindow','location=no,toolbar=no,menubar=no,width=800,height=600,scrollbars=yes,resizable=no,top=0,left=0');return false;\" href='" . $SCHEMATICS . "'><font color=green>View Schematic</font></a>";
-
-        }
-        $rtn .= '</td>';
-        $rtn .= '<td class="item_description">' . $DESC . '</td>';
-        $rtn .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
-        $rtn .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
-        $rtn .= "<td class=\"item_button\"><button " . $additemtocart . ">buy</button></td>";
-        $rtn .= '</tr>';
-    }
-    //sqlsrv_free_stmt($res);
-
-    //echo ($rtn);
-    return $rtn;
-
-}
 
 
 function getImages($pid) {
