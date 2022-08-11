@@ -30,9 +30,9 @@
 			alert("data" + pid + price + weight + qty + length + width + height);
 			 $.ajax({
 				type: 'POST',
-				url: '/cart/cart.php',
-				data: jQuery.param({ action: "addcart"}) ,
-				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				url: '/cart/cart.php?action=addcart',
+				//data: jQuery.param({ action: "addcart"}) ,
+				//contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				//"action=addcart",
 				success: function (response) {
 					alert(response.status);
@@ -49,7 +49,7 @@
 			.fail(function (jqXHR, textStatus, errorThrown) {
     				// Request failed. Show error message to user. 
     				// errorThrown has error message.
-					alert("failed");
+					alert("failed" + jqXHR.responseText);
 			})
 
 //data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
