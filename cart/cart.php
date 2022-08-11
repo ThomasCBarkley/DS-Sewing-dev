@@ -46,7 +46,7 @@ if($action=='addcart') {
     
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql = "INSERT INTO dbo.communicationTest(message) VALUES (" .$action .")";
+    $tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$action ."')";
     $res= sqlsrv_query($conn, $tsql);
     
     //$rtn = "success";
