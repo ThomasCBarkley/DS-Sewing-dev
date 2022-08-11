@@ -16,7 +16,7 @@ $connectionOptions = array(
     "Uid" => "ds-sewing-dev-server-admin", // update me
     "PWD" => "2020Sucks!" // update me
 );
-echo ("server name :" .$serverName);
+echo ("server name begining of code :" .$serverName);
 final class DB {
 
     public static function init()
@@ -28,8 +28,8 @@ final class DB {
     }
 }
 
-
-
+$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+echo ("server name before function:" .$serverName);
 //Added by TCB
 /* function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -64,7 +64,7 @@ final class DB {
 } */
 function getDetailLine($pid)
 {
-    echo ("server name :" .$serverName);
+    echo ("server name in function :" .$serverName);
 
 
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
