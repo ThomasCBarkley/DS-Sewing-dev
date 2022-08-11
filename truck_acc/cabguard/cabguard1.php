@@ -28,14 +28,16 @@
 		function additemtocart(pid, price, weight, qty, length, width, height)
 		{
 			alert("data" + pid + price + weight + qty + length + width + height);
-			/* $.ajax({
+			 $.ajax({
 				type: 'POST',
 				url: 'file_product.php',
-				data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
+				data: "action=addtocart",
 				success: function(data) {
 					$("p").text(data);
 				}
-			}) */
+				//data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
+				
+			}) 
 		};
 	</script>
 </head>
