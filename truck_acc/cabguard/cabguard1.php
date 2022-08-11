@@ -33,7 +33,8 @@
 				url: '/cart/cart.php',
 				data: "action=addtocart",
 				success: function(data) {
-					$("p").text(data);
+					//$("p").text(data);
+					alert("Item Added to cart" + data);
 				}
 			})
 			.fail(function (jqXHR, textStatus, errorThrown) {
