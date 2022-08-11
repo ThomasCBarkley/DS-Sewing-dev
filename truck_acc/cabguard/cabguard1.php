@@ -31,11 +31,20 @@
 			 $.ajax({
 				type: 'POST',
 				url: '/cart/cart.php',
-				data: "action=addcart",
-				success: function(data) {
+				data: jQuery.param({ action: "addcart"}) ,
+				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+				//"action=addcart",
+				success: function (response) {
+					alert(response.status);
+				},
+				error: function () {
+					alert("error");
+				}
+				
+				/*success: function(data) {
 					//$("p").text(data);
 					alert("Item Added to cart" + data);
-				}
+				}*/
 			})
 			.fail(function (jqXHR, textStatus, errorThrown) {
     				// Request failed. Show error message to user. 
