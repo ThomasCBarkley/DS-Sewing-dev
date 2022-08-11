@@ -64,9 +64,9 @@ echo ("server name before function:" .$serverName);
 } */
 function getDetailLine($pid)
 {
-    echo ("server name in function :" .$serverName);
+    global $serverName, $connectionOptions;
 
-    global $serverName, $connectionOptions
+    echo ("server name in function :" .$serverName);
     
     /*$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
