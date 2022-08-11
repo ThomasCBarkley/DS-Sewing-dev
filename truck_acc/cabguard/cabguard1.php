@@ -35,9 +35,15 @@
 				success: function(data) {
 					$("p").text(data);
 				}
-				//data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
+			})
+			.fail(function (jqXHR, textStatus, errorThrown) {
+    				// Request failed. Show error message to user. 
+    				// errorThrown has error message.
+					alert("failed");
+			})
+
+//data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
 				
-			}) 
 		};
 	</script>
 </head>
