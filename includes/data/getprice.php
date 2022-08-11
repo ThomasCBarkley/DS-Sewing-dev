@@ -187,31 +187,24 @@ function getImageLinks($pid){
 
 function getDetailLine($pid)
 {
-    /*
+    
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
         "Database" => "dssewing", // update me
         "Uid" => "ds-sewing-dev-server-admin", // update me
         "PWD" => "2020Sucks!" // update me
     );
-    */
+    
 
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     $tsql= "SELECT TOP 20 pid, description, price, weight, length, height, image, image_schematics  FROM [dbo].[catalog] WHERE PID='" . $pid . "'";
     $res= sqlsrv_query($conn, $tsql);
 
-    //echo ("Reading data from table - PID= " .$pid);
-    
-    //$html='';
     $rtn="";
-    //$SESS_ID = rand();
-    //echo ('Session ID = ' .$id);
 
     //Build onclick string
     $additemtocart = "onclick=\"additemtocart('" .$PID . "','" . $PRICE . "','" . $WEIGHT . "', '1', '', '', '');\"";
-
-    $cart="/cart/cart.php";
 
     /*****************************************************************************/
     /*****************************************************************************/
