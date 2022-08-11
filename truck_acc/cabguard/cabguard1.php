@@ -20,7 +20,7 @@
 	<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/data/product-line.php"; ?>
 	<!-- 
 		iNSERT jQuery to process the but click events. this will need to call the 
-		addToCart($pid, $price, $weight, $qty, $length, $width, $height) function in the /includes/data/getprice.php file
+		addToCart($pid, $price, $weight, $qty, $length, $width, $height) function in the /cart/cart.php file
 		
 	-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -39,7 +39,7 @@
 			.fail(function (jqXHR, textStatus, errorThrown) {
     				// Request failed. Show error message to user. 
     				// errorThrown has error message.
-					alert("failed" + errorThrown);
+					alert("failed");
 			})
 
 //data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
