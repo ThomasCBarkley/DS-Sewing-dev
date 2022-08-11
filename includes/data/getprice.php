@@ -66,14 +66,15 @@ function getDetailLine($pid)
 {
     echo ("server name in function :" .$serverName);
 
-
-    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    global $serverName, $connectionOptions
+    
+    /*$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
         "Database" => "dssewing", // update me
         "Uid" => "ds-sewing-dev-server-admin", // update me
         "PWD" => "2020Sucks!" // update me
     );
-    
+    */
 
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
