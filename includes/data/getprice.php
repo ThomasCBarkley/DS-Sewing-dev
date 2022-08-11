@@ -17,6 +17,7 @@ $connectionOptions = array(
     "PWD" => "2020Sucks!" // update me
 );
 echo ("server name begining of code :" .$serverName);
+
 final class DB {
 
     public static function init()
@@ -28,8 +29,9 @@ final class DB {
     }
 }
 
-$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
-echo ("server name before function:" .$serverName);
+//$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+//echo ("server name before function:" .$serverName);
+
 //Added by TCB
 /* function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
     $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
@@ -66,7 +68,7 @@ function getDetailLine($pid)
 {
     global $serverName, $connectionOptions;
 
-    echo ("server name in function :" .$serverName);
+    //echo ("server name in function :" .$serverName);
     
     /*$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     $connectionOptions = array(
