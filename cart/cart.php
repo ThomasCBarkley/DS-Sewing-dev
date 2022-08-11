@@ -32,6 +32,12 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //get action string
 $action = isset($_GET['action'])?$_GET['action']:"";
+
+$pid = isset($_GET['pid'])?$_GET['pid']:"";
+
+$id = isset($_GET['id'])?$_GET['id']:"";
+
+
 $rtn = "success";
 //Add to cart
 if($action=='addcart') {
@@ -46,7 +52,7 @@ if($action=='addcart') {
     
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$action ."')";
+    $tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
     $res= sqlsrv_query($conn, $tsql);
     
     //$rtn = "success";

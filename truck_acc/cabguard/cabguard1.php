@@ -21,21 +21,21 @@
 	<!-- 
 		iNSERT jQuery to process the but click events. this will need to call the 
 		addToCart($pid, $price, $weight, $qty, $length, $width, $height) function in the /cart/cart.php file
-		
 	-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script language="JavaScript">
 		function additemtocart(pid, price, weight, qty, length, width, height)
 		{
-			alert("data" + pid + price + weight + qty + length + width + height);
+			//alert("data" + pid + price + weight + qty + length + width + height);
+
 			 $.ajax({
 				type: 'POST',
-				url: '/cart/cart.php?action=addcart',
+				url: '/cart/cart.php?action=addcart&pid=' + pid,
 				//data: jQuery.param({ action: "addcart"}) ,
 				//contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				//"action=addcart",
 				success: function (response) {
-					alert(response.status);
+					alert("item added to cart");
 				},
 				error: function () {
 					alert("error");
