@@ -50,9 +50,19 @@ if($action=='addcart') {
     $res= sqlsrv_query($conn, $tsql);
     
     //$rtn = "success";
-    if ($res == FALSE){
-        $rtn = sqlsrv_errors();
-    }
+	if( $res === false ) {
+		if( ($errors = sqlsrv_errors() ) != null) {
+			foreach( $errors as $error ) {
+				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+				echo "code: ".$error[ 'code']."<br />";
+				echo "message: ".$error[ 'message']."<br />";
+			}
+		
+		}
+	}
+    //if ($res == FALSE){
+    //    $rtn = sqlsrv_errors();
+    //}
 
     /*while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
         //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
