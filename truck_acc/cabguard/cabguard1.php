@@ -31,7 +31,7 @@
 			 $.ajax({
 				type: 'POST',
 				url: '/cart/cart.php',
-				data: "action=addtocart",
+				data: "action=addcart",
 				success: function(data) {
 					//$("p").text(data);
 					alert("Item Added to cart" + data);
