@@ -32,6 +32,7 @@
 				type: 'POST',
 				url: '/cart/cart.php?action=addcart&pid=' + pid,
 				//data: jQuery.param({ action: "addcart"}) ,
+				//data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",	
 				//contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				//"action=addcart",
 				success: function (response) {
@@ -51,9 +52,6 @@
     				// errorThrown has error message.
 					alert("failed" + jqXHR.responseText);
 			})
-
-//data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
-				
 		};
 	</script>
 </head>

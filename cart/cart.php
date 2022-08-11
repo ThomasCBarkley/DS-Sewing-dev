@@ -4,31 +4,25 @@ error_reporting(0);
 session_start();
 
 $total=0;
+// Setup Database Conection
+	$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+		
+	$connectionOptions = array(
+		"Database" => "dssewing", // update me
+		"Uid" => "ds-sewing-dev-server-admin", // update me
+		"PWD" => "2020Sucks!" // update me
+	);
+
+	//Establishes the connection
+	$conn = sqlsrv_connect($serverName, $connectionOptions);
+// End Connection
+
 
 //Database connection, replace with your connection string.. Used PDO
 /* Original - removed by TCB
 $conn = new PDO("mysql:host=localhost;dbname=tutsplanet", 'root', '');		
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 */
-
-//Added by TCB
-/* function addToCart($pid, $price, $weight, $qty, $length, $width, $height){
-    $serverName = "ds-sewing-dev-server.database.windows.net"; // update me
-    
-    $connectionOptions = array(
-        "Database" => "dssewing", // update me
-        "Uid" => "ds-sewing-dev-server-admin", // update me
-        "PWD" => "2020Sucks!" // update me
-    );
-    
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
-    $tsql = "INSERT INTO dbo.cart(sessionID, pid, price, weight, qty, Length, width, height)
-    VALUES ($_SESSION, $pid, $weight, $qty, $length, $width, $height)";
-    return "success";
-    
-} */
-
 
 //get action string
 $action = isset($_GET['action'])?$_GET['action']:"";
@@ -42,7 +36,7 @@ $rtn = "success";
 //Add to cart
 if($action=='addcart') {
 	
-	$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+/* 	$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
     
     $connectionOptions = array(
         "Database" => "dssewing", // update me
@@ -51,7 +45,7 @@ if($action=='addcart') {
     );
     
     //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $conn = sqlsrv_connect($serverName, $connectionOptions); */
     $tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
     $res= sqlsrv_query($conn, $tsql);
     
@@ -66,6 +60,7 @@ if($action=='addcart') {
 		
 		}
 	}
+	
     //if ($res == FALSE){
     //    $rtn = sqlsrv_errors();
     //}
