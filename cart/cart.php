@@ -36,6 +36,19 @@ $action = isset($_GET['action'])?$_GET['action']:"";
 //Add to cart
 if($action=='addcart') {
 	
+	$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
+    
+    $connectionOptions = array(
+        "Database" => "dssewing", // update me
+        "Uid" => "ds-sewing-dev-server-admin", // update me
+        "PWD" => "2020Sucks!" // update me
+    );
+    
+    //Establishes the connection
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    $tsql = "INSERT INTO dbo.communicationTest(message) VALUES (" .$action .")";
+
+
 	//Finding the product by code
 /* 	$query = "SELECT * FROM products WHERE sku=:sku";
 	$stmt = $conn->prepare($query);
