@@ -30,7 +30,7 @@
 			alert("data" + pid + price + weight + qty + length + width + height);
 			 $.ajax({
 				type: 'POST',
-				url: 'file_product.php',
+				url: '/cart/cart.php',
 				data: "action=addtocart",
 				success: function(data) {
 					$("p").text(data);
@@ -39,7 +39,7 @@
 			.fail(function (jqXHR, textStatus, errorThrown) {
     				// Request failed. Show error message to user. 
     				// errorThrown has error message.
-					alert("failed");
+					alert("failed" + errorThrown);
 			})
 
 //data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",
