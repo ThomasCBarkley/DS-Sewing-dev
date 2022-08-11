@@ -47,7 +47,20 @@ if($action=='addcart') {
     //Establishes the connection
     $conn = sqlsrv_connect($serverName, $connectionOptions);
     $tsql = "INSERT INTO dbo.communicationTest(message) VALUES (" .$action .")";
+    $res= sqlsrv_query($conn, $tsql);
+    
+    $rtn = "success";
+    if ($res == FALSE){
+        $rtn = sqlsrv_errors();
+    }
 
+    /*while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        $price=$row['itmPrice'];
+    }*/
+    
+    //return $rtn;
+    
 
 	//Finding the product by code
 /* 	$query = "SELECT * FROM products WHERE sku=:sku";
