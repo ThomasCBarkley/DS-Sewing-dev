@@ -32,7 +32,7 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 //get action string
 $action = isset($_GET['action'])?$_GET['action']:"";
-
+$rtn = "success";
 //Add to cart
 if($action=='addcart') {
 	
@@ -49,7 +49,7 @@ if($action=='addcart') {
     $tsql = "INSERT INTO dbo.communicationTest(message) VALUES (" .$action .")";
     $res= sqlsrv_query($conn, $tsql);
     
-    $rtn = "success";
+    //$rtn = "success";
     if ($res == FALSE){
         $rtn = sqlsrv_errors();
     }
@@ -114,7 +114,7 @@ $products = $stmt->fetchAll();
 </head>
 <body>
 <div class="container" style="width:600px;">
-IT LOADS <?php echo ($action); ?>
+IT LOADS <?php echo ($action . " " . $rtn); ?>
 </DIV>
 </body>
 </html>
