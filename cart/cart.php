@@ -31,21 +31,11 @@ $pid = isset($_GET['pid'])?$_GET['pid']:"";
 
 $id = isset($_GET['id'])?$_GET['id']:"";
 
+$cart_HTML = "";
 
 $rtn = "success";
 //Add to cart
 if($action=='addcart') {
-	
-/* 	$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
-    
-    $connectionOptions = array(
-        "Database" => "dssewing", // update me
-        "Uid" => "ds-sewing-dev-server-admin", // update me
-        "PWD" => "2020Sucks!" // update me
-    );
-    
-    //Establishes the connection
-    $conn = sqlsrv_connect($serverName, $connectionOptions); */
 	
 	global $serverName, $connectionOptions, $conn;
 
@@ -64,29 +54,12 @@ if($action=='addcart') {
 		}
 	}
 
-    //if ($res == FALSE){
-    //    $rtn = sqlsrv_errors();
-    //}
+
 
     /*while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
         //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
         $price=$row['itmPrice'];
     }*/
-    
-    //return $rtn;
-    
-
-	//Finding the product by code
-/* 	$query = "SELECT * FROM products WHERE sku=:sku";
-	$stmt = $conn->prepare($query);
-	$stmt->bindParam('sku', $_POST['sku']);
-	$stmt->execute();
-	$product = $stmt->fetch();
-	
-	$currentQty = $_SESSION['products'][$_POST['sku']]['qty']+1; //Incrementing the product qty in cart
-	$_SESSION['products'][$_POST['sku']] =array('qty'=>$currentQty,'name'=>$product['name'],'image'=>$product['image'],'price'=>$product['price']);
-	$product='';
-	header("Location:shopping-cart.php"); */
 }
 
 //Empty All
@@ -125,12 +98,19 @@ if($action=='empty') {
 				echo "message: ".$error[ 'message']."<br />";
 			}
 		
-		} else {
-			echo("found records in if");
 		}		
 
 	}
  	echo("found records");
+	global $cart_HTML;
+
+	$cart_HTML = "<table>";
+	$cart_HTML = "<tr>";
+	$cart_HTML = "<td>Item Number</td>";
+	$cart_HTML = "<td>Description</td>";
+	$cart_HTML = "</tr>";
+		
+
 	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
 		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
 		//$price=$row['itmPrice'];
@@ -151,7 +131,7 @@ $products = $stmt->fetchAll();
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PHP registration form</title>
+<title>DS-Sewing Cart</title>
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -160,5 +140,8 @@ $products = $stmt->fetchAll();
 <div class="container" style="width:600px;">
 IT LOADS <?php echo ($action . " " . $rtn); ?>
 </DIV>
+<div>
+	<?php echo($cart_HTML); ?>
+</div>
 </body>
 </html>
