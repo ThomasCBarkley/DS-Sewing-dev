@@ -126,14 +126,14 @@ if($action=='empty') {
 			}
 		
 		}		
-		}
+
 	}
-	echo("found records");
+/* 	echo("found records");
 	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
 		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
 		//$price=$row['itmPrice'];
 	}
-
+ */
  }
  //Get all Products
 /* $query = "SELECT * FROM products";
