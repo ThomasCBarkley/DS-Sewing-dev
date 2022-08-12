@@ -84,7 +84,7 @@ if($action=='empty') {
 
 	echo("sessionID=" .$id);
 
-    $tsql = "SELECT pid,description FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
+    $tsql = "SELECT pid, description, price, weight, length, height FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
     $res= sqlsrv_query($conn, $tsql);
     
 	echo("Resource=" .$res);
@@ -112,8 +112,20 @@ if($action=='empty') {
 		
 
 	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
-		//$price=$row['itmPrice'];
+		//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+	
+		$PID=$row['pid'];
+        $DESC=$row['description'];
+        $WEIGHT=$row['weight'];
+		$PRICE=$row['price'];
+
+        $cart_HTML .= "<tr>";
+        $cart_HTML .= '<td  class="item_sku">' . $PID;		
+		$cart_HTML .= '</td>';
+        $cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
+        $cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
+        $cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
+        $cart_HTML .= '</tr>';
 	}
 
  }
