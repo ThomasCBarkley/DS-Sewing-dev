@@ -110,8 +110,8 @@ if($action=='empty') {
 	global $serverName, $connectionOptions, $conn;
 
 	echo("sessionID=" .$id);
-	
-    $tsql = "SELECT * FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
+
+    $tsql = "SELECT pid,description FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
     $res= sqlsrv_query($conn, $tsql);
     
 	echo("Resource=" .$res);
@@ -125,15 +125,15 @@ if($action=='empty') {
 				echo "message: ".$error[ 'message']."<br />";
 			}
 		
-		} else {
-			echo("found records");
-			while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-        		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
-        		//$price=$row['itmPrice'];
-    		}
-    
+		}		
 		}
 	}
+	echo("found records");
+	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+		//$price=$row['itmPrice'];
+	}
+
  }
  //Get all Products
 /* $query = "SELECT * FROM products";
