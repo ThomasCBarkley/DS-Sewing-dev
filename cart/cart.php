@@ -123,7 +123,7 @@ if($action=='empty') {
 		
 		} else {
 			while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-        		echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
         		//$price=$row['itmPrice'];
     		}
     
