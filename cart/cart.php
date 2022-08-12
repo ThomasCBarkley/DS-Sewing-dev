@@ -109,11 +109,13 @@ if($action=='empty') {
  if($action=='show'){
 	global $serverName, $connectionOptions, $conn;
 
+	echo("sessionID=" .$id);
+	
     $tsql = "SELECT * FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
     $res= sqlsrv_query($conn, $tsql);
     
-	echo($res);
-	
+	echo("Resource=" .$res);
+
     //$rtn = "success";
 	if( $res === false ) {
 		if( ($errors = sqlsrv_errors() ) != null) {
@@ -124,6 +126,7 @@ if($action=='empty') {
 			}
 		
 		} else {
+			echo("found records");
 			while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
         		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
         		//$price=$row['itmPrice'];
