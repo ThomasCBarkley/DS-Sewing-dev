@@ -83,12 +83,12 @@ if($action=='empty') {
  if($action=='show'){
 	global $serverName, $connectionOptions, $conn;
 
-	echo("sessionID=" .$id);
+	//echo("sessionID=" .$id);
 
     $tsql = "SELECT pid, description, price, weight, length, height FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
     $res= sqlsrv_query($conn, $tsql);
     
-	echo("Resource=" .$res);
+	//echo("Resource=" .$res);
 
     //$rtn = "success";
 	if( $res === false ) {
@@ -102,7 +102,7 @@ if($action=='empty') {
 		}		
 
 	}
- 	echo("found records");
+ 	//echo("found records");
 	global $cart_HTML;
 
 	$cart_HTML = "<table>";
@@ -132,7 +132,7 @@ if($action=='empty') {
 
 	$cart_HTML .="</table>";
 	
-	echo($cart_HTML);
+	//echo($cart_HTML);
 
  }
  //Get all Products
@@ -160,10 +160,11 @@ $products = $stmt->fetchAll();
     <CENTER><?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/header.php"; ?></CENTER>
 </DIV>
 <div class="container" style="width:600px;">
-IT LOADS <?php echo ($action . " " . $rtn); ?>
 </DIV>
 <div>
-	<?php echo($cart_HTML); ?>
+	<CENTER>
+		<?php echo($cart_HTML); ?>
+	</CENTER>
 </div>
 <div>
 	<CENTER><br><br>
