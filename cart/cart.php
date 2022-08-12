@@ -105,10 +105,10 @@ if($action=='empty') {
 	global $cart_HTML;
 
 	$cart_HTML = "<table>";
-	$cart_HTML = "<tr>";
-	$cart_HTML = "<td>Item Number</td>";
-	$cart_HTML = "<td>Description</td>";
-	$cart_HTML = "</tr>";
+	$cart_HTML .= "<tr>";
+	$cart_HTML .= "<td>Item Number</td>";
+	$cart_HTML .= "<td>Description</td>";
+	$cart_HTML .= "</tr>";
 		
 
 	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
@@ -119,7 +119,7 @@ if($action=='empty') {
         $WEIGHT=$row['weight'];
 		$PRICE=$row['price'];
 
-        $cart_HTML .= "<tr>";
+        $cart_HTML .= '<tr>';
         $cart_HTML .= '<td  class="item_sku">' . $PID;		
 		$cart_HTML .= '</td>';
         $cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
@@ -127,6 +127,9 @@ if($action=='empty') {
         $cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
         $cart_HTML .= '</tr>';
 	}
+
+	$cart_HTML .="</table>";
+	
 	echo($cart_HTML);
 
  }
