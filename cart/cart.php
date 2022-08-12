@@ -112,6 +112,8 @@ if($action=='empty') {
     $tsql = "SELECT * FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
     $res= sqlsrv_query($conn, $tsql);
     
+	echo($res);
+	
     //$rtn = "success";
 	if( $res === false ) {
 		if( ($errors = sqlsrv_errors() ) != null) {
