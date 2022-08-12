@@ -125,15 +125,17 @@ if($action=='empty') {
 				echo "message: ".$error[ 'message']."<br />";
 			}
 		
+		} else {
+			echo("found records in if");
 		}		
 
 	}
-/* 	echo("found records");
+ 	echo("found records");
 	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
 		echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
 		//$price=$row['itmPrice'];
 	}
- */
+
  }
  //Get all Products
 /* $query = "SELECT * FROM products";
