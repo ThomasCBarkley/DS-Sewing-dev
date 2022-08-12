@@ -127,6 +127,7 @@ if($action=='empty') {
         $cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
         $cart_HTML .= '</tr>';
 	}
+	echo($cart_HTML);
 
  }
  //Get all Products
