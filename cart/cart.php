@@ -106,7 +106,30 @@ if($action=='empty') {
 
 
  
- 
+ if($action=='show'){
+	global $serverName, $connectionOptions, $conn;
+
+    $tsql = "SELECT * FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
+    $res= sqlsrv_query($conn, $tsql);
+    
+    //$rtn = "success";
+	if( $res === false ) {
+		if( ($errors = sqlsrv_errors() ) != null) {
+			foreach( $errors as $error ) {
+				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+				echo "code: ".$error[ 'code']."<br />";
+				echo "message: ".$error[ 'message']."<br />";
+			}
+		
+		} else {
+			while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+        		echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
+        		//$price=$row['itmPrice'];
+    		}
+    
+		}
+	}
+ }
  //Get all Products
 /* $query = "SELECT * FROM products";
 $stmt = $conn->prepare($query);
