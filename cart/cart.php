@@ -1,4 +1,5 @@
 <?php
+
 error_reporting(0);
 //Setting session start
 session_start();
@@ -108,6 +109,7 @@ if($action=='empty') {
 	$cart_HTML .= "<tr>";
 	$cart_HTML .= "<td>Item Number</td>";
 	$cart_HTML .= "<td>Description</td>";
+	$cart_HTML .= "<td>price</td>";
 	$cart_HTML .= "</tr>";
 		
 
@@ -151,13 +153,22 @@ $products = $stmt->fetchAll();
 
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
 </head>
 <body>
+<DIV ALIGN="center">
+    <CENTER><?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/header.php"; ?></CENTER>
+</DIV>
 <div class="container" style="width:600px;">
 IT LOADS <?php echo ($action . " " . $rtn); ?>
 </DIV>
 <div>
 	<?php echo($cart_HTML); ?>
 </div>
+<div>
+	<CENTER><br><br>
+		<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/footer.php"; ?>
+    </CENTER>
+</div>	
 </body>
 </html>
