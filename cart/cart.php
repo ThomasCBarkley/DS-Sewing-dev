@@ -85,7 +85,7 @@ if($action=='empty') {
 
 	//echo("sessionID=" .$id);
 
-    $tsql = "SELECT pid, description, price, weight, length, height FROM dbo.catalog where pid in(select pid from dbo.cart where sessionID='" . $id ."')";
+    $tsql = "SELECT pid, description, price, weight, length, height FROM dbo.catalog where pid in(select pid, qty as cartQTY from dbo.cart where sessionID='" . $id ."')";
     $res= sqlsrv_query($conn, $tsql);
     
 	//echo("Resource=" .$res);
