@@ -137,11 +137,13 @@ if($action=='show'){
 
 			}
 		//else no error
-			//echo("found records");
+			echo("found records");
 			global $cart_HTML;
 
+
+
 			//set table and header
-			$cart_HTML = '<table BORDER="1" CELLSPACING="0" CELLPADDING="3">';
+/* 			$cart_HTML = '<table BORDER="1" CELLSPACING="0" CELLPADDING="3">';
 			$cart_HTML .= "<tr>";
 			$cart_HTML .= "<td>Qty</td>";
 			$cart_HTML .= "<td>Item Number</td>";
@@ -150,7 +152,7 @@ if($action=='show'){
 			$cart_HTML .= "<td>price</td>";
 			$cart_HTML .= "</tr>";
 
-			echo($cart_HTML);
+			echo($cart_HTML); */
 				
 			//build rows
 				while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
@@ -163,7 +165,7 @@ if($action=='show'){
 					$PRICE=$row['PRC'];
 					$QTY=$row['QTY'];
 
-					$cart_HTML .= '<tr>';
+/* 					$cart_HTML .= '<tr>';
 					$cart_HTML .= '<td class="item_sku">' . $QTY;		
 					$cart_HTML .= '</td>';
 					$cart_HTML .= '<td  class="item_sku">' . $PID;		
@@ -171,7 +173,7 @@ if($action=='show'){
 					$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
 					$cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
 					$cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
-					$cart_HTML .= '</tr>'; 
+					$cart_HTML .= '</tr>';  */
 					
 				}
 
