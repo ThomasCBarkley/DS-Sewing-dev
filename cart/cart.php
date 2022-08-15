@@ -133,10 +133,10 @@ if($action=='empty') {
         $DESC=$row['description'];
         $WEIGHT=$row['weight'];
 		$PRICE=$row['price'];
-		$QTY=$row['qty'];
+		//$QTY=$row['qty'];
 
         $cart_HTML .= '<tr>';
-		$cart_HTML .= '<td class="item_sku">' . $QTY;		
+		$cart_HTML .= '<td class="item_sku">';		
 		$cart_HTML .= '</td>';
         $cart_HTML .= '<td  class="item_sku">' . $PID;		
 		$cart_HTML .= '</td>';
