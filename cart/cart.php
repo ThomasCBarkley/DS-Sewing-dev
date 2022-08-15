@@ -84,8 +84,19 @@ if($action=='empty') {
 	global $serverName, $connectionOptions, $conn;
 
 	//echo("sessionID=" .$id);
+	$tsql="SELECT 
+		dbo.catalog.pid, 
+		dbo.catalog.description, 
+		dbo.catalog.price, 
+		dbo.catalog.weight, 
+		dbo.catalog.length, 
+		dbo.catalog.height, 
+		dbo.cart.qty 
+	FROM dbo.catalog
+	INNER JOIN dbo.cart on dbo.catalog.pid=dbo.cart.pid
+	WHERE dbo.cart.sessionID='" . $id ."'"
 
-    $tsql = "SELECT pid, description, price, weight, length, height FROM dbo.catalog where pid in(select pid, qty as cartQTY from dbo.cart where sessionID='" . $id ."')";
+    //$tsql = "SELECT dbo.catalog.pid, dbo.catalog.description, dbo.catalog.price, dbo.catalog.weight, dbo.catalog.length, dbo.catalog.height dbo.cart.qty FROM dbo.catalog where pid in(select pid as cartQTY from dbo.cart where sessionID='" . $id ."') inner join on dbo.catalog.pid = dbo.cart.pid";
     $res= sqlsrv_query($conn, $tsql);
     
 	//echo("Resource=" .$res);
@@ -122,9 +133,10 @@ if($action=='empty') {
         $DESC=$row['description'];
         $WEIGHT=$row['weight'];
 		$PRICE=$row['price'];
+		$QTY=$row['qty'];
 
         $cart_HTML .= '<tr>';
-		$cart_HTML .= '<td class="item_sku">1';		
+		$cart_HTML .= '<td class="item_sku">' . $QTY;		
 		$cart_HTML .= '</td>';
         $cart_HTML .= '<td  class="item_sku">' . $PID;		
 		$cart_HTML .= '</td>';
