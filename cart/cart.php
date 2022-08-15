@@ -101,7 +101,7 @@ if($action=='empty') {
 if($action=='show'){
 	global $serverName, $connectionOptions, $conn;
 
-	echo("sessionID=" .$id);
+	//echo("sessionID=" .$id);
 
 	//Build Query
 		$tsql="SELECT 
