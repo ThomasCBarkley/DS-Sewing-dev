@@ -114,7 +114,8 @@ if($action=='show'){
 			dbo.cart.qty as QTY
 		FROM dbo.catalog
 		INNER JOIN dbo.cart on dbo.catalog.pid=dbo.cart.pid
-		WHERE dbo.cart.sessionID='" . $id ."'"
+		WHERE dbo.cart.sessionID='" . $id ."'";
+		
 		//$tsql = "SELECT dbo.catalog.pid, dbo.catalog.description, dbo.catalog.price, dbo.catalog.weight, dbo.catalog.length, dbo.catalog.height dbo.cart.qty FROM dbo.catalog where pid in(select pid as cartQTY from dbo.cart where sessionID='" . $id ."') inner join on dbo.catalog.pid = dbo.cart.pid";
 		
 	//Open Query
@@ -155,7 +156,8 @@ if($action=='show'){
 				while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
 					//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
 				
-/* 					$PID=$row['PID'];
+					/* 
+					$PID=$row['PID'];
 					$DESC=$row['DSC'];
 					$WEIGHT=$row['WGT'];
 					$PRICE=$row['PRC'];
@@ -169,7 +171,8 @@ if($action=='show'){
 					$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
 					$cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
 					$cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
-					$cart_HTML .= '</tr>'; */
+					$cart_HTML .= '</tr>'; 
+					*/
 				}
 
 			$cart_HTML .="</table>";
