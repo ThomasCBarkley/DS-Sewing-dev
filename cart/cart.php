@@ -25,17 +25,29 @@ $conn = new PDO("mysql:host=localhost;dbname=tutsplanet", 'root', '');
 $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 */
 
-//get action string
-$action = isset($_GET['action'])?$_GET['action']:"";
+/****************************************************************************************************************** */
+//get params from url query string
+	//?action=
+		$action = isset($_GET['action'])?$_GET['action']:"";
+	//&pid=
+		$pid = isset($_GET['pid'])?$_GET['pid']:"";
+	//&id=
+		$id = isset($_GET['id'])?$_GET['id']:"";
+/****************************************************************************************************************** */
 
-$pid = isset($_GET['pid'])?$_GET['pid']:"";
 
-$id = isset($_GET['id'])?$_GET['id']:"";
 
+/****************************************************************************************************************** */
+// global var for $cart_HTML
 $cart_HTML = "";
+/****************************************************************************************************************** */
+
 
 $rtn = "success";
-//Add to cart
+
+/****************************************************************************************************************** */
+// Add to cart
+/****************************************************************************************************************** */
 if($action=='addcart') {
 	
 	global $serverName, $connectionOptions, $conn;
@@ -55,21 +67,24 @@ if($action=='addcart') {
 		}
 	}
 
-
-
     /*while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
         //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
         $price=$row['itmPrice'];
     }*/
 }
 
-//Empty All
+/****************************************************************************************************************** */
+// Empty entire cart
+/****************************************************************************************************************** */
 if($action=='emptyall') {
 /* 	$_SESSION['products'] =array();
 	header("Location:shopping-cart.php");	
  */}
 
-//Empty one by one
+
+/****************************************************************************************************************** */
+// Remove item
+/****************************************************************************************************************** */
 if($action=='empty') {
 /* 	$sku = $_GET['sku'];
 	$products = $_SESSION['products'];
@@ -80,83 +95,88 @@ if($action=='empty') {
 
 
  
- if($action=='show'){
+/****************************************************************************************************************** */
+// Show Cart
+/****************************************************************************************************************** */
+if($action=='show'){
 	global $serverName, $connectionOptions, $conn;
 
 	//echo("sessionID=" .$id);
-	$tsql="SELECT 
-		dbo.catalog.pid as PID, 
-		dbo.catalog.description as DSC, 
-		dbo.catalog.price as PRC, 
-		dbo.catalog.weight as WGT, 
-		dbo.catalog.length as LEN, 
-		dbo.catalog.height as HGT, 
-		dbo.cart.qty as QTY
-	FROM dbo.catalog
-	INNER JOIN dbo.cart on dbo.catalog.pid=dbo.cart.pid
-	WHERE dbo.cart.sessionID='" . $id ."'"
 
-    //$tsql = "SELECT dbo.catalog.pid, dbo.catalog.description, dbo.catalog.price, dbo.catalog.weight, dbo.catalog.length, dbo.catalog.height dbo.cart.qty FROM dbo.catalog where pid in(select pid as cartQTY from dbo.cart where sessionID='" . $id ."') inner join on dbo.catalog.pid = dbo.cart.pid";
-    $res= sqlsrv_query($conn, $tsql);
+	//Build Query
+		$tsql="SELECT 
+			dbo.catalog.pid as PID, 
+			dbo.catalog.description as DSC, 
+			dbo.catalog.price as PRC, 
+			dbo.catalog.weight as WGT, 
+			dbo.catalog.length as LEN, 
+			dbo.catalog.height as HGT, 
+			dbo.cart.qty as QTY
+		FROM dbo.catalog
+		INNER JOIN dbo.cart on dbo.catalog.pid=dbo.cart.pid
+		WHERE dbo.cart.sessionID='" . $id ."'"
+		//$tsql = "SELECT dbo.catalog.pid, dbo.catalog.description, dbo.catalog.price, dbo.catalog.weight, dbo.catalog.length, dbo.catalog.height dbo.cart.qty FROM dbo.catalog where pid in(select pid as cartQTY from dbo.cart where sessionID='" . $id ."') inner join on dbo.catalog.pid = dbo.cart.pid";
+		
+	//Open Query
+		$res= sqlsrv_query($conn, $tsql);
     
-	//echo("Resource=" .$res);
+	echo("Resource=" .$res);
 
-    //$rtn = "success";
-	if( $res === false ) {
-		if( ($errors = sqlsrv_errors() ) != null) {
-			foreach( $errors as $error ) {
-				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-				echo "code: ".$error[ 'code']."<br />";
-				echo "message: ".$error[ 'message']."<br />";
+    //Process Results
+		//if Error
+			if( $res === false ) {
+				if( ($errors = sqlsrv_errors() ) != null) {
+					foreach( $errors as $error ) {
+						echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+						echo "code: ".$error[ 'code']."<br />";
+						echo "message: ".$error[ 'message']."<br />";
+					}
+				
+				}		
+
 			}
-		
-		}		
+		//else no error
+			//echo("found records");
+			global $cart_HTML;
 
-	}
- 	//echo("found records");
-	global $cart_HTML;
+			//set table and header
+			$cart_HTML = '<table BORDER="1" CELLSPACING="0" CELLPADDING="3">';
+			$cart_HTML .= "<tr>";
+			$cart_HTML .= "<td>Qty</td>";
+			$cart_HTML .= "<td>Item Number</td>";
+			$cart_HTML .= "<td>Description</td>";
+			$cart_HTML .= "<td>Weight</td>";
+			$cart_HTML .= "<td>price</td>";
+			$cart_HTML .= "</tr>";
 
-	$cart_HTML = '<table BORDER="1" CELLSPACING="0" CELLPADDING="3">';
-	$cart_HTML .= "<tr>";
-	$cart_HTML .= "<td>Qty</td>";
-	$cart_HTML .= "<td>Item Number</td>";
-	$cart_HTML .= "<td>Description</td>";
-	$cart_HTML .= "<td>Weight</td>";
-	$cart_HTML .= "<td>price</td>";
-	$cart_HTML .= "</tr>";
-		
+			echo($cart_HTML);
+				
+			//build rows
+				while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+					//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+				
+					$PID=$row['PID'];
+					$DESC=$row['DSC'];
+					$WEIGHT=$row['WGT'];
+					$PRICE=$row['PRC'];
+					$QTY=$row['QTY'];
 
-	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-		//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
-	
-		$PID=$row['PID'];
-        $DESC=$row['DCS'];
-        $WEIGHT=$row['WGT'];
-		$PRICE=$row['PRC'];
-		$QTY=$row['QTY'];
+					$cart_HTML .= '<tr>';
+					$cart_HTML .= '<td class="item_sku">' . $QTY;		
+					$cart_HTML .= '</td>';
+					$cart_HTML .= '<td  class="item_sku">' . $PID;		
+					$cart_HTML .= '</td>';
+					$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
+					$cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
+					$cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
+					$cart_HTML .= '</tr>';
+				}
 
-        $cart_HTML .= '<tr>';
-		$cart_HTML .= '<td class="item_sku">' . $QTY;		
-		$cart_HTML .= '</td>';
-        $cart_HTML .= '<td  class="item_sku">' . $PID;		
-		$cart_HTML .= '</td>';
-        $cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
-        $cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
-        $cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
-        $cart_HTML .= '</tr>';
-	}
-
-	$cart_HTML .="</table>";
-	
-	//echo($cart_HTML);
-
+			$cart_HTML .="</table>";
+			
+		//echo($cart_HTML);
  }
- //Get all Products
-/* $query = "SELECT * FROM products";
-$stmt = $conn->prepare($query);
-$stmt->execute();
-$products = $stmt->fetchAll();
- */
+
 ?>
 
 <!DOCTYPE html>
