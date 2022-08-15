@@ -124,7 +124,7 @@ if($action=='empty') {
 		$PRICE=$row['price'];
 
         $cart_HTML .= '<tr>';
-		$cart_HTML .= '<td class="item_sku">' . $PID;		
+		$cart_HTML .= '<td class="item_sku">1';		
 		$cart_HTML .= '</td>';
         $cart_HTML .= '<td  class="item_sku">' . $PID;		
 		$cart_HTML .= '</td>';
