@@ -107,6 +107,7 @@ if($action=='empty') {
 
 	$cart_HTML = '<table BORDER="1" CELLSPACING="0" CELLPADDING="3">';
 	$cart_HTML .= "<tr>";
+	$cart_HTML .= "<td>Qty</td>";
 	$cart_HTML .= "<td>Item Number</td>";
 	$cart_HTML .= "<td>Description</td>";
 	$cart_HTML .= "<td>Weight</td>";
@@ -123,6 +124,8 @@ if($action=='empty') {
 		$PRICE=$row['price'];
 
         $cart_HTML .= '<tr>';
+		$cart_HTML .= '<td class="item_sku">' . $PID;		
+		$cart_HTML .= '</td>';
         $cart_HTML .= '<td  class="item_sku">' . $PID;		
 		$cart_HTML .= '</td>';
         $cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
