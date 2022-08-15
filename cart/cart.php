@@ -155,7 +155,7 @@ if($action=='show'){
 				while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
 					//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
 				
-					$PID=$row['PID'];
+/* 					$PID=$row['PID'];
 					$DESC=$row['DSC'];
 					$WEIGHT=$row['WGT'];
 					$PRICE=$row['PRC'];
@@ -169,7 +169,7 @@ if($action=='show'){
 					$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
 					$cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
 					$cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
-					$cart_HTML .= '</tr>';
+					$cart_HTML .= '</tr>'; */
 				}
 
 			$cart_HTML .="</table>";
