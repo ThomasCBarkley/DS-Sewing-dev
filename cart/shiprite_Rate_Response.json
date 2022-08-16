@@ -1,0 +1,115 @@
+{
+    "isValid": true,
+    "messages": [
+      {
+        "messageType": "",
+        "message": "string"
+      }
+    ],
+    "dto": {
+      "shipmentId": 123456789,
+      "error": "string",
+      "origin": {
+        "country": "US",
+        "city": "string",
+        "zipCode": "string",
+        "state": "string"
+      },
+      "originType": "C",
+      "originCallAppt": false,
+      "destination": {
+        "country": "US",
+        "city": "string",
+        "zipCode": "string",
+        "state": "string"
+      },
+      "destinationType": "C",
+      "destinationCallAppt": false,
+      "shipdate": "2020-04-02T00:00:00.000Z",
+      "detail": [
+        {
+          "class": 0,
+          "stackable": 0,
+          "units": 0,
+          "qty": 0,
+          "length": 0,
+          "width": 0,
+          "height": 0,
+          "weight": 0,
+          "cube": 0,
+          "name": "string",
+          "description": "string"
+        }
+      ],
+      "accl": [
+        {
+          "displayName": "string",
+          "code": "string",
+          "value": 0
+        }
+      ],
+      "tsa": false,
+      "direction": "inbound",
+      "cube": 0,
+      "pcf": 0,
+      "miles": 0,
+      "lowestCostRateId": 0,
+      "fastestDeliveryRateId": 0,
+      "carriers": [
+        {
+          "ratedClass": 0,
+          "currency": "USD",
+          "tsa": true,
+          "originterminal": {
+            "zip": "string",
+            "code": "string",
+            "phone800": "string",
+            "city": "string",
+            "address": "string",
+            "phone": "string",
+            "state": "string",
+            "address1": "string",
+            "fax": "string",
+            "name": "string"
+          },
+          "relation": "D",
+          "destinationterminal": {
+            "zip": "string",
+            "code": "string",
+            "phone800": "string",
+            "city": "string",
+            "address": "string",
+            "phone": "string",
+            "state": "string",
+            "address1": "string",
+            "fax": "string",
+            "name": "string"
+          },
+          "days": 2,
+          "fscpercent": 0,
+          "estimatedDeliveryDate": "string",
+          "finalcharge": 0,
+          "comment": "string",
+          "name": "string",
+          "asc": {
+            "total": 0,
+            "charges": [
+              {
+                "amount": 0,
+                "name": "string"
+              }
+            ]
+          },
+          "guarantee": true,
+          "rateId": 0,
+          "scac": "string",
+          "fsc": 0,
+          "initialcharge": 0,
+          "service": {
+            "number": 0,
+            "name": "string"
+          }
+        }
+      ]
+    }
+  }

@@ -2,15 +2,9 @@
 //<script language="JavaScript">
 function additemtocart(pid, price, weight, qty, length, width, height)
 {
-    //alert("data" + pid + price + weight + qty + length + width + height);
-
-     $.ajax({
+       $.ajax({
         type: 'POST',
         url: '/cart/cart.php?action=addcart&pid=' + pid,
-        //data: jQuery.param({ action: "addcart"}) ,
-        //data: "pid= + pid + &price= + price +&weight= + weight + &qty= + qty + &length= + length + &width= + width + &height= + height",	
-        //contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-        //"action=addcart",
         success: function (response) {
             alert("item added to cart");
         },
@@ -18,15 +12,33 @@ function additemtocart(pid, price, weight, qty, length, width, height)
             alert("error");
         }
         
-        /*success: function(data) {
-            //$("p").text(data);
-            alert("Item Added to cart" + data);
-        }*/
+
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
             // Request failed. Show error message to user. 
-            // errorThrown has error message.
             alert("failed" + jqXHR.responseText);
     })
 };
+
+/*
+<span id="current"></span><br>
+<input type="number" id="n" value="5" step=".5" />
+
+$('#n').on('change paste', function () {
+    $("#current").html($(this).val())   
+});
+// here when click on spinner to change value, call trigger change
+$(".input-group-btn-vertical").click(function () {
+   $("#n").trigger("change");
+});
+// you can use this to block characters non numeric
+$("#n").keydown(function (e) {
+    // Allow: backspace, delete, tab, escape, enter and .
+    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 || (e.keyCode === 65 && e.ctrlKey === true) || (e.keyCode >= 35 && e.keyCode <= 40)) 
+           return;
+
+    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) 
+       e.preventDefault();
+});
+*/
 //</script>
