@@ -103,7 +103,7 @@ if($action=='show'){
 
 	//echo("sessionID=" .$id);
 
-	//Build Query
+	//Build Query 
 		$tsql="SELECT 
 			dbo.catalog.pid as PID, 
 			dbo.catalog.description as DSC, 
@@ -195,6 +195,8 @@ if($action=='show'){
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="EventHandler.js"></script>
 </head>
 <body>
 <DIV ALIGN="center">
