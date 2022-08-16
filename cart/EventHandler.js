@@ -1,5 +1,5 @@
 
-<script language="JavaScript">
+//<script language="JavaScript">
 function additemtocart(pid, price, weight, qty, length, width, height)
 {
     //alert("data" + pid + price + weight + qty + length + width + height);
@@ -29,4 +29,4 @@ function additemtocart(pid, price, weight, qty, length, width, height)
             alert("failed" + jqXHR.responseText);
     })
 };
-</script>
+//</script>
