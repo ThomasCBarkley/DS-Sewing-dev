@@ -19,7 +19,10 @@ function additemtocart(pid, price, weight, qty, length, width, height)
             alert("failed" + jqXHR.responseText);
     })
 };
+function updateButton(){
 
+    alert("buton pressed");
+}
 /*
 <span id="current"></span><br>
 <input type="number" id="n" value="5" step=".5" />
