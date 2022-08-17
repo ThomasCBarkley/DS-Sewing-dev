@@ -193,7 +193,10 @@ if($action=='show'){
 					
 		//echo($cart_HTML);
  }
-
+ function build_cartRow($PID,$DESC,$WEIGHT,$PRICE,$QTY) {
+	global $cart_HTML;
+	$ShowPRICE = $PRICE*$QTY;
+ }
 ?>
 
 <!DOCTYPE html>
