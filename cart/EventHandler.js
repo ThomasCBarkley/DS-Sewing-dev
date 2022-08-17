@@ -22,6 +22,9 @@ function additemtocart(pid, price, weight, qty, length, width, height)
 function updateButton(pid, textBoxID){
 
     alert("buton pressed PID:" + pid + " Element ID:" + textBoxID);
+    val=document.getElementById(textBoxID).ariaValueMax;
+    alert(textBoxID +" value=" + val);
+
 };
 
 /*
