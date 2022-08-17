@@ -146,16 +146,7 @@ if($action=='show'){
 
 			//set table and header
 			$cart_HTML = build_cartHeader();
-			/* 
- 			$cart_HTML = '<table class="cart_Table" BORDER="1" CELLSPACING="0" CELLPADDING="3">';
-			$cart_HTML .= "<tr>";
-			$cart_HTML .= "<td>Qty</td>";
-			$cart_HTML .= "<td>Item Number</td>";
-			$cart_HTML .= "<td>Description</td>";
-			$cart_HTML .= "<td>Weight</td>";
-			$cart_HTML .= "<td>price</td>";
-			$cart_HTML .= "</tr>";
-			 */
+
 			$row_ID = 0;
 
 			//echo($cart_HTML); 
