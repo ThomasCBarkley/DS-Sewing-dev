@@ -132,15 +132,11 @@ if($action=='show'){
 						echo "code: ".$error[ 'code']."<br />";
 						echo "message: ".$error[ 'message']."<br />";
 					}
-				
 				}		
-
 			}
 		//else no error
 			//echo("found records");
 			global $cart_HTML;
-
-
 
 			//set table and header
  			$cart_HTML = '<table class="cart_Table" BORDER="1" CELLSPACING="0" CELLPADDING="3">';
@@ -182,6 +178,9 @@ if($action=='show'){
 				}
 
 			$cart_HTML .="</table>";
+			$cart_HTML .="<div>";
+			$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','text_QTY" . $row_ID ."');\">Update QTY</button>";
+					
 			
 		//echo($cart_HTML);
  }
