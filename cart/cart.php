@@ -1,10 +1,15 @@
 <?php
 
 error_reporting(0);
-//Setting session start
+
+/****************************************************************************************************************** */
+// Setting session start
 session_start();
+/****************************************************************************************************************** */
+
 
 $total=0;
+/****************************************************************************************************************** */
 // Setup Database Conection
 	$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
 		
@@ -16,7 +21,9 @@ $total=0;
 
 	//Establishes the connection
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
+
 // End Connection
+/****************************************************************************************************************** */
 
 
 //Database connection, replace with your connection string.. Used PDO
@@ -36,14 +43,13 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 /****************************************************************************************************************** */
 
 
-
 /****************************************************************************************************************** */
 // global var for $cart_HTML
 $cart_HTML = "";
 /****************************************************************************************************************** */
 
+/****************************************************************************************************************** */
 
-$rtn = "success";
 
 /****************************************************************************************************************** */
 // Add to cart
@@ -163,7 +169,7 @@ if($action=='show'){
 					$QTY=$row['QTY'];
 
 					$ShowPRICE = $PRICE*$QTY;
-					echo($ShowPRICE);
+					//echo($ShowPRICE);
 					
 
  					$cart_HTML .= '<tr>';
@@ -176,7 +182,7 @@ if($action=='show'){
 					$cart_HTML .= '</td>';
 					$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
 					$cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
-					$cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
+					$cart_HTML .= '<td class="item_price" >$' . number_format($ShowPRICE,2) . '</td>';
 					$cart_HTML .= '</tr>';  
 					
 				}
