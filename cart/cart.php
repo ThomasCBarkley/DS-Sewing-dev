@@ -160,6 +160,9 @@ if($action=='show'){
 			//build rows
 				while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
 					//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+					
+					
+					
 					$row_ID++;
 					        					
 					$PID=$row['PID'];
@@ -193,9 +196,21 @@ if($action=='show'){
 					
 		//echo($cart_HTML);
  }
- function build_cartRow($PID,$DESC,$WEIGHT,$PRICE,$QTY) {
+ function build_cartRow($PID,$DESC,$WEIGHT,$PRICE,$QTY,$ROW) {
 	global $cart_HTML;
 	$ShowPRICE = $PRICE*$QTY;
+ }
+ function build_cartHeader(){
+	$rtn_HTML = '<table class="cart_Table" BORDER="1" CELLSPACING="0" CELLPADDING="3">';
+	$rtn_HTML .= "<tr>";
+	$rtn_HTML .= "<td>Qty</td>";
+	$rtn_HTML .= "<td>Item Number</td>";
+	$rtn_HTML .= "<td>Description</td>";
+	$rtn_HTML .= "<td>Weight</td>";
+	$rtn_HTML .= "<td>price</td>";
+	$rtn_HTML .= "</tr>";
+
+	return $rtn_HTML;
  }
 ?>
 
