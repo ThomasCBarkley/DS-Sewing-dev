@@ -22,7 +22,8 @@ function additemtocart(pid, price, weight, qty, length, width, height)
 function updateButton(pid, textBoxID){
 
     alert("buton pressed PID:" + pid + " Element ID:" + textBoxID);
-}
+};
+
 /*
 <span id="current"></span><br>
 <input type="number" id="n" value="5" step=".5" />
