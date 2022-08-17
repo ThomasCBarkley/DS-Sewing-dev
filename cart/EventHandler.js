@@ -19,9 +19,9 @@ function additemtocart(pid, price, weight, qty, length, width, height)
             alert("failed" + jqXHR.responseText);
     })
 };
-function updateButton(){
+function updateButton(pid, textBoxID){
 
-    alert("buton pressed");
+    alert("buton pressed PID:" + pid + " Element ID:" + textBoxID);
 }
 /*
 <span id="current"></span><br>
