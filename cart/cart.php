@@ -170,7 +170,7 @@ if($action=='show'){
 					$cart_HTML .= '<td class="item_sku">' ;  
 					$cart_HTML .= '<input style="width:25px;" type="text" id="text_QTY' . $row_ID .'" value="' . $QTY . '">';
 					//$cart_HTML .= '<INPUT TYPE="NUMBER" MIN="0" MAX="10" STEP="1" VALUE="' . $QTY . '" SIZE="6">';
-					$cart_HTML .= '&nbsp;<button type="button" onclick="updateButton('. $PID . '"text_QTY' . $row_ID .'");">Update QTY</button>';
+					$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','text_QTY" . $row_ID ."');\">Update QTY</button>";
 					$cart_HTML .= '</td>';
 					$cart_HTML .= '<td  class="item_sku">' . $PID;		
 					$cart_HTML .= '</td>';
