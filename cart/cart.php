@@ -162,6 +162,10 @@ if($action=='show'){
 					$PRICE=$row['PRC'];
 					$QTY=$row['QTY'];
 
+					$ShowPRICE = $PRICE*$QTY;
+					echo($ShowPRICE);
+					
+
  					$cart_HTML .= '<tr>';
 					$cart_HTML .= '<td class="item_sku">' ;  
 					$cart_HTML .= '<input style="width:25px;" type="text" id="text_QTY' . $row_ID .'" value="' . $QTY . '">';
@@ -181,7 +185,6 @@ if($action=='show'){
 			$cart_HTML .="<div>";
 			$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','text_QTY" . $row_ID ."');\">Update QTY</button>";
 					
-			
 		//echo($cart_HTML);
  }
 
