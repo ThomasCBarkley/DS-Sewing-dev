@@ -25,11 +25,11 @@ function updateButton(pid, rowcount, sessionID)
         try{
 
             qty=document.getElementById("text_QTY" + i).value;
+            
             alert("pid=" + pid + " rowcount=" + rowcount + " sessionID=" + sessionID);
-            /*
             $.ajax({
                 type: 'POST',
-                url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + id + '&qty=' + qty,
+                url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + sessionID + '&qty=' + qty,
                 success: function (response) {
                     alert("item added to cart");
                 },
@@ -41,7 +41,7 @@ function updateButton(pid, rowcount, sessionID)
                     // Request failed. Show error message to user. 
                     alert("failed" + jqXHR.responseText);
             })
-            */
+            
         } catch  (error) { alert(error); }
     } 
     /*
