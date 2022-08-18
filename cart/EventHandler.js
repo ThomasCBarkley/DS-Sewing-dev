@@ -24,7 +24,7 @@ function updateButton(pid, rowcount, seesionID)
     for (let i = 1; i <= rowcount; i++) {
         try{
 
-            qty=document.getElementById("text_QTY" + i + "pid=:" + pid + "sessionID=:" + seesionID).value;
+            qty=document.getElementById("text_QTY" + i).value;
             /*
             $.ajax({
                 type: 'POST',
