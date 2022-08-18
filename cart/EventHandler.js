@@ -19,21 +19,19 @@ function additemtocart(pid, price, weight, qty, length, width, height)
 };
 function updateButton(pid, rowcount)
 {
-    alert("button pressed PID:" + pid + " rows:" + rowcount);
+    //alert("button pressed PID:" + pid + " rows:" + rowcount);
     
     for (let i = 1; i <= rowcount; i++) {
-        /*
-        price=
-        $ShowPRICE = $PRICE*$QTY;
-        */
+
         try{
             qty=document.getElementById("text_QTY" + i).value;
             price=document.getElementById("text_PRICE" + i).innerText;
             alert(price);
+            alert(parseFloat(price));
 
             //tot_price=price*qty;
             
-            alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
+            //alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
         } catch  (error) { alert(error); }
     }  
 };
