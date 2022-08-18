@@ -28,7 +28,7 @@ function updateButton(pid, rowcount)
         */
         try{
             qty=document.getElementById("text_QTY" + i).value;
-            price=document.getElementById("text_PRICE" + i).innerText;
+            price=parseInt(document.getElementById("text_PRICE" + i).innerText);
             tot_price=price*qty;
             
             alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
