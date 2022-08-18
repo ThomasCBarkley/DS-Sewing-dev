@@ -28,6 +28,7 @@ function updateButton(pid, rowcount){
     */
     
     for (let i = 1; i < rowcount; i++) {
+        alert(i);
         //if (i === 3) { break; }
         //text += "The number is " + i + "<br>";
         qty=document.getElementById("text_QTY" + i).value;
