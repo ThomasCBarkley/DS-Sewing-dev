@@ -155,8 +155,6 @@ if($action=='show'){
 				while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
 					//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
 					
-					
-					
 					$row_ID++;
 					        					
 					$PID=$row['PID'];
@@ -173,12 +171,13 @@ if($action=='show'){
 					$cart_HTML .= '<td class="item_sku">' ;  
 					$cart_HTML .= '<input style="width:25px;" type="text" id="text_QTY' . $row_ID .'" value="' . $QTY . '">';
 					//$cart_HTML .= '<INPUT TYPE="NUMBER" MIN="0" MAX="10" STEP="1" VALUE="' . $QTY . '" SIZE="6">';
-					$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','text_QTY" . $row_ID ."');\">Update QTY</button>";
+					//$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','text_QTY" . $row_ID ."');\">Update QTY</button>";
 					$cart_HTML .= '</td>';
 					$cart_HTML .= '<td  class="item_sku">' . $PID;		
 					$cart_HTML .= '</td>';
 					$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
 					$cart_HTML .= '<td class="item_weight">' . number_format($WEIGHT,0) . '</td>';
+					$cart_HTML .= '<td class="item_price" >$' . number_format($PRICE,2) . '</td>';
 					$cart_HTML .= '<td class="item_price" >$' . number_format($ShowPRICE,2) . '</td>';
 					$cart_HTML .= '</tr>';  
 					
@@ -201,7 +200,8 @@ if($action=='show'){
 	$rtn_HTML .= "<td>Item Number</td>";
 	$rtn_HTML .= "<td>Description</td>";
 	$rtn_HTML .= "<td>Weight</td>";
-	$rtn_HTML .= "<td>price</td>";
+	$rtn_HTML .= "<td> Item Price</td>";
+	$rtn_HTML .= "<td> Total Price</td>";
 	$rtn_HTML .= "</tr>";
 
 	return $rtn_HTML;
