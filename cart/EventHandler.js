@@ -17,7 +17,7 @@ function additemtocart(pid, price, weight, qty, length, width, height)
             alert("failed" + jqXHR.responseText);
     })
 };
-function updateButton(pid, rowcount, seesionID)
+function updateButton(pid, rowcount, sessionID)
 {
     //alert("button pressed PID:" + pid + " rows:" + rowcount);
     
@@ -25,6 +25,7 @@ function updateButton(pid, rowcount, seesionID)
         try{
 
             qty=document.getElementById("text_QTY" + i).value;
+            alert("pid=" + pid + " rowcount=" + rowcount + " sessionID=" + sessionID);
             /*
             $.ajax({
                 type: 'POST',
