@@ -19,11 +19,11 @@ function additemtocart(pid, price, weight, qty, length, width, height)
             alert("failed" + jqXHR.responseText);
     })
 };
-function updateButton(pid, textBoxID){
+function updateButton(pid, rowcount){
 
-    alert("buton pressed PID:" + pid + " Element ID:" + textBoxID);
-    qty=document.getElementById(textBoxID).value;
-    alert(textBoxID +" value=" + qty);
+    alert("buton pressed PID:" + pid + " rows:" + rowcount);
+    qty=document.getElementById("text_QTY" + rowcount).value;
+    alert(rowcount +" value=" + qty);
 
 };
 
