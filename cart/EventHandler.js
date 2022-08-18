@@ -27,6 +27,11 @@ function updateButton(pid, rowcount)
             qty=document.getElementById("text_QTY" + i).value;
             price=document.getElementById("text_PRICE" + i).innerText;
             alert(price);
+           
+
+            parseNum = price => +price.replace(/[^.\d]/g, '');
+            //let str = 'a1b2c.d3e';
+            let price=document.getElementById("text_PRICE" + i).innerText;
             alert("parsed " + parseInt(price,10));
 
             //tot_price=price*qty;
