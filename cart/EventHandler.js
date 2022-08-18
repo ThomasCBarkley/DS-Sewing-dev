@@ -19,7 +19,7 @@ function additemtocart(pid, price, weight, qty, length, width, height)
 };
 function updateButton(pid, rowcount)
 {
-    alert("buton pressed PID:" + pid + " rows:" + rowcount);
+    alert("button pressed PID:" + pid + " rows:" + rowcount);
     
     for (let i = 1; i <= rowcount; i++) {
         /*
@@ -28,7 +28,7 @@ function updateButton(pid, rowcount)
         */
         try{
             qty=document.getElementById("text_QTY" + i).value;
-            price=parseInt(document.getElementById("text_PRICE" + i).innerText);
+            price=document.getElementById("text_PRICE" + i).innerText;
             alert(price);
 
             //tot_price=price*qty;
