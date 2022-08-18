@@ -22,17 +22,13 @@ function additemtocart(pid, price, weight, qty, length, width, height)
 function updateButton(pid, rowcount){
 
     alert("buton pressed PID:" + pid + " rows:" + rowcount);
-    /*
-    qty=document.getElementById("text_QTY" + rowcount).value;
-    alert(rowcount +" value=" + qty);
-    */
     
     for (let i = 1; i <= rowcount; i++) {
-        //alert(i);
-        //if (i === 3) { break; }
+        
+        /*
         price=
         $ShowPRICE = $PRICE*$QTY;
-
+        */
         try{
             qty=document.getElementById("text_QTY" + i).value;
             tot_price=document.getElementById("text_TOTALPRICE" + i);
