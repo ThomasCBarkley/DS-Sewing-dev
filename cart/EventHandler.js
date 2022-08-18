@@ -17,14 +17,33 @@ function additemtocart(pid, price, weight, qty, length, width, height)
             alert("failed" + jqXHR.responseText);
     })
 };
-function updateButton(pid, rowcount)
+function updateButton(pid, rowcount, seesionID)
 {
     //alert("button pressed PID:" + pid + " rows:" + rowcount);
     
     for (let i = 1; i <= rowcount; i++) {
-
         try{
-            qty=document.getElementById("text_QTY" + i).value;
+
+            qty=document.getElementById("text_QTY" + i + "pid=:" + pid + "sessionID=:" + seesionID).value;
+            /*
+            $.ajax({
+                type: 'POST',
+                url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + id + '&qty=' + qty,
+                success: function (response) {
+                    alert("item added to cart");
+                },
+                error: function () {
+                    alert("error");
+                }
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                    // Request failed. Show error message to user. 
+                    alert("failed" + jqXHR.responseText);
+            })
+            */
+        } catch  (error) { alert(error); }
+    } 
+    /*
             price=document.getElementById("text_PRICE" + i).innerText;
             alert(price);
             
@@ -39,9 +58,7 @@ function updateButton(pid, rowcount)
             //tot_price=price*qty;
             
             //alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
-        } catch  (error) { alert(error); }
-    } 
-    
+
     $.ajax({
         type: 'POST',
         url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + id + '&qty=' + qty,
@@ -56,6 +73,7 @@ function updateButton(pid, rowcount)
             // Request failed. Show error message to user. 
             alert("failed" + jqXHR.responseText);
     })
+    */
 };
 
 /*

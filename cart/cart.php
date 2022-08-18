@@ -214,7 +214,7 @@ if($action=='show'){
 
 			$cart_HTML .="</table>";
 			$cart_HTML .="<div>";
-			$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','" . $row_ID ."');\">Update Cart</button>";
+			$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','" . $row_ID ."','" . $id . "');\">Update Cart</button>";
 					
 		//echo($cart_HTML);
  }
