@@ -28,7 +28,9 @@ function updateButton(pid, rowcount)
         */
         try{
             qty=document.getElementById("text_QTY" + i).value;
-            tot_price=document.getElementById("text_TOTALPRICE" + i).innerText;
+            price=document.getElementById("text_PRICE" + i).innerText;
+            tot_price=price*qty;
+            
             alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
         } catch  (error) { alert(error); }
     }  
