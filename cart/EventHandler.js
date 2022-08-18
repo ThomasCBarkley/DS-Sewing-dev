@@ -31,7 +31,7 @@ function updateButton(pid, rowcount){
         */
         try{
             qty=document.getElementById("text_QTY" + i).value;
-            tot_price=document.getElementById("text_TOTALPRICE" + i);
+            tot_price=document.getElementById("text_TOTALPRICE" + i).innerText;
             alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
         } catch  (error) { alert(error); }
     }
