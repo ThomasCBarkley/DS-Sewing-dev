@@ -89,11 +89,11 @@ if($action=='updatecart') {
 	global $cart_HTML;
 
     //$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
-	$tsql = "UPDATE dbo.cart SET qty = '" . $qty . "' WHERE sessionID = '" . $id . "' and pid = '" . $pid ."'";
-    //$res= sqlsrv_query($conn, $tsql);
+	$tsql = "UPDATE dbo.cart SET qty='" . $qty . "' WHERE sessionID='" . $id . "' and pid='" . $pid ."'";
+    $res= sqlsrv_query($conn, $tsql);
     
 	$cart_HTML=$tsql;
-	
+
     //$rtn = "success";
 	if( $res === false ) {
 		if( ($errors = sqlsrv_errors() ) != null) {
