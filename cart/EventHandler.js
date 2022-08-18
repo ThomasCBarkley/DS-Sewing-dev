@@ -25,6 +25,15 @@ function updateButton(pid, rowcount){
     qty=document.getElementById("text_QTY" + rowcount).value;
     alert(rowcount +" value=" + qty);
 
+    
+    for (let i = 0; i < rowcount; i++) {
+        //if (i === 3) { break; }
+        //text += "The number is " + i + "<br>";
+        qty=document.getElementById("text_QTY" + rowcount).value;
+        alert(rowcount +" value=" + qty);
+    }
+    
+
 };
 
 /*
