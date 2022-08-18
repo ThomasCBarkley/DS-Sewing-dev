@@ -6,7 +6,7 @@ function additemtocart(pid, price, weight, qty, length, width, height)
         type: 'POST',
         url: '/cart/cart.php?action=addcart&pid=' + pid,
         success: function (response) {
-            alert("item added to cart");
+           // alert("item added to cart");
         },
         error: function () {
             alert("error");
@@ -26,12 +26,12 @@ function updateButton(pid, rowcount, sessionID)
 
             qty=document.getElementById("text_QTY" + i).value;
 
-            alert("pid=" + pid + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
+            //alert("pid=" + pid + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
             $.ajax({
                 type: 'POST',
                 url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + sessionID + '&qty=' + qty,
                 success: function (response) {
-                    alert("item added to cart");
+                    //alert("item added to cart");
                 },
                 error: function () {
                     alert("error");
