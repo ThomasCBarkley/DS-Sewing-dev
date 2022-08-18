@@ -179,6 +179,7 @@ if($action=='show'){
 					$cart_HTML .= '<td class="item_weight" >' . number_format($WEIGHT,0) . '</td>';
 					$cart_HTML .= '<td class="item_price" id="text_PRICE' . $row_ID .'">$' . number_format($PRICE,2) . '</td>';
 					$cart_HTML .= '<td class="item_price" id="text_TOTALPRICE' . $row_ID .'">$' . number_format($ShowPRICE,2) . '</td>';
+					//$cart_HTML .= '<input type="text" id="country" name="country" value="Norway" readonly>';
 					$cart_HTML .= '</tr>';  
 					
 				}
