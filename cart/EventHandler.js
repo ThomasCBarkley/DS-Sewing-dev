@@ -22,9 +22,10 @@ function additemtocart(pid, price, weight, qty, length, width, height)
 function updateButton(pid, rowcount){
 
     alert("buton pressed PID:" + pid + " rows:" + rowcount);
+    /*
     qty=document.getElementById("text_QTY" + rowcount).value;
     alert(rowcount +" value=" + qty);
-
+    */
     
     for (let i = 1; i < rowcount; i++) {
         //if (i === 3) { break; }
