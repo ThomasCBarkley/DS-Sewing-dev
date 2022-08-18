@@ -40,7 +40,22 @@ function updateButton(pid, rowcount)
             
             //alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
         } catch  (error) { alert(error); }
-    }  
+    } 
+    
+    $.ajax({
+        type: 'POST',
+        url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + id + '&qty=' + qty,
+        success: function (response) {
+            alert("item added to cart");
+        },
+        error: function () {
+            alert("error");
+        }
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+            // Request failed. Show error message to user. 
+            alert("failed" + jqXHR.responseText);
+    })
 };
 
 /*
