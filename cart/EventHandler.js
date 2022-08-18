@@ -11,20 +11,17 @@ function additemtocart(pid, price, weight, qty, length, width, height)
         error: function () {
             alert("error");
         }
-        
-
     })
     .fail(function (jqXHR, textStatus, errorThrown) {
             // Request failed. Show error message to user. 
             alert("failed" + jqXHR.responseText);
     })
 };
-function updateButton(pid, rowcount){
-
+function updateButton(pid, rowcount)
+{
     alert("buton pressed PID:" + pid + " rows:" + rowcount);
     
     for (let i = 1; i <= rowcount; i++) {
-        
         /*
         price=
         $ShowPRICE = $PRICE*$QTY;
@@ -34,8 +31,7 @@ function updateButton(pid, rowcount){
             tot_price=document.getElementById("text_TOTALPRICE" + i).innerText;
             alert("text_QTY" + i + " value=" + qty + " total price= " + tot_price);
         } catch  (error) { alert(error); }
-    }
-    
+    }  
 };
 
 /*
