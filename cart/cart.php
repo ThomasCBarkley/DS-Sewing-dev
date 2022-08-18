@@ -40,6 +40,8 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$pid = isset($_GET['pid'])?$_GET['pid']:"";
 	//&id=
 		$id = isset($_GET['id'])?$_GET['id']:"";
+	//&qty=
+		$qty = isset($_GET['qty'])?$_GET['qty']:"";
 /****************************************************************************************************************** */
 
 
@@ -77,6 +79,29 @@ if($action=='addcart') {
         //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
         $price=$row['itmPrice'];
     }*/
+}
+/****************************************************************************************************************** */
+// Add to cart
+/****************************************************************************************************************** */
+if($action=='updatecart') {
+	
+	global $serverName, $connectionOptions, $conn;
+
+    //$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
+	$tsql = "UPDATE dbo.cart SET qty = '" . $qty . "' WHERE sessionID = '" . $id . "'";
+    $res= sqlsrv_query($conn, $tsql);
+    
+    //$rtn = "success";
+	if( $res === false ) {
+		if( ($errors = sqlsrv_errors() ) != null) {
+			foreach( $errors as $error ) {
+				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+				echo "code: ".$error[ 'code']."<br />";
+				echo "message: ".$error[ 'message']."<br />";
+			}
+		
+		}
+	}
 }
 
 /****************************************************************************************************************** */
