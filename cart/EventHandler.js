@@ -26,12 +26,14 @@ function updateButton(pid, rowcount, sessionID)
 
             qty=document.getElementById("text_QTY" + i).value;
             updatePID=document.getElementById("text_PID" + i).innerText;
-            
+
             //alert("pid=" + updatePID + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
+
+            posturl='/cart/cart.php?action=updatecart&pid=' + updatePID + '&id=' + sessionID + '&qty=' + qty;
 
             $.ajax({
                 type: 'POST',
-                url: '/cart/cart.php?action=updatecart&pid=' + updatePID + '&id=' + sessionID + '&qty=' + qty,
+                url: posturl,
                 success: function (response) {
                     //alert("item added to cart");
                 },
