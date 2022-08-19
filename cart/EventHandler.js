@@ -28,7 +28,9 @@ function updateButton(pid, rowcount, sessionID)
             updatePID=document.getElementById("text_PID" + i).innerText;
 
             //alert("pid=" + updatePID + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
-
+            if(qty=='0'){
+                alert("pid=" + updatePID + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
+            }
             posturl='/cart/cart.php?action=updatecart&pid=' + updatePID + '&id=' + sessionID + '&qty=' + qty;
 
             $.ajax({
