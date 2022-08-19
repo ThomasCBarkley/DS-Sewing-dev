@@ -119,13 +119,28 @@ if($action=='emptyall') {
 /****************************************************************************************************************** */
 // Remove item
 /****************************************************************************************************************** */
-if($action=='empty') {
-/* 	$sku = $_GET['sku'];
-	$products = $_SESSION['products'];
-	unset($products[$sku]);
-	$_SESSION['products']= $products;
-	header("Location:shopping-cart.php");	
- */}
+if($action=='remove') {
+	global $serverName, $connectionOptions, $conn;
+	global $cart_HTML;
+
+    //$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
+	$tsql = "DELETE FROM dbo.cart WHERE sessionID='" . $id . "' and pid='" . $pid ."'";
+    $res= sqlsrv_query($conn, $tsql);
+    
+	$cart_HTML=$tsql;
+
+    //$rtn = "success";
+	if( $res === false ) {
+		if( ($errors = sqlsrv_errors() ) != null) {
+			foreach( $errors as $error ) {
+				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+				echo "code: ".$error[ 'code']."<br />";
+				echo "message: ".$error[ 'message']."<br />";
+			}
+		
+		}
+	}
+}
 
 
  
@@ -193,7 +208,6 @@ if($action=='show'){
 
 					$ShowPRICE = $PRICE*$QTY;
 					//echo($ShowPRICE);
-					
 
  					$cart_HTML .= '<tr>';
 					$cart_HTML .= '<td class="item_sku">' ;  
