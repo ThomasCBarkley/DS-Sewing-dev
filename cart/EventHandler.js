@@ -30,7 +30,7 @@ function updateButton(pid, rowcount, sessionID)
             alert("pid=" + rpid + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
             $.ajax({
                 type: 'POST',
-                url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + sessionID + '&qty=' + qty,
+                url: '/cart/cart.php?action=updatecart&pid=' + rpid + '&id=' + sessionID + '&qty=' + qty,
                 success: function (response) {
                     //alert("item added to cart");
                 },
