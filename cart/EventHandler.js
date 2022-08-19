@@ -25,8 +25,9 @@ function updateButton(pid, rowcount, sessionID)
         try{
 
             qty=document.getElementById("text_QTY" + i).value;
+            rpid=document.getElementById("text_PID" + i).innerText;
 
-            alert("pid=" + pid + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
+            alert("pid=" + rpid + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
             $.ajax({
                 type: 'POST',
                 url: '/cart/cart.php?action=updatecart&pid=' + pid + '&id=' + sessionID + '&qty=' + qty,
