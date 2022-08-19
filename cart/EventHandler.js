@@ -24,10 +24,10 @@ function updateButton(pid, rowcount, sessionID)
     for (let i = 1; i <= rowcount; i++) {
         try{
 
-            //qty=document.getElementById("text_QTY" + i).value;
-            //updatePID=document.getElementById("text_PID" + i).innerText;
-
-            alert("pid=" + updatePID + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
+            qty=document.getElementById("text_QTY" + i).value;
+            updatePID=document.getElementById("text_PID" + i).innerText;
+            
+            //alert("pid=" + updatePID + " rowcount=" + rowcount + " sessionID=" + sessionID + " QTY=" + qty);
 
             $.ajax({
                 type: 'POST',
