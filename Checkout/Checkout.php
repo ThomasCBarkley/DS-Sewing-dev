@@ -284,6 +284,50 @@ if($action=='show'){
 Checkout 
  	<div>
 		Customer Info
+		
+			<div class="Customer">
+				<div class="CustomerField-div">
+					<label for="Text-AcctCompany" class="CustomerField-label">Company Name</label>
+					<input type="text" class="form-control" name="text-AcctCompany" access="false" id="text-AcctCompany">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctName" class="formbuilder-text-label">Contact Name</label>
+					<input type="text" class="form-control" name="text-AcctName" access="false" id="text-AcctName">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctAddress1" class="formbuilder-text-label">Address 1</label>
+					<input type="text" class="form-control" name="text-AcctAddress1" access="false" id="text-AcctAddress1">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctAddress2" class="formbuilder-text-label">Address 2</label>
+					<input type="text" class="form-control" name="text-AcctAddress2" access="false" id="text-AcctAddress2">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctCity" class="formbuilder-text-label">City</label>
+					<input type="text" class="form-control" name="text-AcctCity" access="false" id="text-AcctCity">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctState" class="formbuilder-text-label">State</label>
+					<input type="text" class="form-control" name="text-AcctState" access="false" id="text-AcctState">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctZip" class="formbuilder-text-label">Zip</label>
+					<input type="text" class="form-control" name="text-AcctZip" access="false" id="text-AcctZip">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctPhone" class="formbuilder-text-label">Phone</label>
+					<input type="text" class="form-control" name="text-AcctPhone" access="false" id="text-AcctPhone">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctFax" class="formbuilder-text-label">Fax</label>
+					<input type="text" class="form-control" name="text-AcctFax" access="false" id="text-AcctFax">
+				</div>
+				<div class="CustomerField-div">
+					<label for="text-AcctCell" class="formbuilder-text-label">Cell</label>
+					<input type="text" class="form-control" name="text-AcctCell" access="false" id="text-AcctCell">
+				</div>
+			</div>
+		
 	</div>
 	<div>
 		Shipping Info
