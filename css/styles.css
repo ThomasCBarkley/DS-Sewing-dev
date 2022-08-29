@@ -59,10 +59,10 @@ p {
 /* Checkout form Style Classes */
 /***********************************************************************************************************************************/
 
-.CustomerField-label .ShipField-labe{
+.CustomerField-label, .ShipField-labe{
     width:110px !important;
 }
-.Customer .Ship{
+.Customer, .Ship{
     padding-left: 20px;
 }
 
