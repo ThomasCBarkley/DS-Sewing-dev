@@ -59,7 +59,7 @@ p {
 /* Checkout form Style Classes */
 /***********************************************************************************************************************************/
 
-.CustomerField-label, .ShipField-label{
+.CustomerField-label, .ShipField-label, .BillField-label{
     width:110px !important;
 }
 .Customer, .Ship, .Bill{
