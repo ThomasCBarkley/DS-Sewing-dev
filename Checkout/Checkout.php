@@ -284,7 +284,6 @@ if($action=='show'){
 Checkout 
  	<div>
 		Customer Info
-		
 			<div class="Customer">
 				<div class="CustomerField-div">
 					<label for="Text-AcctCompany" class="CustomerField-label">Company Name</label>
@@ -331,7 +330,49 @@ Checkout
 	</div>
 	<div>
 		Shipping Info
-	</div>
+			<div class="Ship">
+					<div class="ShipField-div">
+						<label for="Text-ShipCompany" class="ShipField-label">Company Name</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipCompany" access="false" id="text-ShipCompany">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipName" class="ShipField-label">Contact Name</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipName" access="false" id="text-ShipName">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipAddress1" class="ShipField-label">Address 1</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipAddress1" access="false" id="text-ShipAddress1">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipAddress2" class="ShipField-label">Address 2</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipAddress2" access="false" id="text-ShipAddress2">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipCity" class="ShipField-label">City</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipCity" access="false" id="text-ShipCity">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipState" class="ShipField-label">State</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipState" access="false" id="text-ShipState">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipZip" class="ShipField-label">Zip</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipZip" access="false" id="text-ShipZip">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipPhone" class="ShipField-label">Phone</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipPhone" access="false" id="text-ShipPhone">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipFax" class="ShipField-label">Fax</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipFax" access="false" id="text-ShipFax">
+					</div>
+					<div class="ShipField-div">
+						<label for="text-ShipCell" class="ShipField-label">Cell</label>
+						<input type="text" class="ShipField-TextControl" name="text-ShipCell" access="false" id="text-ShipCell">
+					</div>
+				</div>
+			</div>
 	<div>
  		Billing Info
 	</div>
