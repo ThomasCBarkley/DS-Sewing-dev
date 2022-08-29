@@ -296,6 +296,10 @@ if($action=='show'){
 					<input type="text" class="CustomerField-TextControl" name="text-AcctName" access="false" id="text-AcctName">
 				</div>
 				<div class="CustomerField-div">
+					<label for="text-Acctemail" class="CustomerField-label">email</label>
+					<input type="text" class="CustomerField-TextControl" name="text-Acctemail" access="false" id="text-Acctemail">
+				</div>
+				<div class="CustomerField-div">
 					<label for="text-AcctAddress1" class="CustomerField-label">Address 1</label>
 					<input type="text" class="CustomerField-TextControl" name="text-AcctAddress1" access="false" id="text-AcctAddress1">
 				</div>
