@@ -387,6 +387,49 @@ if($action=='show'){
 		<br>
 		 <input type="checkbox" id="billinsameasshipping" name="billing" value="true"> check if billing address is the same as the shipping address</input>
 		</div>
+		<div class="Bill" id="Bill">
+					<div class="BillField-div">
+						<label for="Text-BillCompany" class="BillField-label">Company Name</label>
+						<input type="text" class="BillField-TextControl" name="text-BillCompany" access="false" id="text-BillCompany">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillName" class="BillField-label">Contact Name</label>
+						<input type="text" class="BillField-TextControl" name="text-BillName" access="false" id="text-BillName">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillAddress1" class="BillField-label">Address 1</label>
+						<input type="text" class="BillField-TextControl" name="text-BillAddress1" access="false" id="text-BillAddress1">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillAddress2" class="BillField-label">Address 2</label>
+						<input type="text" class="BillField-TextControl" name="text-BillAddress2" access="false" id="text-BillAddress2">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillCity" class="BillField-label">City</label>
+						<input type="text" class="BillField-TextControl" name="text-BillCity" access="false" id="text-BillCity">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillState" class="BillField-label">State</label>
+						<input type="text" class="BillField-TextControl" name="text-BillState" access="false" id="text-BillState">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillZip" class="BillField-label">Zip</label>
+						<input type="text" class="BillField-TextControl" name="text-BillZip" access="false" id="text-BillZip">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillPhone" class="BillField-label">Phone</label>
+						<input type="text" class="BillField-TextControl" name="text-BillPhone" access="false" id="text-BillPhone">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillFax" class="BillField-label">Fax</label>
+						<input type="text" class="BillField-TextControl" name="text-BillFax" access="false" id="text-BillFax">
+					</div>
+					<div class="BillField-div">
+						<label for="text-BillCell" class="BillField-label">Cell</label>
+						<input type="text" class="BillField-TextControl" name="text-BillCell" access="false" id="text-BillCell">
+					</div>
+				</div>
+			</div>
 	</div>
 	<div>
 	<div class="BillingMethodHeader">
