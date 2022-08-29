@@ -62,7 +62,7 @@ p {
 .CustomerField-label, .ShipField-label{
     width:110px !important;
 }
-.Customer, .Ship{
+.Customer, .Ship, .Bill{
     padding-left: 20px;
 }
 
