@@ -385,7 +385,7 @@ if($action=='show'){
 		<div class="BillingInfoHeader">
  		Billing Info 
 		<br>
-		 <input type="checkbox" id="billinsameasshipping" name="billing" value="false"> check if billing address is the same as the shipping address</input>
+		 <input type="checkbox" id="billinsameasshipping" name="billing" value="true"> check if billing address is the same as the shipping address</input>
 		</div>
 	</div>
 	<div>
