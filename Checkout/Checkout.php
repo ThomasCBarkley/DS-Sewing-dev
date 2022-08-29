@@ -441,11 +441,11 @@ if($action=='show'){
 			<input type="text" class="BillMethod-TextControl" name="text-BillCC" access="false" id="text-BillCC">
 		</div>
 		<div class="BillMethod-div">
-			<label for="text-BillExpDate" class="BillMethod-label">CC Number</label>
+			<label for="text-BillExpDate" class="BillMethod-label">Exp Date</label>
 			<input type="text" class="BillMethod-TextControl" name="text-BillExpDate" access="false" id="text-BillExpDate">
 		</div>
 		<div class="BillMethod-div">
-			<label for="text-BillCCV" class="BillMethod-label">CC Number</label>
+			<label for="text-BillCCV" class="BillMethod-label">CCV Number</label>
 			<input type="text" class="BillMethod-TextControl" name="text-BillCCV" access="false" id="text-BillCCV">
 		</div>
 	</div>
