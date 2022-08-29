@@ -66,7 +66,7 @@ p {
     padding-left: 20px;
 }
 
-.CustomerInfoHeader, .ShippingInfoHeader, .BillingInfoHeader{
+.CustomerInfoHeader, .ShippingInfoHeader, .BillingInfoHeader, .BillingMethodHeader{
     font-family: Verdana;
     font-weight: bold;
     font-size: 14pt;
