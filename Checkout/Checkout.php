@@ -282,9 +282,10 @@ if($action=='show'){
 
 
 <div>
-Checkout 
  	<div>
+		<div class="CustomerInfoHeader">
 		Customer Info
+		</div>
 			<div class="Customer">
 				<div class="CustomerField-div">
 					<label for="Text-AcctCompany" class="CustomerField-label">Company Name</label>
@@ -330,7 +331,9 @@ Checkout
 		
 	</div>
 	<div>
+		<div class="ShippingInfoHeader">
 		Shipping Info
+		</div>
 			<div class="Ship">
 					<div class="ShipField-div">
 						<label for="Text-ShipCompany" class="ShipField-label">Company Name</label>
@@ -375,7 +378,9 @@ Checkout
 				</div>
 			</div>
 	<div>
+		<div class="BillingInfoHeader">
  		Billing Info
+		</div>
 	</div>
 </div>
 
