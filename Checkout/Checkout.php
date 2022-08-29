@@ -435,6 +435,20 @@ if($action=='show'){
 	<div class="BillingMethodHeader">
  		Billing Method 
 	</div>
+	<div class="BillMethod">
+		<div class="BillMethod-div">
+			<label for="text-BillCC" class="BillMethod-label">CC Number</label>
+			<input type="text" class="BillMethod-TextControl" name="text-BillCC" access="false" id="text-BillCC">
+		</div>
+		<div class="BillMethod-div">
+			<label for="text-BillExpDate" class="BillMethod-label">CC Number</label>
+			<input type="text" class="BillMethod-TextControl" name="text-BillExpDate" access="false" id="text-BillExpDate">
+		</div>
+		<div class="BillMethod-div">
+			<label for="text-BillCCV" class="BillMethod-label">CC Number</label>
+			<input type="text" class="BillMethod-TextControl" name="text-BillCCV" access="false" id="text-BillCCV">
+		</div>
+	</div>
 </div>
 
 <div>
