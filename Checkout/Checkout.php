@@ -326,8 +326,7 @@ if($action=='show'){
 							name="text-AcctPhone" 
 							access="false" 
 							id="text-AcctPhone" 
-							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-							required>
+							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 				</div>
 				<div class="CustomerField-div">
 					<label for="text-AcctFax" class="CustomerField-label">Fax</label>
