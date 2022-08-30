@@ -321,7 +321,13 @@ if($action=='show'){
 				</div>
 				<div class="CustomerField-div">
 					<label for="text-AcctPhone" class="CustomerField-label">Phone</label>
-					<input type="text" class="CustomerField-TextControl" name="text-AcctPhone" access="false" id="text-AcctPhone">
+					<input type="tel" 
+							class="CustomerField-TextControl" 
+							name="text-AcctPhone" 
+							access="false" 
+							id="text-AcctPhone" 
+							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+							required>
 				</div>
 				<div class="CustomerField-div">
 					<label for="text-AcctFax" class="CustomerField-label">Fax</label>
