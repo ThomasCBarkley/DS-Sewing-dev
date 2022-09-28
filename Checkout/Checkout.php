@@ -283,11 +283,10 @@ if($action=='show'){
 
 <div>
  	<div class="CustomerContainer">
-		
 		<div class="CustomerInfoHeader">
 		Customer Info
 		</div>
-			<div class="Customer">
+		<div class="Customer">
 				<div class="CustomerField-div">
 					<label for="Text-AcctCompany" class="CustomerField-label">Company Name</label>
 					<input type="text" class="CustomerField-TextControl" name="text-AcctCompany" access="false" id="text-AcctCompany">
@@ -338,13 +337,13 @@ if($action=='show'){
 					<input type="text" class="CustomerField-TextControl" name="text-AcctCell" access="false" id="text-AcctCell">
 				</div>
 			</div>
-		
+		</div>	
 	</div>
 	<div class="ShippingInfoContainer">
 		<div class="ShippingInfoHeader">
 		Shipping Info
 		</div>
-			<div class="Ship">
+		<div class="Ship">
 					<div class="ShipField-div">
 						<label for="Text-ShipCompany" class="ShipField-label">Company Name</label>
 						<input type="text" class="ShipField-TextControl" name="text-ShipCompany" access="false" id="text-ShipCompany">
@@ -387,6 +386,7 @@ if($action=='show'){
 					</div>
 				</div>
 			</div>
+		</div>
 	</div>
 	<div Class="BillingInfoContainer">
 		<div class="BillingInfoHeader">
@@ -437,6 +437,7 @@ if($action=='show'){
 					</div>
 				</div>
 			</div>
+		</div>
 	</div>
 	<div Class="BillingMethodContainer">
 		<div class="BillingMethodHeader">
