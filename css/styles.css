@@ -58,6 +58,22 @@ p {
 /***********************************************************************************************************************************/
 /* Checkout form Style Classes */
 /***********************************************************************************************************************************/
+.CustomerContainer{
+    text-align: center;
+}
+
+.ShippingInfoContainer{
+    text-align: center;
+}
+
+.BillingInfoContainer{
+    text-align: center;
+}
+
+.BillingMethodContainer{
+    text-align: center;
+}
+
 
 .CustomerField-label, .ShipField-label, .BillField-label, .BillMethod-label{
     width:110px !important;
