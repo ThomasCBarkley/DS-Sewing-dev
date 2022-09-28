@@ -281,7 +281,7 @@ if($action=='show'){
 </div>
 
 
-<div>
+<div class=CheckoutInfoContainer">
  	<div class="CustomerContainer">
 		<div class="CustomerInfoHeader">
 		Customer Info
