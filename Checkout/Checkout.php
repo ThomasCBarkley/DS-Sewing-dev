@@ -393,7 +393,7 @@ function build_cartHeader()
 					<input type="text" class="BillField-TextControl" name="text-BillCompany" access="false" id="text-BillCompany">
 				</div>
 				<div class="BillField-div">
-					<label for="text-BillName" class="BillField-label">Contact Name</label>
+					<label for="text-BillName" class="BillField-label">Name on Card</label>
 					<input type="text" class="BillField-TextControl" name="text-BillName" access="false" id="text-BillName">
 				</div>
 				<div class="BillField-div">
