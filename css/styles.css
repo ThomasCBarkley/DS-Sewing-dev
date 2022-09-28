@@ -60,23 +60,26 @@ p {
 /***********************************************************************************************************************************/
 
 .CheckoutInfoContainer{
-    
+    text-align: center;
+    width:100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .CustomerContainer{
-    text-align: center;
+    display: inline-block;
 }
 
 .ShippingInfoContainer{
-    text-align: center;
+    display: inline-block;
 }
 
 .BillingInfoContainer{
-    text-align: center;
+    display: inline-block;
 }
 
 .BillingMethodContainer{
-    text-align: center;
+    display: inline-block;
 }
 
 
