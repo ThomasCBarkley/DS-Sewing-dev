@@ -282,7 +282,9 @@ if($action=='show'){
 
 
 <div>
+	<center>
  	<div>
+		
 		<div class="CustomerInfoHeader">
 		Customer Info
 		</div>
@@ -454,6 +456,7 @@ if($action=='show'){
 			<input type="text" class="BillMethod-TextControl" name="text-BillCCV" access="false" id="text-BillCCV">
 		</div>
 	</div>
+	</center>
 </div>
 
 <div>
