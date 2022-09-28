@@ -95,7 +95,7 @@ p {
     width:110px !important;
 }
 .Customer, .Ship, .Bill, .BillMethod{
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 .CustomerInfoHeader, .ShippingInfoHeader, .BillingInfoHeader, .BillingMethodHeader{
