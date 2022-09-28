@@ -282,7 +282,7 @@ if($action=='show'){
 
 
 <div>
- 	<div>
+ 	<div class="CustomerContainer">
 		
 		<div class="CustomerInfoHeader">
 		Customer Info
@@ -340,7 +340,7 @@ if($action=='show'){
 			</div>
 		
 	</div>
-	<div>
+	<div class="ShippingInfoContainer">
 		<div class="ShippingInfoHeader">
 		Shipping Info
 		</div>
@@ -387,7 +387,8 @@ if($action=='show'){
 					</div>
 				</div>
 			</div>
-	<div>
+	</div>
+	<div Class="BillingInfoContainer">
 		<div class="BillingInfoHeader">
  		Billing Info 
 		<br>
@@ -437,11 +438,11 @@ if($action=='show'){
 				</div>
 			</div>
 	</div>
-	<div>
-	<div class="BillingMethodHeader">
+	<div Class="BillingMethodContainer">
+		<div class="BillingMethodHeader">
  		Billing Method 
-	</div>
-	<div class="BillMethod">
+		</div>
+		<div class="BillMethod">
 		<div class="BillMethod-div">
 			<label for="text-BillCC" class="BillMethod-label">CC Number</label>
 			<input type="text" class="BillMethod-TextControl" name="text-BillCC" access="false" id="text-BillCC">
@@ -453,6 +454,7 @@ if($action=='show'){
 		<div class="BillMethod-div">
 			<label for="text-BillCCV" class="BillMethod-label">CCV Number</label>
 			<input type="text" class="BillMethod-TextControl" name="text-BillCCV" access="false" id="text-BillCCV">
+		</div>
 		</div>
 	</div>
 </div>
