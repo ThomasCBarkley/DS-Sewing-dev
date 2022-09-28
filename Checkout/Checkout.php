@@ -384,7 +384,8 @@ function build_cartHeader()
 			<div class="BillingInfoHeader">
 				Billing Info
 				<br>
-				<input type="checkbox" id="billinsameasshipping" name="billing" value="true" class="billing-shipping-same-checkbox"> check if billing address is the same as the shipping address</input>
+				<input type="checkbox" id="billinsameasshipping" name="billing" value="true" >
+				<span class="billing-shipping-same-checkbox">check if billing address is the same as the shipping address<span>
 			</div>
 			<div class="Bill" id="Bill">
 				<div class="BillField-div">
