@@ -97,6 +97,14 @@ p {
     padding: 10px;
     text-align: center;
 }
+.billing-shipping-same-checkbox{
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 9pt;
+    background-color: #ffcc66;
+    padding: 10px;
+    text-align: center;
+}
 
 /***********************************************************************************************************************************/
 /* Checkout form Style Classes */
