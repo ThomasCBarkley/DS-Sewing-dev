@@ -67,18 +67,22 @@ p {
 
 .CustomerContainer{
     display: inline-block;
+    vertical-align: top;
 }
 
 .ShippingInfoContainer{
     display: inline-block;
+    vertical-align: top;
 }
 
 .BillingInfoContainer{
     display: inline-block;
+    vertical-align: top;
 }
 
 .BillingMethodContainer{
     display: inline-block;
+    vertical-align: top;
 }
 
 
