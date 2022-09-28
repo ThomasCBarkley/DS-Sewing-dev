@@ -8,19 +8,19 @@ error_reporting(0);
 /****************************************************************************************************************** */
 
 
-$total=0;
+$total = 0;
 /****************************************************************************************************************** */
 // Setup Database Conection
-	$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
-		
-	$connectionOptions = array(
-		"Database" => "dssewing", // update me
-		"Uid" => "ds-sewing-dev-server-admin", // update me
-		"PWD" => "2020Sucks!" // update me
-	);
+$serverName = "ds-sewing-dev-server.database.windows.net"; // update me
 
-	//Establishes the connection
-	$conn = sqlsrv_connect($serverName, $connectionOptions);
+$connectionOptions = array(
+	"Database" => "dssewing", // update me
+	"Uid" => "ds-sewing-dev-server-admin", // update me
+	"PWD" => "2020Sucks!" // update me
+);
+
+//Establishes the connection
+$conn = sqlsrv_connect($serverName, $connectionOptions);
 
 // End Connection
 /****************************************************************************************************************** */
@@ -34,14 +34,14 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 /****************************************************************************************************************** */
 //get params from url query string
-	//?action=
-		$action = isset($_GET['action'])?$_GET['action']:"";
-	//&pid=
-		$pid = isset($_GET['pid'])?$_GET['pid']:"";
-	//&id=
-		$id = isset($_GET['id'])?$_GET['id']:"";
-	//&qty=
-		$qty = isset($_GET['qty'])?$_GET['qty']:"";
+//?action=
+$action = isset($_GET['action']) ? $_GET['action'] : "";
+//&pid=
+$pid = isset($_GET['pid']) ? $_GET['pid'] : "";
+//&id=
+$id = isset($_GET['id']) ? $_GET['id'] : "";
+//&qty=
+$qty = isset($_GET['qty']) ? $_GET['qty'] : "";
 /****************************************************************************************************************** */
 
 
@@ -56,26 +56,25 @@ $cart_HTML = "";
 /****************************************************************************************************************** */
 // Add to cart
 /****************************************************************************************************************** */
-if($action=='addcart') {
-	
+if ($action == 'addcart') {
+
 	global $serverName, $connectionOptions, $conn;
 
-    $tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
-    $res= sqlsrv_query($conn, $tsql);
-    
-    //$rtn = "success";
-	if( $res === false ) {
-		if( ($errors = sqlsrv_errors() ) != null) {
-			foreach( $errors as $error ) {
-				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-				echo "code: ".$error[ 'code']."<br />";
-				echo "message: ".$error[ 'message']."<br />";
+	$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" . $pid . "')";
+	$res = sqlsrv_query($conn, $tsql);
+
+	//$rtn = "success";
+	if ($res === false) {
+		if (($errors = sqlsrv_errors()) != null) {
+			foreach ($errors as $error) {
+				echo "SQLSTATE: " . $error['SQLSTATE'] . "<br />";
+				echo "code: " . $error['code'] . "<br />";
+				echo "message: " . $error['message'] . "<br />";
 			}
-		
 		}
 	}
 
-    /*while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+	/*while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
         //echo ($row['PID'] . " " . $row['Description'] . PHP_EOL);
         $price=$row['itmPrice'];
     }*/
@@ -83,26 +82,25 @@ if($action=='addcart') {
 /****************************************************************************************************************** */
 // Add to cart
 /****************************************************************************************************************** */
-if($action=='updatecart') {
-	
+if ($action == 'updatecart') {
+
 	global $serverName, $connectionOptions, $conn;
 	global $cart_HTML;
 
-    //$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
-	$tsql = "UPDATE dbo.cart SET qty='" . $qty . "' WHERE sessionID='" . $id . "' and pid='" . $pid ."'";
-    $res= sqlsrv_query($conn, $tsql);
-    
-	$cart_HTML=$tsql;
+	//$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
+	$tsql = "UPDATE dbo.cart SET qty='" . $qty . "' WHERE sessionID='" . $id . "' and pid='" . $pid . "'";
+	$res = sqlsrv_query($conn, $tsql);
 
-    //$rtn = "success";
-	if( $res === false ) {
-		if( ($errors = sqlsrv_errors() ) != null) {
-			foreach( $errors as $error ) {
-				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-				echo "code: ".$error[ 'code']."<br />";
-				echo "message: ".$error[ 'message']."<br />";
+	$cart_HTML = $tsql;
+
+	//$rtn = "success";
+	if ($res === false) {
+		if (($errors = sqlsrv_errors()) != null) {
+			foreach ($errors as $error) {
+				echo "SQLSTATE: " . $error['SQLSTATE'] . "<br />";
+				echo "code: " . $error['code'] . "<br />";
+				echo "message: " . $error['message'] . "<br />";
 			}
-		
 		}
 	}
 }
@@ -110,50 +108,50 @@ if($action=='updatecart') {
 /****************************************************************************************************************** */
 // Empty entire cart
 /****************************************************************************************************************** */
-if($action=='emptyall') {
-/* 	$_SESSION['products'] =array();
+if ($action == 'emptyall') {
+	/* 	$_SESSION['products'] =array();
 	header("Location:shopping-cart.php");	
- */}
+ */
+}
 
 
 /****************************************************************************************************************** */
 // Remove item
 /****************************************************************************************************************** */
-if($action=='remove') {
+if ($action == 'remove') {
 	global $serverName, $connectionOptions, $conn;
 	global $cart_HTML;
 
-    //$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
-	$tsql = "DELETE FROM dbo.cart WHERE sessionID='" . $id . "' and pid='" . $pid ."'";
-    $res= sqlsrv_query($conn, $tsql);
-    
-	$cart_HTML=$tsql;
+	//$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
+	$tsql = "DELETE FROM dbo.cart WHERE sessionID='" . $id . "' and pid='" . $pid . "'";
+	$res = sqlsrv_query($conn, $tsql);
 
-    //$rtn = "success";
-	if( $res === false ) {
-		if( ($errors = sqlsrv_errors() ) != null) {
-			foreach( $errors as $error ) {
-				echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-				echo "code: ".$error[ 'code']."<br />";
-				echo "message: ".$error[ 'message']."<br />";
+	$cart_HTML = $tsql;
+
+	//$rtn = "success";
+	if ($res === false) {
+		if (($errors = sqlsrv_errors()) != null) {
+			foreach ($errors as $error) {
+				echo "SQLSTATE: " . $error['SQLSTATE'] . "<br />";
+				echo "code: " . $error['code'] . "<br />";
+				echo "message: " . $error['message'] . "<br />";
 			}
-		
 		}
 	}
 }
 
 
- 
+
 /****************************************************************************************************************** */
 // Show Cart
 /****************************************************************************************************************** */
-if($action=='show'){
+if ($action == 'show') {
 	global $serverName, $connectionOptions, $conn;
 
 	//echo("sessionID=" .$id);
 
 	//Build Query 
-		$tsql="SELECT 
+	$tsql = "SELECT 
 			dbo.catalog.pid as PID, 
 			dbo.catalog.description as DSC, 
 			dbo.catalog.price as PRC, 
@@ -163,80 +161,81 @@ if($action=='show'){
 			dbo.cart.qty as QTY
 		FROM dbo.catalog
 		INNER JOIN dbo.cart on dbo.catalog.pid=dbo.cart.pid
-		WHERE dbo.cart.sessionID='" . $id ."'";
+		WHERE dbo.cart.sessionID='" . $id . "'";
 
-		//$tsql = "SELECT dbo.catalog.pid, dbo.catalog.description, dbo.catalog.price, dbo.catalog.weight, dbo.catalog.length, dbo.catalog.height dbo.cart.qty FROM dbo.catalog where pid in(select pid as cartQTY from dbo.cart where sessionID='" . $id ."') inner join on dbo.catalog.pid = dbo.cart.pid";
-		
+	//$tsql = "SELECT dbo.catalog.pid, dbo.catalog.description, dbo.catalog.price, dbo.catalog.weight, dbo.catalog.length, dbo.catalog.height dbo.cart.qty FROM dbo.catalog where pid in(select pid as cartQTY from dbo.cart where sessionID='" . $id ."') inner join on dbo.catalog.pid = dbo.cart.pid";
+
 	//Open Query
-		$res= sqlsrv_query($conn, $tsql);
-    
+	$res = sqlsrv_query($conn, $tsql);
+
 	//echo("Resource=" .$res);
 
-    //Process Results
-		//if Error
-			if( $res === false ) {
-				if( ($errors = sqlsrv_errors() ) != null) {
-					foreach( $errors as $error ) {
-						echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
-						echo "code: ".$error[ 'code']."<br />";
-						echo "message: ".$error[ 'message']."<br />";
-					}
-				}		
+	//Process Results
+	//if Error
+	if ($res === false) {
+		if (($errors = sqlsrv_errors()) != null) {
+			foreach ($errors as $error) {
+				echo "SQLSTATE: " . $error['SQLSTATE'] . "<br />";
+				echo "code: " . $error['code'] . "<br />";
+				echo "message: " . $error['message'] . "<br />";
 			}
-		//else no error
-			//echo("found records");
-			global $cart_HTML;
-
-			//set table and header
-			$cart_HTML = build_cartHeader();
-
-			$row_ID = 0;
-
-			//echo($cart_HTML); 
-				
-			//build rows
-				while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
-					//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
-					
-					$row_ID++;
-					        					
-					$PID=$row['PID'];
-					$DESC=$row['DSC'];
-					$WEIGHT=$row['WGT'];
-					$PRICE=$row['PRC'];
-					$QTY=$row['QTY'];
-
-					$ShowPRICE = $PRICE*$QTY;
-					//echo($ShowPRICE);
-
- 					$cart_HTML .= '<tr>';
-					$cart_HTML .= '<td class="item_sku">' ;  
-					$cart_HTML .= '<input style="width:25px;" type="text" id="text_QTY' . $row_ID .'" value="' . $QTY . '">';
-					//$cart_HTML .= '<INPUT TYPE="NUMBER" MIN="0" MAX="10" STEP="1" VALUE="' . $QTY . '" SIZE="6">';
-					//$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','text_QTY" . $row_ID ."');\">Update QTY</button>";
-					$cart_HTML .= '</td>';
-					$cart_HTML .= '<td class="item_sku" id="text_PID' . $row_ID .'">' . $PID;		
-					$cart_HTML .= '</td>';
-					$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
-					$cart_HTML .= '<td class="item_weight" >' . number_format($WEIGHT,0) . '</td>';
-					$cart_HTML .= '<td class="item_price" id="text_PRICE' . $row_ID .'">$' . number_format($PRICE,2) . '</td>';
-					$cart_HTML .= '<td class="item_price" id="text_TOTALPRICE' . $row_ID .'">$' . number_format($ShowPRICE,2) . '</td>';
-					//$cart_HTML .= '<input type="text" id="country" name="country" value="Norway" readonly>';
-					$cart_HTML .= '</tr>';  
-					
-				}
-
-			$cart_HTML .="</table>";
-			$cart_HTML .="<div>";
-			$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','" . $row_ID ."','" . $id . "');\">Update Cart</button>";
-					
-		//echo($cart_HTML);
- }
- function build_cartRow($PID,$DESC,$WEIGHT,$PRICE,$QTY,$ROW) {
+		}
+	}
+	//else no error
+	//echo("found records");
 	global $cart_HTML;
-	$ShowPRICE = $PRICE*$QTY;
- }
- function build_cartHeader(){
+
+	//set table and header
+	$cart_HTML = build_cartHeader();
+
+	$row_ID = 0;
+
+	//echo($cart_HTML); 
+
+	//build rows
+	while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_ASSOC)) {
+		//echo ($row['pid'] . " " . $row['description'] . PHP_EOL);
+
+		$row_ID++;
+
+		$PID = $row['PID'];
+		$DESC = $row['DSC'];
+		$WEIGHT = $row['WGT'];
+		$PRICE = $row['PRC'];
+		$QTY = $row['QTY'];
+
+		$ShowPRICE = $PRICE * $QTY;
+		//echo($ShowPRICE);
+
+		$cart_HTML .= '<tr>';
+		$cart_HTML .= '<td class="item_sku">';
+		$cart_HTML .= '<input style="width:25px;" type="text" id="text_QTY' . $row_ID . '" value="' . $QTY . '">';
+		//$cart_HTML .= '<INPUT TYPE="NUMBER" MIN="0" MAX="10" STEP="1" VALUE="' . $QTY . '" SIZE="6">';
+		//$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','text_QTY" . $row_ID ."');\">Update QTY</button>";
+		$cart_HTML .= '</td>';
+		$cart_HTML .= '<td class="item_sku" id="text_PID' . $row_ID . '">' . $PID;
+		$cart_HTML .= '</td>';
+		$cart_HTML .= '<td class="item_description">' . $DESC . '</td>';
+		$cart_HTML .= '<td class="item_weight" >' . number_format($WEIGHT, 0) . '</td>';
+		$cart_HTML .= '<td class="item_price" id="text_PRICE' . $row_ID . '">$' . number_format($PRICE, 2) . '</td>';
+		$cart_HTML .= '<td class="item_price" id="text_TOTALPRICE' . $row_ID . '">$' . number_format($ShowPRICE, 2) . '</td>';
+		//$cart_HTML .= '<input type="text" id="country" name="country" value="Norway" readonly>';
+		$cart_HTML .= '</tr>';
+	}
+
+	$cart_HTML .= "</table>";
+	$cart_HTML .= "<div>";
+	$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','" . $row_ID . "','" . $id . "');\">Update Cart</button>";
+
+	//echo($cart_HTML);
+}
+function build_cartRow($PID, $DESC, $WEIGHT, $PRICE, $QTY, $ROW)
+{
+	global $cart_HTML;
+	$ShowPRICE = $PRICE * $QTY;
+}
+function build_cartHeader()
+{
 	$rtn_HTML = '<table class="cart_Table" BORDER="1" CELLSPACING="0" CELLPADDING="3">';
 	$rtn_HTML .= "<tr class=\"cart_Header_TR\">";
 	$rtn_HTML .= "<td>Qty</td>";
@@ -248,11 +247,12 @@ if($action=='show'){
 	$rtn_HTML .= "</tr>";
 
 	return $rtn_HTML;
- }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -268,25 +268,26 @@ if($action=='show'){
 
 	<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
 </head>
+
 <body>
-<DIV ALIGN="center">
-    <CENTER><?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/header.php"; ?></CENTER>
-</DIV>
-<div class="container" style="width:600px;">
-</DIV>
-<div>
-	<CENTER>
-		<?php echo($cart_HTML); ?>
-	</CENTER>
-</div>
+	<DIV ALIGN="center">
+		<CENTER><?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/header.php"; ?></CENTER>
+	</DIV>
+	<div class="container" style="width:600px;">
+	</DIV>
+	<div>
+		<CENTER>
+			<?php echo ($cart_HTML); ?>
+		</CENTER>
+	</div>
 
 
-<div class=CheckoutInfoContainer">
- 	<div class="CustomerContainer">
-		<div class="CustomerInfoHeader">
-		Customer Info
-		</div>
-		<div class="Customer">
+	<div class=CheckoutInfoContainer">
+		<div class="CustomerContainer">
+			<div class="CustomerInfoHeader">
+				Customer Info
+			</div>
+			<div class="Customer">
 				<div class="CustomerField-div">
 					<label for="Text-AcctCompany" class="CustomerField-label">Company Name</label>
 					<input type="text" class="CustomerField-TextControl" name="text-AcctCompany" access="false" id="text-AcctCompany">
@@ -321,12 +322,7 @@ if($action=='show'){
 				</div>
 				<div class="CustomerField-div">
 					<label for="text-AcctPhone" class="CustomerField-label">Phone</label>
-					<input type="tel" 
-							class="CustomerField-TextControl" 
-							name="text-AcctPhone" 
-							access="false" 
-							id="text-AcctPhone" 
-							pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+					<input type="tel" class="CustomerField-TextControl" name="text-AcctPhone" access="false" id="text-AcctPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
 				</div>
 				<div class="CustomerField-div">
 					<label for="text-AcctFax" class="CustomerField-label">Fax</label>
@@ -337,133 +333,129 @@ if($action=='show'){
 					<input type="text" class="CustomerField-TextControl" name="text-AcctCell" access="false" id="text-AcctCell">
 				</div>
 			</div>
-		</div>	
-	</div>
-	<div class="ShippingInfoContainer">
-		<div class="ShippingInfoHeader">
-		Shipping Info
 		</div>
-		<div class="Ship">
-					<div class="ShipField-div">
-						<label for="Text-ShipCompany" class="ShipField-label">Company Name</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipCompany" access="false" id="text-ShipCompany">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipName" class="ShipField-label">Contact Name</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipName" access="false" id="text-ShipName">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipAddress1" class="ShipField-label">Address 1</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipAddress1" access="false" id="text-ShipAddress1">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipAddress2" class="ShipField-label">Address 2</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipAddress2" access="false" id="text-ShipAddress2">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipCity" class="ShipField-label">City</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipCity" access="false" id="text-ShipCity">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipState" class="ShipField-label">State</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipState" access="false" id="text-ShipState">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipZip" class="ShipField-label">Zip</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipZip" access="false" id="text-ShipZip">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipPhone" class="ShipField-label">Phone</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipPhone" access="false" id="text-ShipPhone">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipFax" class="ShipField-label">Fax</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipFax" access="false" id="text-ShipFax">
-					</div>
-					<div class="ShipField-div">
-						<label for="text-ShipCell" class="ShipField-label">Cell</label>
-						<input type="text" class="ShipField-TextControl" name="text-ShipCell" access="false" id="text-ShipCell">
-					</div>
+		<div class="ShippingInfoContainer">
+			<div class="ShippingInfoHeader">
+				Shipping Info
+			</div>
+			<div class="Ship">
+				<div class="ShipField-div">
+					<label for="Text-ShipCompany" class="ShipField-label">Company Name</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipCompany" access="false" id="text-ShipCompany">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipName" class="ShipField-label">Contact Name</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipName" access="false" id="text-ShipName">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipAddress1" class="ShipField-label">Address 1</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipAddress1" access="false" id="text-ShipAddress1">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipAddress2" class="ShipField-label">Address 2</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipAddress2" access="false" id="text-ShipAddress2">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipCity" class="ShipField-label">City</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipCity" access="false" id="text-ShipCity">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipState" class="ShipField-label">State</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipState" access="false" id="text-ShipState">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipZip" class="ShipField-label">Zip</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipZip" access="false" id="text-ShipZip">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipPhone" class="ShipField-label">Phone</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipPhone" access="false" id="text-ShipPhone">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipFax" class="ShipField-label">Fax</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipFax" access="false" id="text-ShipFax">
+				</div>
+				<div class="ShipField-div">
+					<label for="text-ShipCell" class="ShipField-label">Cell</label>
+					<input type="text" class="ShipField-TextControl" name="text-ShipCell" access="false" id="text-ShipCell">
+				</div>
+			</div>
+		</div>
+		<div Class="BillingInfoContainer">
+			<div class="BillingInfoHeader">
+				Billing Info
+				<br>
+				<input type="checkbox" id="billinsameasshipping" name="billing" value="true"> check if billing address is the same as the shipping address</input>
+			</div>
+			<div class="Bill" id="Bill">
+				<div class="BillField-div">
+					<label for="Text-BillCompany" class="BillField-label">Company Name</label>
+					<input type="text" class="BillField-TextControl" name="text-BillCompany" access="false" id="text-BillCompany">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillName" class="BillField-label">Contact Name</label>
+					<input type="text" class="BillField-TextControl" name="text-BillName" access="false" id="text-BillName">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillAddress1" class="BillField-label">Address 1</label>
+					<input type="text" class="BillField-TextControl" name="text-BillAddress1" access="false" id="text-BillAddress1">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillAddress2" class="BillField-label">Address 2</label>
+					<input type="text" class="BillField-TextControl" name="text-BillAddress2" access="false" id="text-BillAddress2">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillCity" class="BillField-label">City</label>
+					<input type="text" class="BillField-TextControl" name="text-BillCity" access="false" id="text-BillCity">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillState" class="BillField-label">State</label>
+					<input type="text" class="BillField-TextControl" name="text-BillState" access="false" id="text-BillState">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillZip" class="BillField-label">Zip</label>
+					<input type="text" class="BillField-TextControl" name="text-BillZip" access="false" id="text-BillZip">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillPhone" class="BillField-label">Phone</label>
+					<input type="text" class="BillField-TextControl" name="text-BillPhone" access="false" id="text-BillPhone">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillFax" class="BillField-label">Fax</label>
+					<input type="text" class="BillField-TextControl" name="text-BillFax" access="false" id="text-BillFax">
+				</div>
+				<div class="BillField-div">
+					<label for="text-BillCell" class="BillField-label">Cell</label>
+					<input type="text" class="BillField-TextControl" name="text-BillCell" access="false" id="text-BillCell">
+				</div>
+			</div>
+		</div>
+		<div Class="BillingMethodContainer">
+			<div class="BillingMethodHeader">
+				Billing Method
+			</div>
+			<div class="BillMethod">
+				<div class="BillMethod-div">
+					<label for="text-BillCC" class="BillMethod-label">CC Number</label>
+					<input type="text" class="BillMethod-TextControl" name="text-BillCC" access="false" id="text-BillCC">
+				</div>
+				<div class="BillMethod-div">
+					<label for="text-BillExpDate" class="BillMethod-label">Exp Date</label>
+					<input type="text" class="BillMethod-TextControl" name="text-BillExpDate" access="false" id="text-BillExpDate">
+				</div>
+				<div class="BillMethod-div">
+					<label for="text-BillCCV" class="BillMethod-label">CCV Number</label>
+					<input type="text" class="BillMethod-TextControl" name="text-BillCCV" access="false" id="text-BillCCV">
 				</div>
 			</div>
 		</div>
 	</div>
-	<div Class="BillingInfoContainer">
-		<div class="BillingInfoHeader">
- 		Billing Info 
-		<br>
-		 <input type="checkbox" id="billinsameasshipping" name="billing" value="true"> check if billing address is the same as the shipping address</input>
-		</div>
-		<div class="Bill" id="Bill">
-					<div class="BillField-div">
-						<label for="Text-BillCompany" class="BillField-label">Company Name</label>
-						<input type="text" class="BillField-TextControl" name="text-BillCompany" access="false" id="text-BillCompany">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillName" class="BillField-label">Contact Name</label>
-						<input type="text" class="BillField-TextControl" name="text-BillName" access="false" id="text-BillName">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillAddress1" class="BillField-label">Address 1</label>
-						<input type="text" class="BillField-TextControl" name="text-BillAddress1" access="false" id="text-BillAddress1">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillAddress2" class="BillField-label">Address 2</label>
-						<input type="text" class="BillField-TextControl" name="text-BillAddress2" access="false" id="text-BillAddress2">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillCity" class="BillField-label">City</label>
-						<input type="text" class="BillField-TextControl" name="text-BillCity" access="false" id="text-BillCity">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillState" class="BillField-label">State</label>
-						<input type="text" class="BillField-TextControl" name="text-BillState" access="false" id="text-BillState">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillZip" class="BillField-label">Zip</label>
-						<input type="text" class="BillField-TextControl" name="text-BillZip" access="false" id="text-BillZip">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillPhone" class="BillField-label">Phone</label>
-						<input type="text" class="BillField-TextControl" name="text-BillPhone" access="false" id="text-BillPhone">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillFax" class="BillField-label">Fax</label>
-						<input type="text" class="BillField-TextControl" name="text-BillFax" access="false" id="text-BillFax">
-					</div>
-					<div class="BillField-div">
-						<label for="text-BillCell" class="BillField-label">Cell</label>
-						<input type="text" class="BillField-TextControl" name="text-BillCell" access="false" id="text-BillCell">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div Class="BillingMethodContainer">
-		<div class="BillingMethodHeader">
- 		Billing Method 
-		</div>
-		<div class="BillMethod">
-		<div class="BillMethod-div">
-			<label for="text-BillCC" class="BillMethod-label">CC Number</label>
-			<input type="text" class="BillMethod-TextControl" name="text-BillCC" access="false" id="text-BillCC">
-		</div>
-		<div class="BillMethod-div">
-			<label for="text-BillExpDate" class="BillMethod-label">Exp Date</label>
-			<input type="text" class="BillMethod-TextControl" name="text-BillExpDate" access="false" id="text-BillExpDate">
-		</div>
-		<div class="BillMethod-div">
-			<label for="text-BillCCV" class="BillMethod-label">CCV Number</label>
-			<input type="text" class="BillMethod-TextControl" name="text-BillCCV" access="false" id="text-BillCCV">
-		</div>
-		</div>
-	</div>
-</div>
 
-<div>
-	<CENTER><br><br>
-		<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/footer.php"; ?>
-    </CENTER>
-</div>	
+	<div>
+		<CENTER><br><br>
+			<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/footer.php"; ?>
+		</CENTER>
+	</div>
 </body>
+
 </html>
