@@ -281,7 +281,6 @@ function build_cartHeader()
 		</CENTER>
 	</div>
 
-
 	<div class=CheckoutInfoContainer">
 		<div class="CustomerContainer">
 			<div class="CustomerInfoHeader">
