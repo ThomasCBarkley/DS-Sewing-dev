@@ -347,6 +347,10 @@ function build_cartHeader()
 					<input type="text" class="ShipField-TextControl" name="text-ShipName" access="false" id="text-ShipName">
 				</div>
 				<div class="ShipField-div">
+					<label for="text-Shipemail" class="ShipField-label">email</label>
+					<input type="text" class="ShipField-TextControl" name="text-Shipemail" access="false" id="text-Shipemail">
+				</div>				
+				<div class="ShipField-div">
 					<label for="text-ShipAddress1" class="ShipField-label">Address 1</label>
 					<input type="text" class="ShipField-TextControl" name="text-ShipAddress1" access="false" id="text-ShipAddress1">
 				</div>
@@ -396,6 +400,11 @@ function build_cartHeader()
 					<label for="text-BillName" class="BillField-label">Name on Card</label>
 					<input type="text" class="BillField-TextControl" name="text-BillName" access="false" id="text-BillName">
 				</div>
+				<div class="BillField-div">
+					<label for="text-Billemail" class="BillField-label">email</label>
+					<input type="text" class="BillField-TextControl" name="text-Billemail" access="false" id="text-Billemail">
+				</div>				
+
 				<div class="BillField-div">
 					<label for="text-BillAddress1" class="BillField-label">Address 1</label>
 					<input type="text" class="BillField-TextControl" name="text-BillAddress1" access="false" id="text-BillAddress1">
