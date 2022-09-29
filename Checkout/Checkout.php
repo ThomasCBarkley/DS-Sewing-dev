@@ -386,10 +386,20 @@ function build_cartHeader()
 		</div>
 		<div Class="BillingInfoContainer">
 			<div class="BillingInfoHeader">
-				Billing Info
+				<table>
+					<tr>
+						<td>
+							Billing Info
+						</td>
+						<td>
+							<input type="checkbox" id="billinsameasshipping" name="billing" value="true" >
+							<span class="billing-shipping-same-checkbox">check if billing address is the same as the shipping address<span>
+						</td>
+					</tr>
+				</table>
+				
 				<br>
-				<input type="checkbox" id="billinsameasshipping" name="billing" value="true" >
-				<span class="billing-shipping-same-checkbox">check if billing address is the same as the shipping address<span>
+
 			</div>
 			<div class="Bill" id="Bill">
 				<div class="BillField-div">
