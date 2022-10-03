@@ -106,6 +106,7 @@ p {
     background-color:  rgb(255, 170, 0); /* #ffcc66*/
     padding: 10px;
     text-align: center;
+    height: 75px;
 }
 
 .billing-shipping-same-checkbox{
