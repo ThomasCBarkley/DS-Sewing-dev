@@ -279,10 +279,12 @@ if($action=='show'){
 		<?php echo($cart_HTML); ?>
 	</CENTER>
 </div>
-<div>
-	<CENTER><br><br>
-		<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/footer.php"; ?>
-    </CENTER>
-</div>	
+<!-- 
+	<div>
+		<CENTER><br><br>
+			<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/footer.php"; ?>
+		</CENTER>
+	</div>
+ -->
 </body>
 </html>
