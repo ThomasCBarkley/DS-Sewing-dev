@@ -470,11 +470,13 @@ function build_cartHeader()
 		</div>
 	</div>
 
+<!--
 	<div>
 		<CENTER><br><br>
 			<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/footer.php"; ?>
 		</CENTER>
-	</div>
+	</div> 
+-->
 </body>
 
 </html>
