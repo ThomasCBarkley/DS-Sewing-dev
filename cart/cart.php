@@ -5,6 +5,8 @@ error_reporting(0);
 /****************************************************************************************************************** */
 // Setting session start
 session_start();
+$current_PHPSESSID = session_id();
+
 /****************************************************************************************************************** */
 
 
@@ -88,11 +90,16 @@ if($action=='updatecart') {
 	global $serverName, $connectionOptions, $conn;
 	global $cart_HTML;
 
+	global $current_PHPSESSID;
+	echo $current_PHPSESSID;
+
     //$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
 	$tsql = "UPDATE dbo.cart SET qty='" . $qty . "' WHERE sessionID='" . $id . "' and pid='" . $pid ."'";
     $res= sqlsrv_query($conn, $tsql);
     
 	$cart_HTML=$tsql;
+
+
 
     //$rtn = "success";
 	if( $res === false ) {
