@@ -20,7 +20,7 @@ function additemtocart(pid, price, weight, qty, length, width, height)
 function updateButton(pid, rowcount, sessionID)
 {
     //alert("button pressed PID:" + pid + " rows:" + rowcount);
-    current_session=get_session_id();
+    current_session=getPHPSessId();
     alert("session id=",current_session);
 
     for (let i = 1; i <= rowcount; i++) {
