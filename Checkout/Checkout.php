@@ -264,7 +264,7 @@ function build_cartHeader()
 	<link rel="stylesheet" href="/css/styles.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script src="EventHandler.js"></script>
+	<script src="\cart\EventHandler.js"></script>
 
 	<?php require_once $_SERVER["DOCUMENT_ROOT"] . "/includes/head.php"; ?>
 </head>

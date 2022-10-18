@@ -72,7 +72,7 @@ $the_banner_id = array_rand( $banner_list, 1 );
                                 <TBODY>
                                 <TR>
                                     <TD valign="middle">
-                                        <a href="/cart/cart.php">
+                                        <a href="/cart/cart.php"><!-- /s/tinycart -->
                                             <img name="tb_checkout" SRC="/images/toolbar_images/tb_checkout.gif"
                                                  WIDTH="56" HEIGHT="26" alt="Go to Cart">
                                         </a>
