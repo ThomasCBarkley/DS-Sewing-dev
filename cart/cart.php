@@ -91,7 +91,7 @@ if($action=='updatecart') {
 	global $cart_HTML;
 
 	global $current_PHPSESSID;
-	echo $current_PHPSESSID;
+	//echo $current_PHPSESSID;
 
     //$tsql = "INSERT INTO dbo.communicationTest(message) VALUES('" .$pid ."')";
 	$tsql = "UPDATE dbo.cart SET qty='" . $qty . "' WHERE sessionID='" . $id . "' and pid='" . $pid ."'";
@@ -286,6 +286,7 @@ if($action=='show'){
 		<?php echo($cart_HTML); ?>
 	</CENTER>
 </div>
+<?php 	echo $current_PHPSESSID; ?>
 <!-- 
 	<div>
 		<CENTER><br><br>
