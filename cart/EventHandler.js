@@ -64,13 +64,13 @@ function getPHPSessId() {
     var phpSessionId = document.cookie.match(/PHPSESSID=[A-Za-z0-9]+\;/i);
 
     if(phpSessionId == null) 
-        return '';
+        return 'null';
 
     if(typeof(phpSessionId) == 'undefined')
-        return '';
+        return 'undefined';
 
     if(phpSessionId.length <= 0)
-        return '';
+        return 'no PHPSESSID';
 
     phpSessionId = phpSessionId[0];
 
