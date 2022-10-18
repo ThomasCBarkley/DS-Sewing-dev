@@ -54,6 +54,44 @@ function updateButton(pid, rowcount, sessionID)
 
 };
 
+function get_session_id() {
+    return /SESS\w*ID=([^;]+)/i.test(document.cookie) ? RegExp.$1 : false;
+}
+
+function getPHPSessId() {
+    var phpSessionId = document.cookie.match(/PHPSESSID=[A-Za-z0-9]+\;/i);
+
+    if(phpSessionId == null) 
+        return '';
+
+    if(typeof(phpSessionId) == 'undefined')
+        return '';
+
+    if(phpSessionId.length <= 0)
+        return '';
+
+    phpSessionId = phpSessionId[0];
+
+    var end = phpSessionId.lastIndexOf(';');
+    if(end == -1) end = phpSessionId.length;
+
+    return phpSessionId.substring(10, end);
+}
+
+
+
+//The following can be used to retrieve JSESSIONID:
+
+function getJSessionId(){
+    var jsId = document.cookie.match(/JSESSIONID=[^;]+/);
+    if(jsId != null) {
+        if (jsId instanceof Array)
+            jsId = jsId[0].substring(11);
+        else
+            jsId = jsId.substring(11);
+    }
+    return jsId;
+}
 /*
 <span id="current"></span><br>
 <input type="number" id="n" value="5" step=".5" />
