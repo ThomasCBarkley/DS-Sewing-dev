@@ -83,7 +83,7 @@ if ($action == 'addcart') {
     }*/
 }
 /****************************************************************************************************************** */
-// Add to cart
+// Update to cart
 /****************************************************************************************************************** */
 if ($action == 'updatecart') {
 
@@ -231,6 +231,10 @@ if ($action == 'show') {
 	$cart_HTML .= "&nbsp;<button type=\"button\" onclick=\"updateButton('" . $PID . "','" . $row_ID . "','" . $id . "');\">Update Cart</button>";
 
 	//echo($cart_HTML);
+}
+
+function submit_checkout(){
+	//write to DB
 }
 function build_cartRow($PID, $DESC, $WEIGHT, $PRICE, $QTY, $ROW)
 {
